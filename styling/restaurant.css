@@ -1,11 +1,30 @@
-.restaurant-info {
-
+body {
+    background: #fafafa;
+    font-family: Arial, sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
 }
 
-.restaurant-menu {
-
+.restaurant-info, .restaurant-menu, .restaurant-tijden, .restaurant-locatie, .restaurant-reserveren, .allergie-info {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
 }
 
-.restaurant-tijden {
+ul {
+    padding-left: 20px;
+}
 
+li {
+    margin-bottom: 6px;
+}
+
+.restaurant-overview {
+    text-align: center;
+    padding: 40px 20px;
+    background: #;
+    border-bottom: 1px solid #eee;
 }
