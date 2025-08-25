@@ -1,0 +1,79 @@
+body {
+    background: #fafafa;
+    font-family: Arial, sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+.restaurant-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 500px;
+    position: relative;
+}
+
+.restaurant-info-section {
+    flex: 1;
+    min-width: 320px;
+    max-width: 400px;
+}
+
+.restaurant-info,
+.restaurant-menu, .restaurant-tijden {
+    max-width: 380px;
+    margin: 20px 10px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.restaurant-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 380px;
+}
+
+.restaurant-tijden {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 380px;
+}
+
+ .restaurant-locatie, .restaurant-reserveren, .allergie-info {
+    max-width: 380px;
+    margin: 20px 10px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    display: block;
+    margin: 20px 0;
+}
+
+.restaurant-sections-wrapper {
+    text-align: center;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+.restaurant-overview {
+    text-align: center;
+    padding: 40px 20px;
+    background: #B5925C ;
+    border-bottom: 1px solid #eee;
+}
