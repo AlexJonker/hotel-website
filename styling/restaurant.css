@@ -1,5 +1,4 @@
 body {
-    background: #fafafa;
     font-family: Arial, sans-serif;
     color: #222;
     margin: 0;
@@ -28,7 +27,7 @@ body {
     max-width: 380px;
     margin: 20px 10px;
     padding: 20px;
-    background: #fff;
+    background: #F9F58B;
     border-radius: 8px;
     display: inline-block;
     vertical-align: top;
@@ -53,7 +52,7 @@ body {
     max-width: 380px;
     margin: 20px 10px;
     padding: 20px;
-    background: #fff;
+    background: #F9F58B;
     border-radius: 8px;
     display: block;
     margin: 20px 0;
