@@ -15,14 +15,6 @@ body {
     padding: 0 0 40px 0;
 }
 
-.restaurant-info-section {
-    width: 100%;
-    min-width: unset;
-    max-width: unset;
-    margin: 0 auto;
-    justify-content: center;
-}
-
 .restaurant-info, .restaurant-menu {
     max-width: 700px;
     margin: 20px auto;
@@ -45,10 +37,6 @@ body {
     background: #F9F58B;
     border-top: 1px solid #eee;
     margin-top: 0;
-}
-
-.restaurant-sections-wrapper {
-    text-align: center;
 }
 
 .restaurant-overview {
