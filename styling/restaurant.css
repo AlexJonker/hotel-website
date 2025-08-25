@@ -6,12 +6,22 @@ body {
     padding: 0;
 }
 
-.restaurant-info, .restaurant-menu, .restaurant-tijden, .restaurant-locatie, .restaurant-reserveren, .allergie-info {
+.restaurant-info, .restaurant-locatie, .restaurant-reserveren, .allergie-info {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
     background: #fff;
     border-radius: 8px;
+    justify-content: left;
+}
+
+.restaurant-menu, .restaurant-tijden {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    justify-content: left;
 }
 
 ul {
@@ -25,6 +35,6 @@ li {
 .restaurant-overview {
     text-align: center;
     padding: 40px 20px;
-    background: #;
+    background: #B5925C ;
     border-bottom: 1px solid #eee;
 }
