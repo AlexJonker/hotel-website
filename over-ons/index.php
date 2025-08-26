@@ -26,9 +26,7 @@
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel adipisci nemo quibusdam voluptates expedita,
           non nobis eveniet est, velit facilis itaque consequatur praesentium minima, labore accusamus libero nesciunt
           error. Corrupti!</p>
-        <a href="http://127.0.0.1:5500/over-ons/index.html"><img
-            src="https://img.icons8.com/?size=100&id=18914&format=png&color=000000" width="50" height="50"
-            alt="alternatetext"><br> </a>
+     
       </div>
       <div class="box3">
 
@@ -44,7 +42,11 @@
       </div>
     </div>
   </div>
+   <a href="http://127.0.0.1:5500/over-ons/index.html"><img
+            src="https://img.icons8.com/?size=100&id=18914&format=png&color=000000" width="50" height="50"
+            alt="alternatetext"><br> </a>
   <?php include('../assets/footer.html'); ?>
+    
 </body>
 
 </html>

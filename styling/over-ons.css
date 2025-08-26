@@ -3,7 +3,7 @@
     }
 
     .box3 {
-      margin-bottom: 50px;
+      margin-bottom: 100px;
     }
 
     .cont {
@@ -11,7 +11,8 @@
       margin: 2px;
       padding: 10px;
       border-radius: 5%;
-      background-color: azure
+      background-color: azure;
+      margin-bottom: 20px;
     }
 
     .bottom {
@@ -21,9 +22,10 @@
 
     a:hover {
       background-color: purple;
+      width: 50px;
     }
 
-    img {
+  .mySlides {
       border-radius: 10%;
     }
 
