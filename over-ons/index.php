@@ -33,11 +33,11 @@
         <div class="w3-content w3-section" style="max-width:500px">
           <img class="mySlides"
             src="https://fastly.picsum.photos/id/142/4272/2848.jpg?hmac=z8IS_an6FQ8ijJOBd-wSVg1JTZbeIDG4TbjHwLQbs0I"
-            style="width:105%" alt="alternatetext">
-          <img class="mySlides" src="https://picsum.photos/id/4/5000/3333" style="width:105%">
+            style="width:110%" alt="alternatetext">
+          <img class="mySlides" src="https://picsum.photos/id/4/5000/3333" style="width:110%">
           <img class="mySlides"
             src="https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA"
-            style="width:105%">
+            style="width:110%">
         </div>
       </div>
     </div>
