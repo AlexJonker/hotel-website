@@ -42,9 +42,6 @@
       </div>
     </div>
   </div>
-   <a href="http://127.0.0.1:5500/over-ons/index.html"><img
-            src="https://img.icons8.com/?size=100&id=18914&format=png&color=000000" width="50" height="50"
-            alt="alternatetext"><br> </a>
   <?php include('../assets/footer.html'); ?>
     
 </body>
