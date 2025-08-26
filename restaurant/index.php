@@ -6,8 +6,7 @@
         <link rel="stylesheet" href="/styling/global.css">
         <link rel="stylesheet" href="/styling/restaurant.css">
         <link rel="stylesheet" href="/styling/footer.css">
-        <title>Restaurant</title>
-        <link rel="icon" href="/assets/favicon.ico">
+        <title>Restaurant - Hotel De Zonne Vallei.</title>
     </head>
     <body>
 

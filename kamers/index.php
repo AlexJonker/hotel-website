@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styling/global.css">
-    <link rel="stylesheet" href="/styling/hotelkamers.css">
+    <link rel="stylesheet" href="/styling/kamers.css">
     <title>Kamers - Hotel De Zonne Vallei.</title>
-    <link rel="icon" href="/assets/favicon.ico">
 </head>
 <body>
     <main class="rooms-list">
