@@ -8,7 +8,7 @@
     <title>Home - Hotel De Zonne Vallei</title>
 </head>
 <body>
-    <?php include("assets/navbar.html"); ?>
+    <?php include("assets/html/navbar.html"); ?>
 
     <div class="hero-container">
         <div class="hero-content-wrapper">
@@ -35,6 +35,6 @@
     </section>
 
 
-    <?php include("assets/footer.html"); ?>
+    <?php include("assets/html/footer.html"); ?>
 </body>
 </html>

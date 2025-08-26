@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="/styling/restaurant.css">
     <link rel="stylesheet" href="/styling/footer.css">
     <title>Restaurant - Hotel De Zonne Vallei</title>
-    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="icon" href="/assets/logos/favicon.ico">
 </head>
 
 <body>
 
-<?php include("../assets/navbar.html"); ?>
+<?php include("../assets/html/navbar.html"); ?>
 
 
     <div class="hero-container">
@@ -63,7 +63,7 @@
         </div>
     </section>
 
-<?php include("../assets/footer.html"); ?>
+<?php include("../assets/html/footer.html"); ?>
 
 </body>
 

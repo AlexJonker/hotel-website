@@ -8,7 +8,7 @@
     <title>Kamers - Hotel De Zonne Vallei</title>
 </head>
 <body>
-    <?php include('../assets/navbar.html'); ?>
+    <?php include('../assets/html/navbar.html'); ?>
     <div class="hero-container">
         <div class="hero-content-wrapper">
             <h1>Beschikbare Kamers</h1>
@@ -91,7 +91,7 @@
             </a>
         </section>
     </main>
-    <?php include('../assets/footer.html'); ?>
+    <?php include('../assets/html/footer.html'); ?>
 </body>
 
 </html>
