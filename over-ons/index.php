@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <?php include('../assets/navbar.html'); ?>
   <div class="cont">
     <h1>Wie zij wij?</h1>
     <div class="box">
@@ -43,6 +44,7 @@
       </div>
     </div>
   </div>
+  <?php include('../assets/footer.html'); ?>
 </body>
 
 </html>
