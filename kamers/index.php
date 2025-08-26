@@ -9,8 +9,13 @@
 </head>
 <body>
     <?php include('../assets/navbar.html'); ?>
+    <div class="hero-container">
+        <div class="hero-content-wrapper">
+            <h1>Beschikbare Kamers</h1>
+            <p>Bekijk en boek jouw ideale kamer.</p>
+        </div>
+    </div>
     <main class="rooms-list">
-        <h1>Beschikbare Kamers</h1>
         <section class="rooms-container">
             <a href="#" class="room-card">
                 <img src="https://lipsum.app/random/600x300" alt="Standaard Kamer">
