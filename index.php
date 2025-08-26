@@ -10,7 +10,7 @@
 <body>
     <?php include("assets/navbar.html"); ?>
 
-        <div class="hero-container">
+    <div class="hero-container">
         <div class="hero-content-wrapper">
             <h1>Lorem, ipsum dolor sit amet</h1>
             <p>yoyoyoooo</p>
