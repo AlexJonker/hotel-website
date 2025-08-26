@@ -9,5 +9,16 @@
 </head>
 <body>
     <?php include("assets/nav/navbar.html"); ?>
+
+        <div class="hero-container">
+        <div class="hero-content-wrapper">
+            <h1>Lorem, ipsum dolor sit amet</h1>
+            <p>yoyoyoooo</p>
+            <div class="hero-button-container">
+                <a href="">awesomesauce</a>
+                <a id="h-btn-2" href="">meh</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
