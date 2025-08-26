@@ -2,10 +2,10 @@
     background: white;
     border-radius: 12px;
     padding: 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px var(--color-shadow);
     width: 400px;
     text-align: center;
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--color-border-alt);
 
     position: absolute;
     top: 50%;
@@ -16,7 +16,7 @@
 .login-title {
     font-size: 2rem;
     font-weight: 400;
-    color: #333;
+    color: var(--color-grey);
     margin-bottom: 30px;
 }
 
@@ -28,7 +28,7 @@
 .form-label {
     display: block;
     font-weight: 500;
-    color: #555;
+    color: #555; /* geen var, optioneel toevoegen */
     margin-bottom: 8px;
     font-size: 0.9rem;
 }
@@ -36,7 +36,7 @@
 .form-input {
     width: 100%;
     padding: 15px;
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--color-border-dark);
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -45,14 +45,14 @@
 
 .form-input:focus {
     outline: none;
-    border-color: #9db85a;
-    box-shadow: 0 0 0 2px rgba(157, 184, 90, 0.15);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-shadow-accent-light);
 }
 
 .login-btn {
     width: 100%;
     padding: 15px;
-    background: #9db85a;
+    background: var(--color-accent);
     color: white;
     border: none;
     border-radius: 8px;
@@ -64,9 +64,9 @@
 }
 
 .login-btn:hover {
-    background: #8ba650;
+    background: var(--color-accent-dark);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(157, 184, 90, 0.25);
+    box-shadow: 0 4px 12px var(--color-shadow-accent);
 }
 
 .login-btn:active {

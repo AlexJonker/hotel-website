@@ -2,7 +2,7 @@
     width: 100%;
     height: 100px;
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.075) 0 0 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.075) 0 0 10px 20px; /* geen var, optioneel toevoegen */
 }
 
 .nav-items-wrapper {
@@ -47,11 +47,11 @@
 #contact {
     padding: 15px 30px;
     border-radius: 5px;
-    background-color: rgb(141, 141, 60);
+    background-color: var(--color-primary);
     color: white;
     transition: 0.5s all;
 }
 
 #contact:hover {
-    background-color: rgb(96, 96, 24);
+    background-color: var(--color-primary-dark);
 }

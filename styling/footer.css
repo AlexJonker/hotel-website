@@ -17,9 +17,9 @@ a{
   display: flex;
   flex-flow: row wrap;
   padding: 30px 30px 20px 30px;
-  color: #2f2f2f;
-  background: #fff;
-  border-top: 1px solid #e5e5e5;
+  color: var(--color-bg-dark);
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border);
   text-decoration: none;
 }
 
@@ -66,7 +66,7 @@ a{
   margin-top: 1em;
   margin-bottom: -10px;
   font-style: normal;
-  color: #999;
+  color: var(--color-grey-lighter);
 }
 
 .footer-btn {
@@ -75,9 +75,9 @@ a{
   justify-content: center;
   height: 36px;
   max-width: max-content;
-  background: rgba(33, 33, 33, 0.07);
+  background: var(--color-footer-bg);
   border-radius: 100px;
-  color: #2f2f2f;
+  color: var(--color-bg-dark);
   margin: 0.6em 0;
   font-size: 1rem;
   padding: 0 1.3em;
@@ -92,7 +92,7 @@ a{
 .footer li a {
   line-height: 2em;
   font-style: normal;
-  color: #999;
+  color: var(--color-grey-lighter);
 }
 
 .footer-nav {
@@ -113,7 +113,7 @@ a{
 .legal {
   text-align: center;
   padding: 20px 0;
-  color: #999;
+  color: var(--color-grey-lighter);
 }
 
 

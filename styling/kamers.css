@@ -1,7 +1,7 @@
 .hero-container {
     width: 100%;
     height: 300px;
-    background-color: rgb(227, 227, 227);
+    background-color: var(--color-bg-alt);
 
     background-position: center;
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@
 .rooms-list {
     width: 100%;
     padding: 80px 0;
-    background: #f8f8f8;
+    background: var(--color-bg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,8 +52,8 @@
 
 .room-card {
     overflow: hidden;
-    background: #e3e3e3;
-    color: #333;
+    background: var(--color-bg-alt);
+    color: var(--color-grey);
     border-radius: 15px;
     width: 350px;
     display: flex;
@@ -61,16 +61,16 @@
     align-items: center;
     transition: 0.5s all;
     text-decoration: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px var(--color-shadow);
 }
 
 .room-card:hover {
     transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+    box-shadow: 0 8px 24px var(--color-shadow-dark);
 }
 
 .room-card span:hover {
-    background-color: rgb(47, 47, 5);
+    background-color: var(--color-primary-dark);
 }
 .room-card img {
     width: 100%;
@@ -81,7 +81,7 @@
 .room-card h2 {
     font-size: 28px;
     font-weight: bold;
-    color: #333;
+    color: var(--color-grey);
     margin: 20px 0 10px 0;
     text-align: center;
 }
@@ -93,8 +93,8 @@
 .room-price {
     font-size: 20px;
     font-weight: 500;
-    color: #fff;
-    background: #8d8d3c;
+    color: var(--color-white);
+    background: var(--color-primary);
     border-radius: 5px;
     padding: 12px 25px;
     margin: 20px 0;

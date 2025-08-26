@@ -6,7 +6,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid var(--color-border);
 
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@
 
 .hero-button-container a {
     padding: 20px 30px;
-    background-color: rgb(141, 141, 60);
+    background-color: var(--color-primary);
     border-radius: 5px;
     color: white;
     text-decoration: none;
@@ -46,30 +46,30 @@
 }
 
 .hero-button-container a:hover {
-    background-color: rgb(86, 86, 19);
+    background-color: var(--color-primary-dark);
 }
 
 #h-btn-2 {
-    background-color: rgba(255, 255, 255, 0.315);
+    background-color: rgba(255, 255, 255, 0.315); /* transparant wit, geen var */
 }
 
 
 .about-section {
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid var(--color-border);
 
     width: 100%;
     padding: 80px 0;
-    background-color: #f8f8f8;
+    background-color: var(--color-bg);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .about-section2 {
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid var(--color-border);
     width: 100%;
     padding: 80px 0;
-    background-color: rgba(255, 255, 255, 0.153);
+    background-color: rgba(255, 255, 255, 0.153); /* transparant wit, geen var */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,7 +89,7 @@
 
 .about-content-wrapper h2 {
     font-size: 42px;
-    color: #333;
+    color: var(--color-grey);
     margin-bottom: 10px;
 }
 
@@ -107,13 +107,13 @@
 .about-content-wrapper p {
     font-size: 18px;
     line-height: 1.6;
-    color: #666;
+    color: var(--color-grey-light);
     max-width: 700px;
 }
 
 .about-button {
     padding: 18px 35px;
-    background-color: rgb(141, 141, 60);
+    background-color: var(--color-primary);
     border-radius: 5px;
     color: white;
     text-decoration: none;
@@ -124,6 +124,6 @@
 }
 
 .about-button:hover {
-    background-color: rgb(86, 86, 19);
+    background-color: var(--color-primary-dark);
     transform: translateY(-2px);
 }
