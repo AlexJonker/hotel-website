@@ -20,6 +20,7 @@
             </div>
         </div>
     </div>
+  
     <?php include("assets/footer.html"); ?>
 </body>
 </html>
