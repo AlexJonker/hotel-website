@@ -59,10 +59,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: 0.5s all;
     text-decoration: none;
-    border: #8d8d3c solid;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .room-card:hover {
@@ -70,6 +69,9 @@
     box-shadow: 0 8px 24px rgba(0,0,0,0.13);
 }
 
+.room-card span:hover {
+    background-color: rgb(47, 47, 5);
+}
 .room-card img {
     width: 100%;
     height: 220px;
