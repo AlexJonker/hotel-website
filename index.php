@@ -20,7 +20,21 @@
             </div>
         </div>
     </div>
-  
+
+    <section class="about-section">
+        <div class="about-content-wrapper">
+            <h2>Over Ons</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi voluptates, quo consectetur doloremque voluptate dolor sint ipsum eius quisquam assumenda nemo facilis amet, dolores consequuntur beatae odio quidem quod molestiae.
+            </p>
+            <p>
+                jj hfhsdkf asdf f fjhffhf d d dkj a Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, rerum.
+            </p>
+            <a href="/over-ons" class="about-button">Meer over ons</a>
+        </div>
+    </section>
+
+
     <?php include("assets/footer.html"); ?>
 </body>
 </html>
