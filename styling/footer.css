@@ -111,15 +111,11 @@ a{
 }
 
 .legal {
-  margin-top: -3em;
-  display: flex;
-  flex-wrap: wrap;
+  text-align: center;
+  padding: 20px 0;
   color: #999;
-  display: flex;
-  align-items: center;
-  margin-left: 22em;
-
 }
+
 
 .footer-img {
   width: 190px;
