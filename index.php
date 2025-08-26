@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styling/global.css">
     <link rel="stylesheet" href="/styling/home.css">
-    <title>Home - Hotel De Zonne Vallei.</title>
+    <title>Home - Hotel De Zonne Vallei</title>
 </head>
 <body>
     <?php include("assets/navbar.html"); ?>

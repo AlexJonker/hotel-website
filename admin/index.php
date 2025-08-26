@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styling/global.css">
-    <link rel="stylesheet" href="/styling/home.css">
     <link rel="stylesheet" href="/styling/admin.css">
-    <title>Document</title>
+    <title>Admin - Hotel De Zonne Vallei</title>
 </head>
 
 <body>
