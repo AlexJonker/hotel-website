@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include("assets/nav/navbar.html"); ?>
+    <?php include("assets/navbar.html"); ?>
 
         <div class="hero-container">
         <div class="hero-content-wrapper">
