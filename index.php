@@ -8,7 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php include("assets/nav/navbar.html"); ?>
 </body>
-
 </html>
