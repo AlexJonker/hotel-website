@@ -31,10 +31,10 @@ Hotel De Zonne Vallei ligt in het bruisende hart van Alkmaar, een stad die rijk 
         <div class="about-content-wrapper">
             <h2>Over Ons</h2>
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi voluptates, quo consectetur doloremque voluptate dolor sint ipsum eius quisquam assumenda nemo facilis amet, dolores consequuntur beatae odio quidem quod molestiae.
+               Hotel De Zonne Vallei is opgericht door Bouke van Zon, een visionaire ondernemer met een passie voor gastvrijheid en een scherp oog voor detail. Met jarenlange ervaring in de horeca-industrie heeft Bouke zijn droom verwezenlijkt om een uniek hotel te creëren waar gasten zich thuis voelen en kunnen genieten van alle gemakken en luxe die het leven te bieden heeft.
             </p>
             <p>
-                jj hfhsdkf asdf f fjhffhf d d dkj a Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, rerum.
+                Lees hier verder:
             </p>
             <a href="/over-ons" class="about-button">Meer over ons</a>
         </div>
