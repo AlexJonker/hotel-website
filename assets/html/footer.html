@@ -14,7 +14,6 @@
             <img src="/assets/logos/logo_light.png" alt="foto"
                 class="footer-img">
             <div class="footer-addr">
-                <!-- <h1 class="footer-logo">De Zonne Vallei</h1> -->
                 <h2>Hotel De Zonne Vallei</h2>
                 <address>
                     Straatnaam 85, 1234 AB Alkmaar, NL
@@ -22,7 +21,7 @@
                 <h2>Weer in Alkmaar</h2>
                 <br>
                 <div id="weather">
-                    <p>26°</p>
+                    <div id="weer-info">Weer laden...</div>
                 </div>
                 <br>
             </div>
@@ -77,6 +76,21 @@
 
     </footer>
 
+<script>
+fetch("/assets/php/weer.php")
+  .then(response => response.json())
+  .then(data => {
+    if (data.currentConditions && data.currentConditions.temp !== undefined) {
+      const tempC = ((data.currentConditions.temp - 32) * 5 / 9).toFixed(1);
+      document.getElementById("weer-info").innerHTML = `${tempC}°C`;
+    } else {
+      document.getElementById("weer-info").innerHTML = "geen weer";
+    }
+  })
+  .catch(err => {
+    document.getElementById("weer-info").innerHTML = "error";
+  });
+</script>
 </body>
 
 </html>
