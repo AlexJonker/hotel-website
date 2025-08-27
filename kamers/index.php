@@ -33,7 +33,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <?php
             foreach ($kamers as $kamer) {
                 ?>
-                <a href="#" class="room-card">
+                <a href="/kamer?num=<?= htmlspecialchars($kamer['id']) ?>" class="room-card">
                     <img src="<?= htmlspecialchars($kamer['afbeelding']) ?>" alt="<?= htmlspecialchars($kamer['naam']) ?>">
                     <div class="room-info">
                         <h2><?= htmlspecialchars($kamer['naam']) ?></h2>

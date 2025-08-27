@@ -1,0 +1,58 @@
+.kamer-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 60px auto 40px auto;
+    background-color: var(--color-bg-alt);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.kamer-naam {
+    font-size: 38px;
+    color: var(--color-grey);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.kamer-content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.kamer-afbeelding {
+    width: 340px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    background-color: #eee;
+}
+
+.kamer-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: center;
+}
+
+.kamer-beschrijving {
+    font-size: 18px;
+    color: var(--color-grey-light);
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.kamer-prijs {
+    font-size: 20px;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-top: 10px;
+}
