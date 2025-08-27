@@ -1,5 +1,5 @@
 <?php
-require '../assets/db.php';
+require '../assets/php/db.php';
 
 $result = mysqli_query($conn, "SELECT * FROM kamers");
 $kamers = [];

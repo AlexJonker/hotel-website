@@ -1,5 +1,5 @@
 <?php
-require '../assets/db.php';
+require '../assets/php/db.php';
 
 $current_room = $_GET['num'] ?? "Hello!";
 
