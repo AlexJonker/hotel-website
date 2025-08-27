@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<?php include('../assets/html/navbar.html'); ?>
     <div class="login-container">
         <h1 class="login-title">Login voor admin</h1>
         <form id="loginForm">
@@ -28,6 +29,7 @@
             <div id="successMessage" class="success-message"></div>
         </form>
     </div>
+    <br>
+    <?php include("../assets/html/footer.html"); ?>
 </body>
-
 </html>
