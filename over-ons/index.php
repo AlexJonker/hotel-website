@@ -13,20 +13,18 @@
 <body>
   <?php include('../assets/html/navbar.html'); ?>
   <div class="cont">
-    <h1>Wie zij wij?</h1>
+    <h1>over ons</h1>
     <div class="box">
 
       <div class="box2">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel adipisci nemo quibusdam voluptates expedita,
-          non nobis eveniet est, velit facilis itaque consequatur praesentium minima, labore accusamus libero nesciunt
-          error. Corrupti!</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel adipisci nemo quibusdam voluptates expedita,
-          non nobis eveniet est, velit facilis itaque consequatur praesentium minima, labore accusamus libero nesciunt
-          error. Corrupti!</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel adipisci nemo quibusdam voluptates expedita,
-          non nobis eveniet est, velit facilis itaque consequatur praesentium minima, labore accusamus libero nesciunt
-          error. Corrupti!</p>
-     
+        <h2>Welkom bij Hotel De Zonne Vallei</h2>
+        <p>Bij Hotel De Zonne Vallei streven we ernaar om elke gast een onvergetelijke ervaring te bieden, doordrenkt met luxe, comfort en uitzonderlijke gastvrijheid. Gelegen in het hart van Alkmaar, biedt ons hotel de perfecte uitvalsbasis om deze historische en charmante stad te ontdekken.</p>
+       <h2>Ons Verhaal</h2>
+       <p>Hotel De Zonne Vallei is opgericht door Bouke van Zon, een visionaire ondernemer met een passie voor gastvrijheid en een scherp oog voor detail. Met jarenlange ervaring in de horeca-industrie heeft Bouke zijn droom verwezenlijkt om een uniek hotel te creëren waar gasten zich thuis voelen en kunnen genieten van alle gemakken en luxe die het leven te bieden heeft.</P>
+        <h2>Onze Waarden</h2>
+       <p>Bij Hotel De Zonne Vallei staan kwaliteit, gastvrijheid en persoonlijke service centraal. Wij geloven dat elk detail bijdraagt aan een perfecte ervaring, van de smaakvolle inrichting van onze kamers tot de culinaire hoogstandjes in ons restaurant. Ons toegewijde team staat altijd klaar om aan al uw wensen te voldoen en ervoor te zorgen dat uw verblijf zo aangenaam mogelijk is.</P>
+        <h2>Ons Team</h2>
+       <p>Ons team van enthousiaste en professionele medewerkers deelt de visie van Bouke van Zon om elke gast een warm welkom en een onvergetelijk verblijf te bieden. Van de receptie tot het restaurant en de huishouding, elk teamlid speelt een cruciale rol in het creëren van de unieke sfeer en ervaring waar Hotel De Zonne Vallei om bekend staat.</P>
       </div>
       <div class="box3">
 

@@ -63,3 +63,9 @@
 .mySlides:first-child {
   display: block;
 }
+h2.thick {
+  font-weight: bold;
+}
+h2.thicker {
+  font-weight: 900;
+}
