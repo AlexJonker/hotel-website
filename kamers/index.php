@@ -11,8 +11,27 @@
     <?php include('../assets/html/navbar.html'); ?>
     <div class="hero-container">
         <div class="hero-content-wrapper">
-            <h1>Beschikbare Kamers</h1>
-            <p>Bekijk en boek jouw ideale kamer.</p>
+            <h1>Ontdek Onze Kamers</h1>
+             <!--tesk opmaak verbeteren-->
+            <p>Welkom in het 3-duimen Hotel De Zonne Vallei, waar luxe en comfort hand in hand gaan. Gelegen in het hart van Alkmaar, bieden onze kamers een perfecte balans tussen modern design en gezelligheid. Of u nu voor een romantisch uitje, een familievakantie of een zakelijke bijeenkomst komt, ons hotel heeft precies wat u nodig heeft voor een onvergetelijk verblijf. Geniet van de rust en elegantie van onze kamers en ervaar de uitzonderlijke gastvrijheid die ons hotel kenmerkt.</p>
+          
+               <!--
+               kamers types:
+              1. Comfort Kamer
+Onze Comfort Kamer biedt een serene ontsnapping met alle basisvoorzieningen die u nodig heeft. Geniet van een comfortabel bed, een moderne badkamer en een prachtig uitzicht op de stad. Perfect voor een kort verblijf of een zakenreis.
+
+2. Deluxe Kamer
+Voor degenen die net dat beetje extra comfort willen, is onze Deluxe Kamer de perfecte keuze. Deze kamers zijn ruimer en beschikken over luxere voorzieningen, zoals een zithoek en een Nespresso-apparaat. De ideale plek om te ontspannen na een dag vol ontdekkingen in Alkmaar.
+
+3. Junior Suite
+Onze Junior Suites bieden een ultieme combinatie van ruimte en luxe. Met een aparte woonkamer, een ruime badkamer en een balkon met een adembenemend uitzicht, is deze kamer perfect voor een romantisch uitje of een speciale gelegenheid.
+
+4. Familie Suite
+Speciaal ontworpen voor gezinnen, biedt onze Familie Suite voldoende ruimte en comfort voor iedereen. Deze suites beschikken over twee aparte slaapkamers, een ruime woonkamer en extra voorzieningen zoals een kitchenette en speelhoek voor de kinderen. De perfecte thuisbasis voor een onvergetelijke familievakantie.
+
+5. Bruidssuite
+Onze Bruidssuite is de ultieme romantische ontsnapping voor pasgetrouwde stellen. Deze luxueuze suite biedt een ruime slaapkamer met een kingsize bed, een stijlvolle woonkamer en een eigen balkon met een prachtig uitzicht op Alkmaar. Geniet van extra's zoals een bubbelbad, rozenblaadjes op het bed en een fles champagne om uw speciale gelegenheid te vieren in stijl.
+-->
         </div>
     </div>
     <main class="rooms-list">
