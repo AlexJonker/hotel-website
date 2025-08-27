@@ -10,7 +10,6 @@
     <title>Restaurant - Hotel De Zonne Vallei</title>
     <link rel="icon" href="/assets/logos/favicon.ico">
 </head>
-
 <body>
 
 <?php include("../assets/html/navbar.html"); ?>
