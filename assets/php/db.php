@@ -30,6 +30,13 @@ $sql = "
         prijs DECIMAL(10, 2) NOT NULL,
         PRIMARY KEY (id)
     );
+
+    CREATE TABLE IF NOT EXISTS afbeeldingen (
+        id INT NOT NULL AUTO_INCREMENT,
+        link VARCHAR(255) DEFAULT NULL,
+        kamer_id INT NOT NULL,
+        PRIMARY KEY (id)
+    );
 ";
 if (!mysqli_query($conn, $sql)) {
     die("Error creating table: " . mysqli_error($conn));
