@@ -14,9 +14,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     $afbeeldingen[] = $row;
 }
 
-echo json_encode([
-    'afbeeldingen' => $afbeeldingen[0]["kamer_id"]
-]);
 
 ?>
 
