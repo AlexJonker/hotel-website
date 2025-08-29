@@ -1,4 +1,23 @@
+<?php
+require '../../assets/php/fontawesome.php';
+require '../../assets/php/db.php';
 
+
+$result = mysqli_query($conn, "SELECT * FROM kamers");
+$kamers = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $kamers[] = $row;
+}
+;
+
+$result = mysqli_query($conn, "SELECT * FROM afbeeldingen");
+$afbeeldingen = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $afbeeldingen[] = $row;
+}
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,42 +29,45 @@
     <link rel="stylesheet" href="/styling/global.css">
     <link rel="stylesheet" href="/styling/home.css">
     <link rel="stylesheet" href="/styling/panel.css">
-    <?php include("../../assets/php/fontawesome.php"); ?>
 </head>
 
 <body>
-    <form>
-       <div class = "layout">
     <aside>
         <nav>
-            <ul>
-                <li><a href=""><i class="fas fa-plus"></i> Toevoegen</a></li>
-                <li><a href=""><i class="fas fa-edit"></i> Editen</a></li>
-                <li><a href=""><i class="fas fa-key"></i> Wachtwoord wijzigen</a></li>
-            </ul>
-            
-        </nav>
-        <form action="" method="post">
-        <label>Naam:</label><br>
-        
-      <input type="text" id="persoon" name="persoon" required ><br>
-      <br>
-       <label>Prijs:</label><br>
-      <input type="text" id="persoon" name="persoon" required >
-   <br>
-  <br>
-         <button type ="submit" id="verzenden" name="verzenden" >sturen</button>
-        
-</form>
+            <a href="/"><i class="fas fa-home"></i> Home</a>
+            <a href=""><i class="fas fa-key"></i> Wachtwoord wijzigen</a>
 
-        <a href="/" class="home-button" title="Home">
-            <i class="fas fa-home"></i>
-        </a>
-    
+        </nav>
     </aside>
- <article><h1>database overzicht</h1></article>
-</form>
-    </div>
+    <article>
+        <section class="rooms-container">
+            <?php
+            foreach ($kamers as $kamer) {
+                ?>
+                <a href="/kamer?num=<?= $kamer['id'] ?>" class="room-card">
+                    <?php
+                    $kamerAfbeelding = null;
+                    foreach ($afbeeldingen as $afbeelding) {
+                        if ($afbeelding['kamer_id'] == $kamer['id']) {
+                            $kamerAfbeelding = $afbeelding['link'];
+                            break;
+                        }
+                    }
+                    ?>
+                    <?php if ($kamerAfbeelding): ?>
+                        <img src="<?= $kamerAfbeelding ?>" alt="<?= $kamer['naam'] ?>">
+                    <?php endif; ?>
+                    <div class="room-info">
+                        <h2><?= $kamer['naam'] ?></h2>
+                        <span class="room-price">€<?= $kamer['prijs'] ?> / nacht</span>
+                    </div>
+                </a>
+                <?php
+            }
+            ?>
+        </section>
+    </article>
+
 </body>
 
 </html>
