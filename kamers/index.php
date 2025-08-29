@@ -1,5 +1,25 @@
+<?php
+require '../assets/php/db.php';
+
+$result = mysqli_query($conn, "SELECT * FROM kamers");
+$kamers = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $kamers[] = $row;
+}
+;
+
+$result = mysqli_query($conn, "SELECT * FROM afbeeldingen");
+$afbeeldingen = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $afbeeldingen[] = $row;
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +27,7 @@
     <link rel="stylesheet" href="/styling/kamers.css">
     <title>Kamers - Hotel De Zonne Vallei</title>
 </head>
+
 <body>
     <!--- <?php include('../assets/html/navbar.html'); ?> -->
     <div class="hero-container">
@@ -36,78 +57,30 @@ Onze Bruidssuite is de ultieme romantische ontsnapping voor pasgetrouwde stellen
     </div>
     <main class="rooms-list">
         <section class="rooms-container">
-            <a href="#" class="room-card">
-                <img src="https://lipsum.app/random/600x300" alt="Standaard Kamer">
-                <div class="room-info">
-                    <h2>Kamer</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <span class="room-price">€75 / nacht</span>
-                </div>
-            </a>
-            <a href="#" class="room-card">
-                <img src="https://lipsum.app/random/600x300" alt="Standaard Kamer">
-                <div class="room-info">
-                    <h2>Kamer</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <span class="room-price">€75 / nacht</span>
-                </div>
-            </a>
-            <a href="#" class="room-card">
-                <img src="https://lipsum.app/random/600x300" alt="Standaard Kamer">
-                <div class="room-info">
-                    <h2>Kamer</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <span class="room-price">€75 / nacht</span>
-                </div>
-            </a>
-            <a href="#" class="room-card">
-                <img src="https://lipsum.app/random/600x300" alt="Standaard Kamer">
-                <div class="room-info">
-                    <h2>Kamer</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <span class="room-price">€75 / nacht</span>
-                </div>
-            </a>
-            <a href="#" class="room-card">
-                <img src="https://lipsum.app/random/600x300" alt="Standaard Kamer">
-                <div class="room-info">
-                    <h2>Kamer</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <span class="room-price">€75 / nacht</span>
-                </div>
-            </a>
-            <a href="#" class="room-card">
-                <img src="https://lipsum.app/random/600x300" alt="Standaard Kamer">
-                <div class="room-info">
-                    <h2>Kamer</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <span class="room-price">€75 / nacht</span>
-                </div>
-            </a>
-            <a href="#" class="room-card">
-                <img src="https://lipsum.app/random/600x300" alt="Standaard Kamer">
-                <div class="room-info">
-                    <h2>Kamer</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <span class="room-price">€75 / nacht</span>
-                </div>
-            </a>
-            <a href="#" class="room-card">
-                <img src="https://lipsum.app/random/600x300" alt="Standaard Kamer">
-                <div class="room-info">
-                    <h2>Kamer</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <span class="room-price">€75 / nacht</span>
-                </div>
-            </a>
-            <a href="#" class="room-card">
-                <img src="https://lipsum.app/random/600x300" alt="Standaard Kamer">
-                <div class="room-info">
-                    <h2>Kamer</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <span class="room-price">€75 / nacht</span>
-                </div>
-            </a>
+            <?php
+            foreach ($kamers as $kamer) {
+                ?>
+                <a href="/kamer?num=<?= $kamer['id'] ?>" class="room-card">
+                    <?php
+                    $kamerAfbeelding = null;
+                    foreach ($afbeeldingen as $afbeelding) {
+                        if ($afbeelding['kamer_id'] == $kamer['id']) {
+                            $kamerAfbeelding = $afbeelding['link'];
+                            break;
+                        }
+                    }
+                    ?>
+                    <?php if ($kamerAfbeelding): ?>
+                        <img src="<?= $kamerAfbeelding ?>" alt="<?= $kamer['naam'] ?>">
+                    <?php endif; ?>
+                    <div class="room-info">
+                        <h2><?= $kamer['naam'] ?></h2>
+                        <span class="room-price">€<?= $kamer['prijs'] ?> / nacht</span>
+                    </div>
+                </a>
+                <?php
+            }
+            ?>
         </section>
     </main>
     <!---<?php include('../assets/html/footer.html'); ?> -->
