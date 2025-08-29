@@ -10,11 +10,14 @@ aside {
     width: 200px;
     background-color: #f4f4f4;
     padding: 15px;
-    position: relative;
+  
     box-sizing: border-box;
 }
 
-
+.layout {
+    display: flex;
+    height: 100vh;
+}
 nav ul li {
     margin-bottom: 10px;
 }
@@ -52,4 +55,9 @@ nav ul li a i {
 
 .home-button:hover {
     color: var(--color-primary-light);
+}
+article{
+    flex:1;
+    box-sizing:border-box;
+        padding: 20px;
 }
