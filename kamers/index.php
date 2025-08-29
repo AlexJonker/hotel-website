@@ -55,7 +55,7 @@ echo json_encode([
                     }
                     ?>
                     <?php if ($kamerAfbeelding): ?>
-                        <img src="<?= htmlspecialchars($kamerAfbeelding) ?>" alt="<?= htmlspecialchars($kamer['naam']) ?>">
+                        <img src="<?= $kamerAfbeelding ?>" alt="<?= $kamer['naam'] ?>">
                     <?php endif; ?>
                     <div class="room-info">
                         <h2><?= $kamer['naam'] ?></h2>
