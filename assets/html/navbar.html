@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/styling/navbar.css">
     <link rel="icon" href="/assets/logos/favicon.ico">
 </head>
+
 <body>
     <nav class="nav-container">
         <div class="nav-items-wrapper">
@@ -16,8 +18,13 @@
                 </a>
             </div>
 
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
 
-            <div class="nav-links-wrapper">
+            <div class="nav-links-wrapper" id="navLinks">
                 <a href="/">Home</a>
                 <a href="/kamers">Kamers</a>
                 <a href="/restaurant">Restaurant</a>
@@ -25,7 +32,26 @@
                 <a id="contact" href="/contact">Contact</a>
             </div>
         </div>
-
     </nav>
+
+    <script>
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+
+            navLinks.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links-wrapper a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById('navLinks');
+                const mobileToggle = document.querySelector('.mobile-menu-toggle');
+                navLinks.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            });
+        });
+    </script>
 </body>
+
 </html>
