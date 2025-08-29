@@ -129,6 +129,20 @@
     box-shadow: 0 4px 12px rgba(44, 82, 130, 0.3);
 }
 
+.about-paragraph {
+    margin-bottom: 30px;
+}
+
+.about-paragraph h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.about-paragraph p {
+    margin: 0;
+}
+
 @media screen and (max-width: 768px) {
     .hero-container {
         height: 80vh;
