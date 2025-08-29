@@ -32,7 +32,8 @@ $conn->close();
 </head>
 
 <body>
-    <div class="login-container">
+    <?php include('../assets/html/navbar.html'); ?>
+    <section class="login-container">
         <h1 class="login-title">Admin Login</h1>
         <div id="errorMessage" class="error-message" style="display: none;">
             Fout wachtwoord. Probeer opnieuw.
@@ -53,8 +54,11 @@ $conn->close();
         </form>
         
         <p class="info-text">Alleen bevoegd personeel heeft toegang tot dit gedeelte.</p>
-    </div>
-    
+
+    </section>
+    <br>
+    <?php include('../assets/html/footer.html'); ?>
+
 
     <script>
         const DatabasePassword = <?php echo json_encode($dbPassword); ?>;
@@ -73,5 +77,6 @@ $conn->close();
             }
         });
     </script>
+    
 </body>
 </html>
