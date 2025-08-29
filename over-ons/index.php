@@ -13,6 +13,7 @@
 <body>
   <?php include('../assets/html/navbar.html'); ?>
   <div class="cont">
+    
     <h1>over ons</h1>
     <div class="box">
 
