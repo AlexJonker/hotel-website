@@ -55,7 +55,10 @@ while ($row = mysqli_fetch_assoc($result)) {
                     }
                     ?>
                     <?php if ($kamerAfbeelding): ?>
-                        <img src="<?= $kamerAfbeelding ?>" alt="<?= $kamer['naam'] ?>">
+                        <div class="room-image" style="position:relative;">
+                            <img src="<?= $kamerAfbeelding ?>" alt="<?= $kamer['naam'] ?>">
+                            <p class="fas fa-pencil-alt" aria-hidden="true"></p>
+                        </div>
                     <?php endif; ?>
                     <div class="room-info">
                         <h2><?= $kamer['naam'] ?></h2>
