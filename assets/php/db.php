@@ -1,43 +1,28 @@
 <?php
 $env = parse_ini_file('../.env');
 
-$host = $env["db_host"];
-$db   = $env["db_name"];
-$user = $env["db_user"];
-$pass = $env["db_pass"];
+$conn = mysqli_connect(
+    $env["db_host"],
+    $env["db_user"],
+    $env["db_pass"]
+);
 
-
-$conn = mysqli_connect($host, $user, $pass);
-if (!$conn) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
-
-$sql = "CREATE DATABASE IF NOT EXISTS `$db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci";
-if (!mysqli_query($conn, $sql)) {
-    die("Error creating database: " . mysqli_error($conn));
-}
-
-if (!mysqli_select_db($conn, $db)) {
-    die("Error selecting database: " . mysqli_error($conn));
-}
-
-$sql = "
+mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS `{$env["db_name"]}`");
+mysqli_select_db($conn, $env["db_name"]);
+mysqli_query($conn, "
     CREATE TABLE IF NOT EXISTS kamers (
-        id INT NOT NULL AUTO_INCREMENT,
+        id INT AUTO_INCREMENT PRIMARY KEY,
         naam VARCHAR(100) NOT NULL,
         beschrijving TEXT,
         afbeelding VARCHAR(255) DEFAULT NULL,
-        prijs DECIMAL(10, 2) NOT NULL,
-        PRIMARY KEY (id)
-    );
+        prijs DECIMAL(10,2) NOT NULL
+    )
+");
 
+mysqli_query($conn, "
     CREATE TABLE IF NOT EXISTS afbeeldingen (
-        id INT NOT NULL AUTO_INCREMENT,
+        id INT AUTO_INCREMENT PRIMARY KEY,
         link VARCHAR(255) DEFAULT NULL,
-        kamer_id INT NOT NULL,
-        PRIMARY KEY (id)
-    );
-";
-if (!mysqli_query($conn, $sql)) {
-    die("Error creating table: " . mysqli_error($conn));
-}
+        kamer_id INT NOT NULL
+    )
+");
