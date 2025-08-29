@@ -6,6 +6,17 @@ $kamers = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $kamers[] = $row;
 }
+;
+
+$result = mysqli_query($conn, "SELECT * FROM afbeeldingen");
+$afbeeldingen = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $afbeeldingen[] = $row;
+}
+
+echo json_encode([
+    'afbeeldingen' => $afbeeldingen[0]["kamer_id"]
+]);
 
 ?>
 
@@ -33,12 +44,22 @@ while ($row = mysqli_fetch_assoc($result)) {
             <?php
             foreach ($kamers as $kamer) {
                 ?>
-                <a href="/kamer?num=<?= htmlspecialchars($kamer['id']) ?>" class="room-card">
-                    <img src="<?= htmlspecialchars($kamer['afbeelding']) ?>" alt="<?= htmlspecialchars($kamer['naam']) ?>">
+                <a href="/kamer?num=<?= $kamer['id'] ?>" class="room-card">
+                    <?php
+                    $kamerAfbeelding = null;
+                    foreach ($afbeeldingen as $afbeelding) {
+                        if ($afbeelding['kamer_id'] == $kamer['id']) {
+                            $kamerAfbeelding = $afbeelding['link'];
+                            break;
+                        }
+                    }
+                    ?>
+                    <?php if ($kamerAfbeelding): ?>
+                        <img src="<?= htmlspecialchars($kamerAfbeelding) ?>" alt="<?= htmlspecialchars($kamer['naam']) ?>">
+                    <?php endif; ?>
                     <div class="room-info">
-                        <h2><?= htmlspecialchars($kamer['naam']) ?></h2>
-                        <!-- <p><?= htmlspecialchars($kamer['beschrijving']) ?></p> -->
-                        <span class="room-price">€<?= htmlspecialchars($kamer['prijs']) ?> / nacht</span>
+                        <h2><?= $kamer['naam'] ?></h2>
+                        <span class="room-price">€<?= $kamer['prijs'] ?> / nacht</span>
                     </div>
                 </a>
                 <?php
