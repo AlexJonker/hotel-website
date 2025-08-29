@@ -23,6 +23,7 @@
 .form-group {
     margin-bottom: 25px;
     text-align: left;
+    
 }
 
 .form-label {
@@ -41,7 +42,9 @@
     font-size: 1rem;
     transition: all 0.3s ease;
     background: white;
+    box-sizing: border-box;
 }
+
 
 .form-input:focus {
     outline: none;
