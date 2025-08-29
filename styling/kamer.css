@@ -21,6 +21,12 @@
     letter-spacing: -0.5px;
 }
 
+.rechts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .kamer-content {
     display: flex;
     flex-direction: row;
@@ -94,4 +100,25 @@
     font-size: 24px;
     color: var(--color-primary);
     font-weight: 600;
+}
+
+.kamer-beschikbaarheid {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.kamer-reserveer-knop {
+    padding: 15px 30px;
+    border-radius: 5px;
+    background-color: var(--color-primary);
+    color: white;
+    transition: 0.5s all;
+}
+
+.kamer-reserveer-knop:hover {
+    background-color: var(--color-primary-dark);
 }

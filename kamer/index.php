@@ -45,19 +45,26 @@ if (is_numeric($current_room)) {
                     $afbeeldingen[] = $afbeelding_row['link'];
                 }
                 ?>
-
-                <div class="kamer-afbeeldingen-slideshow">
-                    <?php if (!empty($afbeeldingen)): ?>
-                        <button class="slideshow-arrow left" onclick="plusSlides(-1)">&#10094;</button>
-                        <div class="slideshow-images">
-                            <?php foreach ($afbeeldingen as $index => $link): ?>
-                                <img class="kamer-afbeelding slideshow-slide" src="<?= $link ?>" alt="Afbeelding van <?= $kamer['naam'] ?>" style="<?= $index === 0 ? '' : 'display:none;' ?>">
-                            <?php endforeach; ?>
-                        </div>
-                        <button class="slideshow-arrow right" onclick="plusSlides(1)">&#10095;</button>
-                    <?php else: ?>
-                        <img class="kamer-afbeelding" src="<?= $kamer['afbeelding'] ?>" alt="Afbeelding van <?= $kamer['naam'] ?>">
-                    <?php endif; ?>
+                <div class = "rechts">
+                    <div class="kamer-afbeeldingen-slideshow">
+                        <?php if (!empty($afbeeldingen)): ?>
+                            <?php if (count($afbeeldingen) > 1): ?>
+                                <button class="slideshow-arrow left" onclick="plusSlides(-1)">&#10094;</button>
+                            <?php endif; ?>
+                            <div class="slideshow-images">
+                                <?php foreach ($afbeeldingen as $index => $link): ?>
+                                    <img class="kamer-afbeelding slideshow-slide" src="<?= $link ?>" alt="Afbeelding van <?= $kamer['naam'] ?>" style="<?= $index === 0 ? '' : 'display:none;' ?>">
+                                <?php endforeach; ?>
+                            </div>
+                            <?php if (count($afbeeldingen) > 1): ?>
+                                <button class="slideshow-arrow right" onclick="plusSlides(1)">&#10095;</button>
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <p class="kamer-afbeelding">Geen afbeeldingen beschikbaar.</p>
+                        <?php endif; ?>
+                    </div>
+                    <p class="kamer-beschikbaarheid" style="color: <?= $kamer['beschikbaar'] ? 'green' : 'red' ?>">Kamer is <?= $kamer['beschikbaar'] ? 'beschikbaar' : 'niet beschikbaar' ?></p>
+                    <a class="kamer-reserveer-knop" href="/kamers/reserveer?num=<?= $kamer['id'] ?>">Reserveer deze kamer</a>
                 </div>
             </div>
         </div>
