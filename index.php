@@ -8,7 +8,7 @@
     <title>Home - Hotel De Zonne Vallei</title>
 </head>
 <body>
-    <!-- <?php include("assets/html/navbar.html"); ?> -->
+    <?php include("assets/html/navbar.html"); ?>
 
  <div class="hero-container">
         <div class="hero-content-wrapper">
