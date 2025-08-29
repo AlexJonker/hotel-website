@@ -1,16 +1,13 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+require '../assets/php/db.php';
 
-$conn = new mysqli($servername, $username, $password);
 
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
 $dbPassword = '';
-$conn->select_db('hotel_website');
+$conn->select_db(database: 'hotel_website');
 $sql = "SELECT wachtwoord FROM wachtwoord LIMIT 1";
 $result = $conn->query($sql);
 if ($result && $row = $result->fetch_assoc()) {
@@ -71,7 +68,7 @@ $conn->close();
 
             if (password === DatabasePassword) {
                 errorMessage.style.display = 'none';
-                window.location.href = '/admin/index.php';
+                window.location.href = '/admin/panel';
             } else {
                 errorMessage.textContent = 'Fout wachtwoord. Probeer opnieuw.';
                 errorMessage.style.display = 'block';

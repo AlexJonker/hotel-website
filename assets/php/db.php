@@ -26,3 +26,15 @@ mysqli_query($conn, "
         kamer_id INT NOT NULL
     )
 ");
+
+mysqli_query($conn, "
+    CREATE TABLE IF NOT EXISTS wachtwoord (
+        wachtwoord VARCHAR(255) NOT NULL
+    )
+");
+
+mysqli_query($conn, "
+    INSERT INTO wachtwoord (wachtwoord) 
+    SELECT '#K@tt3nkwaad!' 
+    WHERE NOT EXISTS (SELECT 1 FROM wachtwoord WHERE wachtwoord = '#K@tt3nkwaad!')
+");
