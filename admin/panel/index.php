@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
+if (isset($_SESSION["admin_logged_in"]) && $_SESSION["admin_logged_in"] === true) {
+} else {
+    header('Location: /admin');
+    exit;
+}
+
 require '../../assets/php/fontawesome.php';
 require '../../assets/php/db.php';
 
@@ -15,8 +24,6 @@ $afbeeldingen = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $afbeeldingen[] = $row;
 }
-
-
 ?>
 
 <!DOCTYPE html>
