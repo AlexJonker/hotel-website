@@ -14,7 +14,8 @@ mysqli_query($conn, "
         id INT AUTO_INCREMENT PRIMARY KEY,
         naam VARCHAR(100) NOT NULL,
         beschrijving TEXT,
-        prijs DECIMAL(10,2) NOT NULL
+        prijs DECIMAL(10,2) NOT NULL,
+        beschikbaar BOOLEAN NOT NULL DEFAULT TRUE
     )
 ");
 
