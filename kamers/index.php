@@ -8,7 +8,7 @@
     <title>Kamers - Hotel De Zonne Vallei</title>
 </head>
 <body>
-    <?php include('../assets/html/navbar.html'); ?>
+    <!--- <?php include('../assets/html/navbar.html'); ?> -->
     <div class="hero-container">
         <div class="hero-content-wrapper">
             <h1>Ontdek Onze Kamers</h1>
@@ -110,7 +110,7 @@ Onze Bruidssuite is de ultieme romantische ontsnapping voor pasgetrouwde stellen
             </a>
         </section>
     </main>
-    <?php include('../assets/html/footer.html'); ?>
+    <!---<?php include('../assets/html/footer.html'); ?> -->
 </body>
 
 </html>

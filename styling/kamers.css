@@ -1,53 +1,61 @@
+body {
+    overflow-x: hidden;
+}
+
 .hero-container {
     width: 100%;
-    height: 300px;
+    height: 250px;
     background-color: var(--color-bg-alt);
-
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-    background-image: url("https://lipsum.app/random/1920x1080");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://lipsum.app/random/1920x1080");
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+    padding: 20px;
 }
 
 .hero-content-wrapper {
-    width: 50%;
-    height: auto;
+    width: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+    text-align: center;
 }
 
 .hero-content-wrapper h1 {
-    font-size: 50px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-
-
+.hero-content-wrapper p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
 
 .rooms-list {
     width: 100%;
-    padding: 80px 0;
+    padding: 40px 20px;
     background: var(--color-bg);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
 .rooms-container {
-    width: 80%;
+    width: 100%;
     max-width: 1200px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+    flex-direction: column;
+    gap: 20px;
     justify-content: center;
+    align-items: center;
 }
 
 .room-card {
@@ -55,48 +63,118 @@
     background: var(--color-bg-alt);
     color: var(--color-grey);
     border-radius: 15px;
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: 0.5s all;
+    transition: 0.3s all;
     text-decoration: none;
     box-shadow: 0 4px 20px var(--color-shadow);
 }
 
 .room-card:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 8px 24px var(--color-shadow-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px var(--color-shadow-dark);
 }
 
-.room-card span:hover {
-    background-color: var(--color-primary-dark);
-}
 .room-card img {
     width: 100%;
-    height: 220px;
+    height: 200px;
     object-fit: cover;
-}
-
-.room-card h2 {
-    font-size: 28px;
-    font-weight: bold;
-    color: var(--color-grey);
-    margin: 20px 0 10px 0;
-    text-align: center;
 }
 
 .room-info {
     text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.room-card h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-grey);
+    margin-bottom: 10px;
+}
+
+.room-info p {
+    font-size: 0.95rem;
+    color: var(--color-grey-light);
+    margin-bottom: 15px;
+    line-height: 1.5;
 }
 
 .room-price {
-    font-size: 20px;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--color-white);
     background: var(--color-primary);
     border-radius: 5px;
-    padding: 12px 25px;
-    margin: 20px 0;
+    padding: 10px 20px;
     display: inline-block;
+    transition: all 0.3s;
+}
+
+.room-price:hover {
+    background-color: var(--color-primary-dark);
+}
+
+@media screen and (min-width: 768px) {
+    .hero-container {
+        height: 400px;
+        padding: 30px;
+    }
+
+    .hero-content-wrapper {
+        width: 70%;
+        gap: 20px;
+    }
+
+    .hero-content-wrapper h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero-content-wrapper p {
+        font-size: 1.1rem;
+        max-width: 600px;
+    }
+
+    .rooms-list {
+        padding: 80px 40px;
+    }
+
+    .rooms-container {
+        width: 90%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .room-card {
+        width: 350px;
+        max-width: none;
+    }
+
+    .room-card:hover {
+        transform: translateY(-6px) scale(1.02);
+    }
+
+    .room-card img {
+        height: 220px;
+    }
+
+    .room-card h2 {
+        font-size: 1.75rem;
+        margin: 20px 0 10px 0;
+    }
+
+    .room-info p {
+        font-size: 1rem;
+    }
+
+    .room-price {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+        margin: 20px 0;
+    }
 }
