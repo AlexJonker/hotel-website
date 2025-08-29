@@ -8,9 +8,9 @@
     <title>Home - Hotel De Zonne Vallei</title>
 </head>
 <body>
-    <?php include("assets/html/navbar.html"); ?>
+    <!-- <?php include("assets/html/navbar.html"); ?> -->
 
-    <div class="hero-container">
+ <div class="hero-container">
         <div class="hero-content-wrapper">
             <h1>Welkom bij Hotel De Zonne Vallei</h1>
                        <!--  <p>
@@ -22,21 +22,17 @@ Hotel De Zonne Vallei ligt in het bruisende hart van Alkmaar, een stad die rijk 
 
             
             <div class="hero-button-container">
-                <a href="">awesomesauce</a><!--wat reden?-->
-                <a id="h-btn-2" href="">meh</a>
+                <a href="#kamers">Ontdek Onze Kamers</a>
+                <a id="h-btn-2" href="#contact">Contact</a>
             </div>
-           
-            
-
-  
-</div>
+        </div>
     </div>
 
     <section class="about-section">
         <div class="about-content-wrapper">
             <h2>Over Ons</h2>
             <p>
-               Hotel De Zonne Vallei is opgericht door Bouke van Zon, een visionaire ondernemer met een passie voor gastvrijheid en een scherp oog voor detail. Met jarenlange ervaring in de horeca-industrie heeft Bouke zijn droom verwezenlijkt om een uniek hotel te creëren waar gasten zich thuis voelen en kunnen genieten van alle gemakken en luxe die het leven te bieden heeft.
+                Hotel De Zonne Vallei is opgericht door Bouke van Zon, een visionaire ondernemer met een passie voor gastvrijheid en een scherp oog voor detail. Met jarenlange ervaring in de horeca-industrie heeft Bouke zijn droom verwezenlijkt om een uniek hotel te creëren waar gasten zich thuis voelen en kunnen genieten van alle gemakken en luxe die het leven te bieden heeft.
             </p>
             <p>
                 Lees hier verder:
@@ -46,6 +42,6 @@ Hotel De Zonne Vallei ligt in het bruisende hart van Alkmaar, een stad die rijk 
     </section>
 
 
-    <?php include("assets/html/footer.html"); ?>
+    <!---<?php include("assets/html/footer.html"); ?> -->
 </body>
 </html>
