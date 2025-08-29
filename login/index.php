@@ -35,10 +35,11 @@ $conn->close();
     <?php include('../assets/html/navbar.html'); ?>
     <section class="login-container">
         <h1 class="login-title">Admin Login</h1>
+        <br>
         <div id="errorMessage" class="error-message" style="display: none;">
             Fout wachtwoord. Probeer opnieuw.
         </div>
-
+        <br>
         <form id="loginForm">
             <div class="form-group">
                 <label for="password" class="form-label">Wachtwoord</label>
@@ -52,7 +53,7 @@ $conn->close();
             </div>
             <button type="submit" class="login-btn">Inloggen</button>
         </form>
-        
+        <br>
         <p class="info-text">Alleen bevoegd personeel heeft toegang tot dit gedeelte.</p>
 
     </section>
