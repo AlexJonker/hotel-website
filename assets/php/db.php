@@ -1,5 +1,18 @@
 <?php
-$env = parse_ini_file('../.env');
+$env = false;
+
+if (file_exists('../.env')) {
+    $env = parse_ini_file('../.env');
+}
+elseif (file_exists('../../.env')) {
+    $env = parse_ini_file('../../.env');
+}
+
+if ($env === false) {
+    die("No .env file found");
+}
+
+
 
 $conn = mysqli_connect(
     $env["db_host"],
