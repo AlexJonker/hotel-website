@@ -29,7 +29,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 </head>
 
 <body>
-    <!--- <?php include('../assets/html/navbar.html'); ?> -->
+    <?php include('../assets/html/navbar.html'); ?>
     <div class="hero-container">
         <div class="hero-content-wrapper">
             <h1>Ontdek Onze Kamers</h1>
@@ -83,7 +83,7 @@ Onze Bruidssuite is de ultieme romantische ontsnapping voor pasgetrouwde stellen
             ?>
         </section>
     </main>
-    <!---<?php include('../assets/html/footer.html'); ?> -->
+    <?php include('../assets/html/footer.html'); ?>
 </body>
 
 </html>
