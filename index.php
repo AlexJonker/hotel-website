@@ -18,7 +18,7 @@
 
 
             <div class="hero-button-container">
-                <a href="#kamers">Ontdek Onze Kamers</a>
+                <a href="/kamers">Ontdek Onze Kamers</a>
                 <a id="h-btn-2" href="#contact">Contact</a>
             </div>
         </div>
