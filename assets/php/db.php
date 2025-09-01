@@ -28,7 +28,7 @@ mysqli_query($conn, "
         naam VARCHAR(100) NOT NULL,
         beschrijving TEXT,
         prijs DECIMAL(10,2) NOT NULL,
-        beschikbaar BOOLEAN NOT NULL DEFAULT TRUE
+        beschikbaar INT NOT NULL DEFAULT TRUE
     )
 ");
 

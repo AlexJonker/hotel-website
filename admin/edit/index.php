@@ -13,7 +13,32 @@ if (is_numeric($current_room)) {
 
 }
 
+
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['delete_image'])) {
+        $image_link = $_POST['image_link'];
+        $image_id = $_POST['image_id'];
+        
+        // Delete from database
+        $delete_query = "DELETE FROM afbeeldingen WHERE id = ? AND kamer_id = ?";
+        $stmt = mysqli_prepare($conn, $delete_query);
+        mysqli_stmt_bind_param($stmt, "ii", $image_id, $current_room);
+        mysqli_stmt_execute($stmt);
+        
+        // Delete physical file
+        $file_path = $_SERVER['DOCUMENT_ROOT'] . $image_link;
+        if (file_exists($file_path)) {
+            unlink($file_path);
+        }
+
+        // Redirect to refresh the page
+        header("Location: " . $_SERVER['REQUEST_URI']);
+    }
+
+
+
     //Data
     $naam = $_POST['naam'];
     $prijs = $_POST['prijs'];
@@ -57,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
         // Check file size
-        if ($_FILES["afbeelding"]["size"] > 2000000) { //2 mb
+        if ($_FILES["afbeelding"]["size"] > 30000000) { // 30 MB
             echo "File is too big.";
             $uploadOk = 0;
         }
@@ -85,8 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Send back
-    header("Location: /admin");
-    exit;
+    header("Location: " . $_SERVER['REQUEST_URI']);
 }
 ?>
 
@@ -124,9 +148,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php $kamer = $kamers[0]; ?>
         <div class="kamer-container">
             <h1 class="kamer-naam">Kamer bewerken</h1>
-            <form class="kamer-edit-form" method="post" enctype="multipart/form-data">
                 <div class="kamer-content">
-                    <div class="kamer-info">
+                    <form form method="post" enctype="multipart/form-data" class="kamer-info">
                         <label for="kamer-naam-input" class="kamer-label">Naam kamer</label>
                         <input type="text" id="kamer-naam-input" name="naam" class="kamer-input" value="<?= htmlspecialchars($kamer['naam']) ?>">
 
@@ -136,12 +159,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label for="kamer-beschrijving-input" class="kamer-label">Beschrijving</label>
                         <textarea id="kamer-beschrijving-input" name="beschrijving" class="kamer-textarea" rows="6"><?= htmlspecialchars($kamer['beschrijving']) ?></textarea>
 
-                        <label for="kamer-beschikbaar-input" class="kamer-label">Beschikbaarheid</label>
-                        <select id="kamer-beschikbaar-input" name="beschikbaar" class="kamer-input">
-                            <option value="1" <?= $kamer['beschikbaar'] ? 'selected' : '' ?>>Beschikbaar</option>
-                            <option value="0" <?= !$kamer['beschikbaar'] ? 'selected' : '' ?>>Niet beschikbaar</option>
-                        </select>
-                    </div>
+                        <label for="kamer-beschikbaar-input" class="kamer-label">Kamers beschikbaar</label>
+                        <input type="number" step="1" id="kamer-beschikbaar-input" name="beschikbaar" class="kamer-input" value="<?= htmlspecialchars($kamer['beschikbaar']) ?>">
+
+                        <label for="kamer-afbeelding-upload" class="kamer-label">Voeg nieuwe afbeelding toe</label>
+                        <input type="file" id="kamer-afbeelding-upload" name="afbeelding" class="kamer-input" accept="image/*">
+                        <div class="kamer-form-buttons">
+                            <button type="submit" class="kamer-save-knop">Opslaan</button>
+                            <a href="/admin" class="kamer-cancel-knop">Annuleren</a>
+                        </div>
+                    </form>
                     <?php
                     $kamer_id = $kamer['id'];
                     $afbeeldingen = [];
@@ -159,7 +186,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <div class="slideshow-images">
                                     <?php foreach ($afbeeldingen as $index => $link): ?>
                                         <img class="kamer-afbeelding slideshow-slide" src="<?= $link ?>" alt="Afbeelding van <?= $kamer['naam'] ?>" style="<?= $index === 0 ? '' : 'display:none;' ?>">
-                                        <button type="button" class="kamer-afbeelding-verwijder fa-solid fa-trash"></button>
+                                        <form method="post" style="display: inline;">
+                                            <input type="hidden" name="delete_image" value="1">
+                                            <input type="hidden" name="image_link" value="<?= htmlspecialchars($link) ?>">
+                                            <input type="hidden" name="image_id" value="<?php 
+                                                $img_result = mysqli_query($conn, "SELECT id FROM afbeeldingen WHERE link = '" . mysqli_real_escape_string($conn, $link) . "' AND kamer_id = $kamer_id LIMIT 1");
+                                                echo mysqli_fetch_assoc($img_result)['id'];
+                                            ?>">
+                                            <button type="submit" class="kamer-afbeelding-verwijder fa-solid fa-trash"></button>
+                                        </form>
                                     <?php endforeach; ?>
                                 </div>
                                 <?php if (count($afbeeldingen) > 1): ?>
@@ -169,15 +204,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <p class="kamer-afbeelding">Geen afbeeldingen beschikbaar.</p>
                             <?php endif; ?>
                         </div>
-                        <label for="kamer-afbeelding-upload" class="kamer-label">Voeg nieuwe afbeelding toe</label>
-                        <input type="file" id="kamer-afbeelding-upload" name="afbeelding" class="kamer-input" accept="image/*">
                     </div>
                 </div>
-                <div class="kamer-form-buttons">
-                    <button type="submit" class="kamer-save-knop">Opslaan</button>
-                    <a href="/admin" class="kamer-cancel-knop">Annuleren</a>
-                </div>
-            </form>
         </div>
     <?php else: ?>
         <div class="kamer-error">
