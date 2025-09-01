@@ -1,0 +1,118 @@
+<?php
+require '../../assets/php/db.php';
+
+$room_id = isset($_REQUEST['num']) && is_numeric($_REQUEST['num']) ? (int)$_REQUEST['num'] : null;
+$room = null;
+if ($room_id) {
+    $res = mysqli_query($conn, "SELECT id, naam, prijs, beschikbaar, beschrijving FROM kamers WHERE id = $room_id LIMIT 1");
+    if ($row = mysqli_fetch_assoc($res)) {
+        $room = $row;
+    }
+}
+
+$errors = [];
+$success = false;
+$email = '';
+$email_send_error = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email'] ?? '');
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'Voer een geldig e-mailadres in.';
+    }
+    if (!$room) {
+        $errors[] = 'Ongeldige kamer geselecteerd.';
+    }
+    if (empty($errors)) {
+        $message  = "Beste gast,\n\n";
+        $message .= "Hartelijk dank voor uw reservering bij Zonne Vallei! We kijken ernaar uit u te verwelkomen.\n\n";
+        $message .= "Reserveringsdetails:\n";
+        $message .= "– Kamer: " . $room['naam'] . "\n";
+        $message .= "– Prijs per nacht: €" . number_format($room['prijs'], 2, ',', '.') . "\n\n";
+        $message .= "Wij nemen binnenkort contact met u op om uw verblijf verder af te stemmen.\n";
+        $message .= "Heeft u in de tussentijd vragen? Neem gerust contact met ons op.\n\n";
+        $message .= "Met vriendelijke groet,\n";
+        $message .= "Het team van Zonne Vallei";
+
+
+        require_once($_SERVER['DOCUMENT_ROOT'] . "/admin/smtp/sender.php");
+        $output = sender($email, $message);
+
+        if (strpos($output, 'Email verstuured!') !== false) {
+            $success = true;
+        } else {
+            $lines = explode("\n", trim(strip_tags($output)));
+            $firstLine = $lines[0] ?? '';
+            if ($firstLine === '' || stripos($firstLine, 'email verzending mislukt!') === false) {
+                $firstLine = 'Onbekende fout.';
+            }
+            $email_send_error = 'Email verstuurd! ';
+        }
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/styling/global.css">
+    <link rel="stylesheet" href="/styling/reserveer.css">
+    <title>Reserveer kamer <?= htmlspecialchars($room_id) ?> - Hotel De Zonne Vallei</title>
+</head>
+
+<body>
+    <?php include('../../assets/html/navbar.html'); ?>
+
+    <?php if ($room): ?>
+        <div class="kamer-container">
+            <h1 class="kamer-naam">Reserveer: <?= htmlspecialchars($room['naam']) ?></h1>
+            <div class="kamer-content">
+                <div class="kamer-info">
+                    <p class="kamer-prijs">Prijs per nacht: €<?= number_format($room['prijs'], 2, ',', '.') ?></p>
+                    <p class="kamer-beschrijving"><?= nl2br(htmlspecialchars($room['beschrijving'])) ?></p>
+                </div>
+
+                <div class="rechts">
+                    <p class="kamer-beschikbaarheid" style="color: <?= $room['beschikbaar'] ? 'green' : 'red' ?>">
+                        Kamer is <?= $room['beschikbaar'] ? 'beschikbaar' : 'niet beschikbaar' ?>
+                    </p>
+
+                    <?php if ($success): ?>
+                        <div class="reserveer-success">
+                            <p>Bedankt! Er is een reserveringsaanvraag verstuurd voor kamer <?= htmlspecialchars($room['naam']) ?> met e-mailadres <?= htmlspecialchars($email) ?>.</p>
+                            <p><a class="terug-knop kamer-reserveer-knop" href="/kamer?num=<?= $room['id'] ?>">Terug naar kamer</a></p>
+                        </div>
+                    <?php elseif ($email_send_error): ?>
+                        <div class="reserveer-errors">
+                            <p><?= htmlspecialchars($email_send_error) ?></p>
+                        </div>
+                    <?php else: ?>
+                        <?php if (!empty($errors)): ?>
+                            <div class="reserveer-errors">
+                                <?php foreach ($errors as $err): ?>
+                                    <p><?= htmlspecialchars($err) ?></p>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <form class="reserveer-form" method="post" action="?num=<?= $room_id ?>">
+                            <label for="email">E-mailadres</label>
+                            <input id="email" name="email" type="email" required value="<?= htmlspecialchars($email) ?>">
+                            <button type="submit" class="kamer-reserveer-knop">Bevestig</button>
+                        </form>
+
+                        <p style="margin-top:1rem;"><a class="terug-knop kamer-reserveer-knop" href="/kamer?num=<?= $room['id'] ?>">Terug naar kamer</a></p>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    <?php else: ?>
+        <div class="kamer-error">
+            <p>Ongeldige kamer. Ga terug naar <a href="/kamers">overzicht kamers</a>.</p>
+        </div>
+    <?php endif; ?>
+
+    <?php include('../../assets/html/footer.html'); ?>
+</body>
+</html>
