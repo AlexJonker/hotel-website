@@ -25,11 +25,85 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     mysqli_query($conn, $command);
 
 
+    // Image upload
+    if (isset($_FILES["afbeelding"]) && $_FILES["afbeelding"]["error"] === UPLOAD_ERR_OK) {
+        $target_dir = "../../assets/uploads/kamer_$current_room/";
+        if (!file_exists($target_dir)) {
+            mkdir($target_dir, recursive: true);
+        }
+        // Create file name with number in it
+        $extension = pathinfo($_FILES["afbeelding"]["name"], PATHINFO_EXTENSION);
+        $counter = 1;
+
+        // Find next available number without file extension (.png, .jpeg, .jpg)
+        while (glob($target_dir . "image_" . $counter . ".*")) {
+            $counter++;
+        }
+
+        $target_file_name = "image_" . $counter . "." . $extension;
+        $target_file = $target_dir . $target_file_name;
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+        // Check if image file is a actual image or fake image
+        $check = getimagesize($_FILES["afbeelding"]["tmp_name"]);
+        if ($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+
+
+        // Check file size
+        if ($_FILES["afbeelding"]["size"] > 2000000) { //2 mb
+            echo "File is too big.";
+            $uploadOk = 0;
+        }
+
+        // Allow certain file formats
+        if (
+            $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        ) {
+            echo "Only JPG, JPEG, PNG files are allowed.";
+            $uploadOk = 0;
+        }
+
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "File was not uploaded.";
+        } else {
+            if (move_uploaded_file($_FILES["afbeelding"]["tmp_name"], $target_file)) {
+                echo "The file " . htmlspecialchars(basename($_FILES["afbeelding"]["name"])) . " has been uploaded.";
+                $command = "INSERT INTO afbeeldingen (kamer_id, link) VALUES ($current_room, '/assets/uploads/kamer_$current_room/$target_file_name')";
+                mysqli_query($conn, $command);
+            } else {
+                echo "Error uploading file.";
+            }
+        }
+    }
+
     // Send back
     header("Location: /admin");
     exit;
 }
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!DOCTYPE html>
@@ -96,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php endif; ?>
                         </div>
                         <label for="kamer-afbeelding-upload" class="kamer-label">Voeg nieuwe afbeelding toe</label>
-                        <input type="file" id="kamer-afbeelding-upload" name="afbeeldingen[]" class="kamer-input" multiple accept="image/*">
+                        <input type="file" id="kamer-afbeelding-upload" name="afbeelding" class="kamer-input" accept="image/*">
                     </div>
                 </div>
                 <div class="kamer-form-buttons">
