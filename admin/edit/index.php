@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+if (isset($_SESSION["admin_logged_in"]) && $_SESSION["admin_logged_in"] === true) {
+} else {
+    header('Location: /admin');
+    exit;
+}
+
+
 require '../../assets/php/db.php';
 require '../../assets/php/fontawesome.php';
 
