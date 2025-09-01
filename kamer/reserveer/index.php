@@ -13,6 +13,7 @@ if ($room_id) {
 $errors = [];
 $success = false;
 $email = '';
+$email_send_error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -22,12 +23,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Ongeldige kamer geselecteerd.';
     }
     if (empty($errors)) {
-        $success = true;
+        $message  = "Beste gast,\n\n";
+        $message .= "Hartelijk dank voor uw reservering bij Zonne Vallei! We kijken ernaar uit u te verwelkomen.\n\n";
+        $message .= "Reserveringsdetails:\n";
+        $message .= "– Kamer: " . $room['naam'] . "\n";
+        $message .= "– Prijs per nacht: €" . number_format($room['prijs'], 2, ',', '.') . "\n\n";
+        $message .= "Wij nemen binnenkort contact met u op om uw verblijf verder af te stemmen.\n";
+        $message .= "Heeft u in de tussentijd vragen? Neem gerust contact met ons op.\n\n";
+        $message .= "Met vriendelijke groet,\n";
+        $message .= "Het team van Zonne Vallei";
+
+
+        require_once($_SERVER['DOCUMENT_ROOT'] . "/admin/smtp/sender.php");
+        $output = sender($email, $message);
+
+        if (strpos($output, 'Email verstuured!') !== false) {
+            $success = true;
+        } else {
+            $lines = explode("\n", trim(strip_tags($output)));
+            $firstLine = $lines[0] ?? '';
+            if ($firstLine === '' || stripos($firstLine, 'email verzending mislukt!') === false) {
+                $firstLine = 'Onbekende fout.';
+            }
+            $email_send_error = 'Email verstuurd! ';
+        }
     }
 }
 ?>
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -35,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="/styling/reserveer.css">
     <title>Reserveer kamer <?= htmlspecialchars($room_id) ?> - Hotel De Zonne Vallei</title>
 </head>
+
 <body>
     <?php include('../../assets/html/navbar.html'); ?>
 
@@ -56,6 +82,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="reserveer-success">
                             <p>Bedankt! Er is een reserveringsaanvraag verstuurd voor kamer <?= htmlspecialchars($room['naam']) ?> met e-mailadres <?= htmlspecialchars($email) ?>.</p>
                             <p><a class="terug-knop kamer-reserveer-knop" href="/kamer?num=<?= $room['id'] ?>">Terug naar kamer</a></p>
+                        </div>
+                    <?php elseif ($email_send_error): ?>
+                        <div class="reserveer-errors">
+                            <p><?= htmlspecialchars($email_send_error) ?></p>
                         </div>
                     <?php else: ?>
                         <?php if (!empty($errors)): ?>

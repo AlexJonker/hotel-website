@@ -1,14 +1,18 @@
 <?php
-$env = parse_ini_file('../.env');
+$db_host = "127.0.0.1";
+$db_user = "root";
+$db_pass = "";  
+$db_name = "hotel_website";
 
-$conn = mysqli_connect(
-    $env["db_host"],
-    $env["db_user"],
-    $env["db_pass"]
-);
+$conn = mysqli_connect($db_host, $db_user, $db_pass);
 
-mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS `{$env["db_name"]}`");
-mysqli_select_db($conn, $env["db_name"]);
+if (!$conn) {
+    die("Database-verbinding mislukt: " . mysqli_connect_error());
+}
+
+mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS `$db_name`");
+mysqli_select_db($conn, $db_name);
+
 mysqli_query($conn, "
     CREATE TABLE IF NOT EXISTS kamers (
         id INT AUTO_INCREMENT PRIMARY KEY,
