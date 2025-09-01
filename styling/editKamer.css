@@ -92,8 +92,8 @@
 
 .kamer-afbeelding-verwijder {
     position: absolute;
-    top: .5rem;
-    right: 4.5rem;
+    top: 0.5rem;
+    right: 0.5rem;
     background: rgba(255, 0, 0, 0.8);
     color: #fff;
     border: none;
@@ -107,6 +107,10 @@
     justify-content: center;
     z-index: 3;
     transition: background 0.2s;
+}
+
+.slideshow-images {
+    position: relative;
 }
 
 .kamer-afbeelding-verwijder:hover {
