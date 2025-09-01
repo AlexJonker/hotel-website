@@ -78,23 +78,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ?>
                     <div class="rechts">
                         <div class="kamer-afbeeldingen-slideshow">
-                        <?php if (!empty($afbeeldingen)): ?>
-                            <?php if (count($afbeeldingen) > 1): ?>
-                                <button type="button" class="slideshow-arrow left" onclick="plusSlides(-1)">&#10094;</button>
+                            <?php if (!empty($afbeeldingen)): ?>
+                                <?php if (count($afbeeldingen) > 1): ?>
+                                    <button type="button" class="slideshow-arrow left" onclick="plusSlides(-1)">&#10094;</button>
+                                <?php endif; ?>
+                                <div class="slideshow-images">
+                                    <?php foreach ($afbeeldingen as $index => $link): ?>
+                                        <img class="kamer-afbeelding slideshow-slide" src="<?= $link ?>" alt="Afbeelding van <?= $kamer['naam'] ?>" style="<?= $index === 0 ? '' : 'display:none;' ?>">
+                                        <button type="button" class="kamer-afbeelding-verwijder fa-solid fa-trash"></button>
+                                    <?php endforeach; ?>
+                                </div>
+                                <?php if (count($afbeeldingen) > 1): ?>
+                                    <button type="button" class="slideshow-arrow right" onclick="plusSlides(1)">&#10095;</button>
+                                <?php endif; ?>
+                            <?php else: ?>
+                                <p class="kamer-afbeelding">Geen afbeeldingen beschikbaar.</p>
                             <?php endif; ?>
-                            <div class="slideshow-images">
-                                <?php foreach ($afbeeldingen as $index => $link): ?>
-                                    <img class="kamer-afbeelding slideshow-slide" src="<?= $link ?>" alt="Afbeelding van <?= $kamer['naam'] ?>" style="<?= $index === 0 ? '' : 'display:none;' ?>">
-                                    <button type="button" class="kamer-afbeelding-verwijder fa-solid fa-trash"></button>
-                                <?php endforeach; ?>
-                            </div>
-                            <?php if (count($afbeeldingen) > 1): ?>
-                                <button type="button" class="slideshow-arrow right" onclick="plusSlides(1)">&#10095;</button>
-                            <?php endif; ?>
-                        <?php else: ?>
-                            <p class="kamer-afbeelding">Geen afbeeldingen beschikbaar.</p>
-                        <?php endif; ?>
-                    </div>
+                        </div>
                         <label for="kamer-afbeelding-upload" class="kamer-label">Voeg nieuwe afbeelding toe</label>
                         <input type="file" id="kamer-afbeelding-upload" name="afbeeldingen[]" class="kamer-input" multiple accept="image/*">
                     </div>
