@@ -1,18 +1,34 @@
 <?php
-function sender($adress, $email){
-$to = $adress;
-$subject = 'Test Email';
-$message = $email;
-$headers = 'From: obb220038@gmail.com' . "\r\n" .
-           'Reply-To: obb220038@gmail.com' . "\r\n" .
-           'X-Mailer: PHP/' . phpversion();
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-if (mail($to, $subject, $message, $headers)) {
-    echo 'Email verstuured!';
-} else {
-    echo 'email verzending mislukt!';
+require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+
+function sender($adress, $email){
+    $mail = new PHPMailer(true);
+    try {
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'thijskeesje@gmail.com';
+        $mail->Password = 'kngi igyh qghn judd';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
+
+        $mail->setFrom('thijskeesje@gmail.com', 'Thijs Keesje');
+        $mail->addAddress($adress);
+
+        $mail->Subject = 'Test Email';
+        $mail->Body    = $email;
+
+        $mail->send();
+        return 'Email verstuurd!';
+    } catch (Exception $e) {
+        return 'Email verzending mislukt!';
+    }
 }
-}
+
+if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,12 +47,13 @@ if (mail($to, $subject, $message, $headers)) {
          <button type ="submit" id="verzenden" name="verzenden" >verzenden</button>
         
 </form>
-
 <?php
-if (isset($_POST["verzenden"])){
-   sender($_POST["persoon"],  $_POST["email"]);
-
-}?>
-
+    if (isset($_POST["verzenden"])){
+        echo sender($_POST["persoon"],  $_POST["email"]);
+    }
+?>
 </body>
 </html>
+<?php
+}
+?>
