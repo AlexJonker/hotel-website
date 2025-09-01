@@ -7,10 +7,7 @@
  
       <?php include("../assets/php/fontawesome.php"); ?>
   
-  <style>textarea {
-  resize: none;
-}</style>
-</head>
+
 
 <body>
   <?php
@@ -43,11 +40,11 @@ if (mail($to, $subject, $message, $headers)) {
         
       
   <h2 id='h'>Stel je vraag?</h2><br>
-      <input type="text" id="naam" name="naam" size="40" required placeholder="Naam" class="style"><br><br>
+      <input type="text" id="naam" name="naam"  required placeholder="Naam" class="style">
     
          
       
-      <input type="email" id="email" name="email" size="40" required placeholder="Email" ><br><br>
+      <input type="email" id="email" name="email"  required placeholder="Email" >
   
       <textarea id="vraag" name="vraag" rows="4" cols="40" required  placeholder="stel je vraag" ></textarea>
         <input type="submit" id="verzenden" name="verzenden" required >
