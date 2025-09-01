@@ -21,9 +21,9 @@ $headers = 'From: obb220038@gmail.com' . "\r\n" .
            
 
 if (mail($to, $subject, $message, $headers)) {
-    echo 'Message verstuurd!';
+    echo 'Vraag verstuurd!';
 } else {
-    echo 'Message verzending mislukt!';
+    echo 'Vraag verzending mislukt!';
 }
 }
 ?>
@@ -48,26 +48,28 @@ if (mail($to, $subject, $message, $headers)) {
   
       <textarea id="vraag" name="vraag" rows="4" cols="40" required  placeholder="stel je vraag" ></textarea>
         <input type="submit" id="verzenden" name="verzenden" required >
+         <?php
+         
+if (isset($_POST["verzenden"])){
+   sender($_POST["naam"], $_POST["email"], $_POST["vraag"]);
+
+}?>
       </div>
       <div class="box3"> <!--section-->
 
             <ul>
                  <h2> <i class="fa-solid fa-info"></i>contact info:</h2> <br> <!--wissel de namen met icoontjes-->
 
-                <li><a href=""><i class="fas fa-location-dot my-icon"></i> straatnaam 85  1234 AB Alkmaar NL</a></li> <br>
-                <li><a href=""><i class="fas fa-phone"></i> 31 6 4241344</a></li> <br>
-                <li><a href=""><i class="fas fa-envelope"></i> support@zonnenvalei</a></li>
+                <li><i class="fas fa-location-dot my-icon"></i> straatnaam 85  1234 AB Alkmaar NL</a></li> <br>
+                <li><i class="fas fa-phone"></i> 31 6 4241344</a></li> <br>
+                <li> <i class="fas fa-envelope"></i> support@zonnenvalei</a></li>
                 
             </ul>
         <!--section-->
       </div>
     </div>
   </div>
-      <?php
-if (isset($_POST["verzenden"])){
-   sender($_POST["naam"], $_POST["email"], $_POST["vraag"]);
 
-}?>
   <?php include('../assets/html/footer.html'); ?>
 
 </body>

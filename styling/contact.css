@@ -64,6 +64,10 @@
   margin-top: 10px;
   color:#ffffff;
 }
+
+#verzenden:hover {
+    background-color: var(--color-primary-dark);
+}
 textarea {
   resize: none;
 }
