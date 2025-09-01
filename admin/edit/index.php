@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="kamer-container">
             <h1 class="kamer-naam"><?= $is_new_room ? 'Nieuwe kamer toevoegen' : 'Kamer bewerken' ?></h1>
                 <div class="kamer-content">
-                    <form form method="post" enctype="multipart/form-data" class="kamer-info">
+                    <form method="post" enctype="multipart/form-data" class="kamer-info">
                         <label for="kamer-naam-input" class="kamer-label">Naam kamer</label>
                         <input type="text" id="kamer-naam-input" name="naam" class="kamer-input" value="<?= htmlspecialchars($kamer['naam']) ?>">
 

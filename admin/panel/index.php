@@ -24,6 +24,17 @@ $afbeeldingen = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $afbeeldingen[] = $row;
 }
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $oud_wachtwoord_input = $_POST['oud_wachtwoord'];
+    $nieuw_wachtwoord_input = $_POST['nieuw_wachtwoord'];
+
+    $oud_wachtwoord = mysql_query("SELECT wachtwoord FROM admins WHERE id = {$_SESSION['admin_id']}");
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -43,15 +54,15 @@ while ($row = mysqli_fetch_assoc($result)) {
     <aside>
         <a href="/"><i class="fas fa-home"></i> Home</a>
         <a href=""><i class="fas fa-key"></i> Wachtwoord wijzigen</a>
-        <div class="form-popup" id="myForm">
-            <form class="form-container">
-                <label for="email"><b>Oud wachtwoord</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+        <div class="form-popup">
+            <form class="form-container" method="post" enctype="multipart/form-data">
+                <label for="oud_wachtwoord">Oud wachtwoord</label>
+                <input type="password" placeholder="Enter current Password" name="oud_wachtwoord" required>
 
-                <label for="psw"><b>Nieuw wachtwoord</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <label for="nieuw_wachtwoord">Nieuw wachtwoord</label>
+                <input type="password" placeholder="Enter new Password" name="nieuw_wachtwoord" required>
 
-                <button type="submit" class="btn">Wijzig</button>
+                <button type="submit">Wijzig</button>
             </form>
         </div>
 

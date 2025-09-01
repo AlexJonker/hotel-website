@@ -12,7 +12,6 @@ if ($conn->connect_error) {
 }
 
 $dbPassword = '';
-$conn->select_db(database: 'hotel_website');
 $sql = "SELECT wachtwoord FROM wachtwoord LIMIT 1";
 $result = $conn->query($sql);
 if ($result && $row = $result->fetch_assoc()) {
