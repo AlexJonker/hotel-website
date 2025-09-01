@@ -3,6 +3,8 @@ require '../../assets/php/db.php';
 require '../../assets/php/fontawesome.php';
 
 $current_room = $_GET['kamer'];
+$kamers = [];
+$is_new_room = false;
 
 if (is_numeric($current_room)) {
     $result = mysqli_query($conn, "SELECT * FROM kamers WHERE id = $current_room");
@@ -10,11 +12,20 @@ if (is_numeric($current_room)) {
     while ($row = mysqli_fetch_assoc($result)) {
         $kamers[] = $row;
     }
-
+    
+    // If no room found, we'll create a new one
+    if (empty($kamers)) {
+        $is_new_room = true;
+        // Create empty room data for display
+        $kamers[] = [
+            'id' => $current_room,
+            'naam' => '',
+            'prijs' => '',
+            'beschrijving' => '',
+            'beschikbaar' => ''
+        ];
+    }
 }
-
-
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['delete_image'])) {
@@ -37,18 +48,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: " . $_SERVER['REQUEST_URI']);
     }
 
-
-
     //Data
     $naam = $_POST['naam'];
     $prijs = $_POST['prijs'];
     $beschrijving = $_POST['beschrijving'];
     $beschikbaar = $_POST['beschikbaar'];
 
-    // Database
-    $command = "UPDATE kamers SET naam = '$naam', prijs = '$prijs', beschrijving = '$beschrijving', beschikbaar = '$beschikbaar' WHERE id = $current_room";
+    // Database - Insert or Update based on whether room exists
+    if ($is_new_room) {
+        $command = "INSERT INTO kamers (id, naam, prijs, beschrijving, beschikbaar) VALUES ('$current_room', '$naam', '$prijs', '$beschrijving', '$beschikbaar')";
+    } else {
+        $command = "UPDATE kamers SET naam = '$naam', prijs = '$prijs', beschrijving = '$beschrijving', beschikbaar = '$beschikbaar' WHERE id = $current_room";
+    }
     mysqli_query($conn, $command);
-
 
     // Image upload
     if (isset($_FILES["afbeelding"]) && $_FILES["afbeelding"]["error"] === UPLOAD_ERR_OK) {
@@ -79,7 +91,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "File is not an image.";
             $uploadOk = 0;
         }
-
 
         // Check file size
         if ($_FILES["afbeelding"]["size"] > 30000000) { // 30 MB
@@ -114,22 +125,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -138,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styling/global.css">
     <link rel="stylesheet" href="/styling/editKamer.css">
-    <title>Bewerk kamer <?= htmlspecialchars($current_room) ?> - Hotel De Zonne Vallei</title>
+    <title><?= $is_new_room ? 'Nieuwe kamer ' : 'Bewerk kamer ' ?><?= htmlspecialchars($current_room) ?> - Hotel De Zonne Vallei</title>
     <script src="/assets/js/kamer_slideshow.js"></script>
 </head>
 
@@ -147,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php if (!empty($kamers)): ?>
         <?php $kamer = $kamers[0]; ?>
         <div class="kamer-container">
-            <h1 class="kamer-naam">Kamer bewerken</h1>
+            <h1 class="kamer-naam"><?= $is_new_room ? 'Nieuwe kamer toevoegen' : 'Kamer bewerken' ?></h1>
                 <div class="kamer-content">
                     <form form method="post" enctype="multipart/form-data" class="kamer-info">
                         <label for="kamer-naam-input" class="kamer-label">Naam kamer</label>
@@ -165,52 +160,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label for="kamer-afbeelding-upload" class="kamer-label">Voeg nieuwe afbeelding toe</label>
                         <input type="file" id="kamer-afbeelding-upload" name="afbeelding" class="kamer-input" accept="image/*">
                         <div class="kamer-form-buttons">
-                            <button type="submit" class="kamer-save-knop">Opslaan</button>
+                            <button type="submit" class="kamer-save-knop"><?= $is_new_room ? 'Toevoegen' : 'Opslaan' ?></button>
                             <a href="/admin" class="kamer-cancel-knop">Annuleren</a>
                         </div>
                     </form>
-                    <?php
-                    $kamer_id = $kamer['id'];
-                    $afbeeldingen = [];
-                    $afbeeldingen_result = mysqli_query($conn, "SELECT link FROM afbeeldingen WHERE kamer_id = $kamer_id");
-                    while ($afbeelding_row = mysqli_fetch_assoc($afbeeldingen_result)) {
-                        $afbeeldingen[] = $afbeelding_row['link'];
-                    }
-                    ?>
-                    <div class="rechts">
-                        <div class="kamer-afbeeldingen-slideshow">
-                            <?php if (!empty($afbeeldingen)): ?>
-                                <?php if (count($afbeeldingen) > 1): ?>
-                                    <button type="button" class="slideshow-arrow left" onclick="plusSlides(-1)">&#10094;</button>
+                    <?php if (!$is_new_room): ?>
+                        <?php
+                        $kamer_id = $kamer['id'];
+                        $afbeeldingen = [];
+                        $afbeeldingen_result = mysqli_query($conn, "SELECT link FROM afbeeldingen WHERE kamer_id = $kamer_id");
+                        while ($afbeelding_row = mysqli_fetch_assoc($afbeeldingen_result)) {
+                            $afbeeldingen[] = $afbeelding_row['link'];
+                        }
+                        ?>
+                        <div class="rechts">
+                            <div class="kamer-afbeeldingen-slideshow">
+                                <?php if (!empty($afbeeldingen)): ?>
+                                    <?php if (count($afbeeldingen) > 1): ?>
+                                        <button type="button" class="slideshow-arrow left" onclick="plusSlides(-1)">&#10094;</button>
+                                    <?php endif; ?>
+                                    <div class="slideshow-images">
+                                        <?php foreach ($afbeeldingen as $index => $link): ?>
+                                            <img class="kamer-afbeelding slideshow-slide" src="<?= $link ?>" alt="Afbeelding van <?= $kamer['naam'] ?>" style="<?= $index === 0 ? '' : 'display:none;' ?>">
+                                            <form method="post" style="display: inline;"></form>
+                                                <input type="hidden" name="delete_image" value="1">
+                                                <input type="hidden" name="image_link" value="<?= htmlspecialchars($link) ?>">
+                                                <input type="hidden" name="image_id" value="<?php 
+                                                    $img_result = mysqli_query($conn, "SELECT id FROM afbeeldingen WHERE link = '" . mysqli_real_escape_string($conn, $link) . "' AND kamer_id = $kamer_id LIMIT 1");
+                                                    echo mysqli_fetch_assoc($img_result)['id'];
+                                                ?>">
+                                                <button type="submit" class="kamer-afbeelding-verwijder fa-solid fa-trash"></button>
+                                            </form>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <?php if (count($afbeeldingen) > 1): ?>
+                                        <button type="button" class="slideshow-arrow right" onclick="plusSlides(1)">&#10095;</button>
+                                    <?php endif; ?>
+                                <?php else: ?>
+                                    <p class="kamer-afbeelding">Geen afbeeldingen beschikbaar.</p>
                                 <?php endif; ?>
-                                <div class="slideshow-images">
-                                    <?php foreach ($afbeeldingen as $index => $link): ?>
-                                        <img class="kamer-afbeelding slideshow-slide" src="<?= $link ?>" alt="Afbeelding van <?= $kamer['naam'] ?>" style="<?= $index === 0 ? '' : 'display:none;' ?>">
-                                        <form method="post" style="display: inline;">
-                                            <input type="hidden" name="delete_image" value="1">
-                                            <input type="hidden" name="image_link" value="<?= htmlspecialchars($link) ?>">
-                                            <input type="hidden" name="image_id" value="<?php 
-                                                $img_result = mysqli_query($conn, "SELECT id FROM afbeeldingen WHERE link = '" . mysqli_real_escape_string($conn, $link) . "' AND kamer_id = $kamer_id LIMIT 1");
-                                                echo mysqli_fetch_assoc($img_result)['id'];
-                                            ?>">
-                                            <button type="submit" class="kamer-afbeelding-verwijder fa-solid fa-trash"></button>
-                                        </form>
-                                    <?php endforeach; ?>
-                                </div>
-                                <?php if (count($afbeeldingen) > 1): ?>
-                                    <button type="button" class="slideshow-arrow right" onclick="plusSlides(1)">&#10095;</button>
-                                <?php endif; ?>
-                            <?php else: ?>
-                                <p class="kamer-afbeelding">Geen afbeeldingen beschikbaar.</p>
-                            <?php endif; ?>
+                            </div>
                         </div>
-                    </div>
+                    <?php else: ?>
+                        <div class="rechts">
+                            <p class="kamer-afbeelding">Afbeeldingen worden beschikbaar na het opslaan van de kamer.</p>
+                        </div>
+                    <?php endif; ?>
                 </div>
-        </div>
-    <?php else: ?>
-        <div class="kamer-error">
-            <p>Kamer niet gevonden.</p>
-            <a href="/admin">Bekijk alle kamers</a>
         </div>
     <?php endif; ?>
     <?php include('../../assets/html/footer.html'); ?>

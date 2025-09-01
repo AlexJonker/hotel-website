@@ -93,6 +93,11 @@ article {
     object-fit: cover;
 }
 
+.room-card i {
+    font-size: 238px;
+    object-fit: cover;
+}
+
 .room-info {
     text-align: center;
     padding: 20px;

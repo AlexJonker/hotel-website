@@ -49,6 +49,14 @@ while ($row = mysqli_fetch_assoc($result)) {
     </aside>
     <article>
         <section class="rooms-container">
+            <a href="/admin/edit?kamer=<?= count($kamers) + 1 ?>" class="room-card">
+                    <div class="room-image" style="position:relative;">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                <div class="room-info">
+                    <h2>Nieuw</h2>
+                </div>
+            </a>
             <?php
             foreach ($kamers as $kamer) {
                 ?>
