@@ -1,19 +1,24 @@
 <?php
-require '../assets/php/db.php';
+$servername = "localhost";
+$username = "root";
+$password = "";
 
 
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
 $dbPassword = '';
-$conn->select_db(database: 'hotel_website');
+$conn->select_db('hotel_website');
 $sql = "SELECT wachtwoord FROM wachtwoord LIMIT 1";
+
 $result = $conn->query($sql);
 if ($result && $row = $result->fetch_assoc()) {
     $dbPassword = $row['wachtwoord'];
 }
+
 $conn->close();
+
 ?>
 
 
@@ -34,7 +39,7 @@ $conn->close();
         <h1 class="login-title">Admin Login</h1>
         <br>
         <div id="errorMessage" class="error-message" style="display: none;">
-            Fout wachtwoord. Probeer opnieuw.
+            Fout wachtwoord.
         </div>
         <br>
         <form id="loginForm">
@@ -57,7 +62,6 @@ $conn->close();
     <br>
     <?php include('../assets/html/footer.html'); ?>
 
-
     <script>
         const DatabasePassword = <?php echo json_encode($dbPassword); ?>;
         document.getElementById('loginForm').addEventListener('submit', function(e) {
@@ -68,13 +72,13 @@ $conn->close();
 
             if (password === DatabasePassword) {
                 errorMessage.style.display = 'none';
-                window.location.href = '/admin/panel';
+                window.location.href = '/admin/panel/panel';
             } else {
-                errorMessage.textContent = 'Fout wachtwoord. Probeer opnieuw.';
+                errorMessage.textContent = 'Fout wachtwoord.';
                 errorMessage.style.display = 'block';
             }
         });
     </script>
-    
+
 </body>
 </html>
