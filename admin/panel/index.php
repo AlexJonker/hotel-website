@@ -41,18 +41,27 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 <body>
     <aside>
-        <nav>
-            <a href="/"><i class="fas fa-home"></i> Home</a>
-            <a href=""><i class="fas fa-key"></i> Wachtwoord wijzigen</a>
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href=""><i class="fas fa-key"></i> Wachtwoord wijzigen</a>
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+                <label for="email"><b>Oud wachtwoord</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
 
-        </nav>
+                <label for="psw"><b>Nieuw wachtwoord</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit" class="btn">Wijzig</button>
+            </form>
+        </div>
+
     </aside>
     <article>
         <section class="rooms-container">
             <a href="/admin/edit?kamer=<?= count($kamers) + 1 ?>" class="room-card">
-                    <div class="room-image" style="position:relative;">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
+                <div class="room-image" style="position:relative;">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
                 <div class="room-info">
                     <h2>Nieuw</h2>
                 </div>

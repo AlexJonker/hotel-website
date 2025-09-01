@@ -12,7 +12,7 @@ aside {
 }
 
 
-nav a {
+aside a {
     text-decoration: none;
     color: #000000;
     padding: 8px 12px;
@@ -21,11 +21,11 @@ nav a {
     border-bottom: 1px solid #eaeaea;
 }
 
-nav a:hover {
+aside a:hover {
     background-color: #ddd;
 }
 
-nav a i {
+aside a i {
     color: var(--color-primary-light);
 }
 
