@@ -1,25 +1,37 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+session_start();
+require '../assets/php/db.php';
 
+if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true) {
+    header('Location: /admin/panel');
+    exit;
+}
 
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+  die("Connection failed: " . $conn->connect_error);
 }
 
 $dbPassword = '';
-$conn->select_db('hotel_website');
 $sql = "SELECT wachtwoord FROM wachtwoord LIMIT 1";
-
 $result = $conn->query($sql);
 if ($result && $row = $result->fetch_assoc()) {
     $dbPassword = $row['wachtwoord'];
 }
-
 $conn->close();
 
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $password = $_POST['password'] ?? '';
+    
+    if ($password === $dbPassword) {
+        $_SESSION['admin_logged_in'] = true;
+        header('Location: /admin/panel');
+        exit;
+    } else {
+        $errorMessage = 'Fout wachtwoord. Probeer opnieuw.';
+    }
+}
 ?>
+
 
 
 <!DOCTYPE html>
@@ -39,10 +51,10 @@ $conn->close();
         <h1 class="login-title">Admin Login</h1>
         <br>
         <div id="errorMessage" class="error-message" style="display: none;">
-            Fout wachtwoord.
+            Fout wachtwoord. Probeer opnieuw.
         </div>
         <br>
-        <form id="loginForm">
+        <form id="loginForm" method="POST">
             <div class="form-group">
                 <label for="password" class="form-label">Wachtwoord</label>
                 <input
@@ -60,25 +72,6 @@ $conn->close();
 
     </section>
     <br>
-    <?php include('../assets/html/footer.html'); ?>
-
-    <script>
-        const DatabasePassword = <?php echo json_encode($dbPassword); ?>;
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('errorMessage');
-
-            if (password === DatabasePassword) {
-                errorMessage.style.display = 'none';
-                window.location.href = '/admin/panel/panel';
-            } else {
-                errorMessage.textContent = 'Fout wachtwoord.';
-                errorMessage.style.display = 'block';
-            }
-        });
-    </script>
-
+    <?php include('../assets/html/footer.html'); ?>    
 </body>
 </html>
