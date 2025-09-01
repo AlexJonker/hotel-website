@@ -12,6 +12,23 @@ if (is_numeric($current_room)) {
     }
 
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //Data
+    $naam = $_POST['naam'];
+    $prijs = $_POST['prijs'];
+    $beschrijving = $_POST['beschrijving'];
+    $beschikbaar = $_POST['beschikbaar'];
+
+    // Database
+    $command = "UPDATE kamers SET naam = '$naam', prijs = '$prijs', beschrijving = '$beschrijving', beschikbaar = '$beschikbaar' WHERE id = $current_room";
+    mysqli_query($conn, $command);
+
+
+    // Send back
+    header("Location: /admin");
+    exit;
+}
 ?>
 
 
