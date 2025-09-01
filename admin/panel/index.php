@@ -52,7 +52,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <?php
             foreach ($kamers as $kamer) {
                 ?>
-                <a href="/kamer?num=<?= $kamer['id'] ?>" class="room-card">
+                <a href="/admin/edit?kamer=<?= $kamer['id'] ?>" class="room-card">
                     <?php
                     $kamerAfbeelding = null;
                     foreach ($afbeeldingen as $afbeelding) {
