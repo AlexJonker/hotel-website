@@ -46,7 +46,6 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
 </head>
 
 <body>
-    <?php include('../assets/html/navbar.html'); ?>
     <section class="login-container">
         <h1 class="login-title">Admin Login</h1>
         <br>
@@ -71,7 +70,5 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
         <p class="info-text">Alleen bevoegd personeel heeft toegang tot dit gedeelte.</p>
 
     </section>
-    <br>
-    <?php include('../assets/html/footer.html'); ?>    
 </body>
 </html>
