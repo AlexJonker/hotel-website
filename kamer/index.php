@@ -53,7 +53,7 @@ if (is_numeric($current_room)) {
                             <?php endif; ?>
                             <div class="slideshow-images">
                                 <?php foreach ($afbeeldingen as $index => $link): ?>
-                                    <img class="kamer-afbeelding slideshow-slide" src="<?= $link ?>" alt="Afbeelding van <?= $kamer['naam'] ?>" style="<?= $index === 0 ? '' : 'display:none;' ?>">
+                                    <img class="kamer-afbeelding slide-container" src="<?= $link ?>" alt="Afbeelding van <?= $kamer['naam'] ?>" style="<?= $index === 0 ? '' : 'display:none;' ?>">
                                 <?php endforeach; ?>
                             </div>
                             <?php if (count($afbeeldingen) > 1): ?>

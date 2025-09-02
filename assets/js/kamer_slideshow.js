@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slideshow-slide');
+    const slides = document.querySelectorAll(".slide-container");
     let current = 0;
 
     function showSlide(index) {
