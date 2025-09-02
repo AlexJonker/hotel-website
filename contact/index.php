@@ -3,6 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styling/global.css">
   <link rel="stylesheet" href="/styling/contact.css">
+  <link rel="icon" href="/assets/logos/favicon.ico">
   <title>contact - Hotel De Zonne Vallei</title>
  
       <?php include("../assets/php/fontawesome.php"); ?>
@@ -21,9 +22,9 @@ $headers = 'From: obb220038@gmail.com' . "\r\n" .
            
 
 if (mail($to, $subject, $message, $headers)) {
-    echo 'Vraag verstuurd!';
+    echo '<i class="fa-solid fa-check my-icon"></i>Vraag verstuurd!';
 } else {
-    echo 'Vraag verzending mislukt!';
+    echo '<i class="fa-solid fa-xmark evil"></i>Vraag verzending mislukt!';
 }
 }
 ?>
@@ -46,7 +47,7 @@ if (mail($to, $subject, $message, $headers)) {
       
       <input type="email" id="email" name="email"  required placeholder="Email" >
   
-      <textarea id="vraag" name="vraag" rows="4" cols="40" required  placeholder="stel je vraag" ></textarea>
+      <textarea id="vraag" name="vraag" rows="4" cols="40" minlength="30" maxlength="800" required  placeholder="stel je vraag" ></textarea>
         <input type="submit" id="verzenden" name="verzenden" required >
          <?php
          
@@ -58,11 +59,11 @@ if (isset($_POST["verzenden"])){
       <div class="box3"> <!--section-->
 
             <ul>
-                 <h2> <i class="fa-solid fa-info"></i>contact info:</h2> <br> <!--wissel de namen met icoontjes-->
+                 <h2> <i class="fa-solid fa-info my-icon"></i>contact info:</h2> <br> <!--wissel de namen met icoontjes-->
 
                 <li><i class="fas fa-location-dot my-icon"></i> straatnaam 85  1234 AB Alkmaar NL</a></li> <br>
-                <li><i class="fas fa-phone"></i> 31 6 4241344</a></li> <br>
-                <li> <i class="fas fa-envelope"></i> support@zonnenvalei</a></li>
+                <li><i class="fas fa-phone my-icon"></i> 31 6 4241344</a></li> <br>
+                <li> <i class="fas fa-envelope my-icon"></i> support@zonnenvalei</a></li>
                 
             </ul>
         <!--section-->

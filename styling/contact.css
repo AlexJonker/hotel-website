@@ -52,8 +52,11 @@
 
 
 
-.fas, .fa-solid {
+.my-icon {
   color: var(--color-primary-light)
+}
+.evil {
+  color:rgb(221, 82, 82)
 }
 
 #verzenden {
