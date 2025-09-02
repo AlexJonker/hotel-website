@@ -20,7 +20,15 @@
   letter-spacing: 1px;
   border-radius: 50px;
 }
+section h2{
+   background: var(--color-primary);
+ 
+  text-align: center;
 
+  color: #f4f1f1;
+  border-radius: 50px;
+  
+}
 .box {
   display: flex;
   flex-wrap: wrap;
