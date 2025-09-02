@@ -5,18 +5,19 @@
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin-top: 100px;
+  
 
 }
 
 .cont h1 {
+   background: var(--color-primary);
   margin-top: 20px;
   text-align: center;
   font-size: 2.8rem;
   color: #2d3e50;
   margin-bottom: 32px;
   letter-spacing: 1px;
-  font-weight: 600;
-
 }
 
 .box {
@@ -27,25 +28,26 @@
   align-items: flex-start;
 }
 
-.box2 {
+section{
   flex: 1 1 340px;
   min-width: 300px;
   max-width: 540px;
 }
 
-.box2 p {
+section p {
   font-size: 1.1rem;
   color: #444;
   line-height: 1.7;
   margin-bottom: 18px;
 }
 
-.box3 {
+.w3-section {
   flex: 1 1 320px;
   min-width: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .w3-content {
