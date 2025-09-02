@@ -43,6 +43,22 @@ if (is_numeric($current_room)) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if (isset($_POST['naam']) && isset($_POST['prijs']) && isset($_POST['beschrijving']) && isset($_POST['beschikbaar'])) {
+        $naam = sanitize($_POST['naam']);
+        $prijs = sanitize($_POST['prijs']);
+        $beschrijving = sanitize($_POST['beschrijving']);
+        $beschikbaar = sanitize($_POST['beschikbaar']);
+
+        // Database
+        if ($is_new_room) {
+            $command = "INSERT INTO kamers (id, naam, prijs, beschrijving, beschikbaar) VALUES ('$current_room', '$naam', '$prijs', '$beschrijving', '$beschikbaar')";
+        } else {
+            $command = "UPDATE kamers SET naam = '$naam', prijs = '$prijs', beschrijving = '$beschrijving', beschikbaar = '$beschikbaar' WHERE id = $current_room";
+        }
+        mysqli_query($conn, $command);
+    }
+
     if (isset($_POST['delete_image'])) {
         $image_link = $_POST['image_link'];
         $image_id = $_POST['image_id'];
@@ -63,18 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: " . $_SERVER['REQUEST_URI']);
     }
 
-    $naam = sanitize($_POST['naam']);
-    $prijs = sanitize($_POST['prijs']);
-    $beschrijving = sanitize($_POST['beschrijving']);
-    $beschikbaar = sanitize($_POST['beschikbaar']);
-
-    // Database
-    if ($is_new_room) {
-        $command = "INSERT INTO kamers (id, naam, prijs, beschrijving, beschikbaar) VALUES ('$current_room', '$naam', '$prijs', '$beschrijving', '$beschikbaar')";
-    } else {
-        $command = "UPDATE kamers SET naam = '$naam', prijs = '$prijs', beschrijving = '$beschrijving', beschikbaar = '$beschikbaar' WHERE id = $current_room";
-    }
-    mysqli_query($conn, $command);
 
     // Image upload
     if (isset($_FILES["afbeelding"]) && $_FILES["afbeelding"]["error"] === UPLOAD_ERR_OK) {
