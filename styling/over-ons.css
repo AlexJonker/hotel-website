@@ -25,20 +25,20 @@
   align-items: flex-start;
 }
 
-.box2 {
+section{
   flex: 1 1 340px;
   min-width: 300px;
   max-width: 540px;
 }
 
-.box2 p {
+section p {
   font-size: 1.1rem;
   color: #444;
   line-height: 1.7;
   margin-bottom: 18px;
 }
 
-.box3 {
+.w3-section {
   flex: 1 1 320px;
   min-width: 260px;
   display: flex;
