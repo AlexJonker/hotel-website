@@ -32,16 +32,6 @@
         </div>
     </section>
 
-    <section class="about-section">
-        <div class="about-content-wrapper">
-            <h2>Openingstijden</h2>
-            <p><strong>Ontbijt:</strong> Mon – Fri: 6:30am – 10:30am | Sat – Sun: 7am – 11am</p>
-            <p><strong>Lunch:</strong> Mon – Fri: 12pm – 2:30pm | Sat – Sun: 12pm – 3pm</p>
-            <p><strong>Diner:</strong> Mon – Fri: 6pm – 10pm | Sat – Sun: 6pm – 10:30pm</p>
-            <p><strong>Bar:</strong> Tues – Sat: 5pm – 11:30pm</p>
-        </div>
-    </section>
-
     <section class="about-section" id="menu">
         <div class="about-content-wrapper">
             
