@@ -5,31 +5,20 @@
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  margin-top: 10px;
+
 }
 
 .cont h1 {
-   background: var(--color-primary);
   margin-top: 20px;
   text-align: center;
   font-size: 2.8rem;
-  color: #f4f1f1;
+  color: #2d3e50;
   margin-bottom: 32px;
   letter-spacing: 1px;
-  border-radius: 50px;
-}
-section h2{
-   background: var(--color-primary);
- 
-  text-align: center;
-
-  color: #f4f1f1;
-  border-radius: 50px;
-   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 4%;
-  
+
 }
+
 .box {
   display: flex;
   flex-wrap: wrap;
@@ -38,26 +27,25 @@ section h2{
   align-items: flex-start;
 }
 
-section{
+.box2 {
   flex: 1 1 340px;
   min-width: 300px;
   max-width: 540px;
 }
 
-section p {
+.box2 p {
   font-size: 1.1rem;
   color: #444;
   line-height: 1.7;
   margin-bottom: 18px;
 }
 
-.w3-section {
+.box3 {
   flex: 1 1 320px;
   min-width: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .w3-content {
@@ -77,4 +65,10 @@ section p {
 
 .mySlides:first-child {
   display: block;
+}
+
+.box2 h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4%;
 }
