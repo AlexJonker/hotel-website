@@ -14,7 +14,7 @@
   <?php
   function sender($naam, $email, $vraag)
   {
-   // $to = 'support@gmail.com'; Support email
+   $to = 'support@gmail.com'; //Support email
     $subject = "Onderwerp: Vraag van: Klant:{$naam}, {$email}";
     $message = $vraag;
     $headers = 'From: obb220038@gmail.com' . "\r\n" .
