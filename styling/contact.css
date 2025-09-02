@@ -30,20 +30,20 @@
   align-items: flex-start;
 }
 
-.box2 {
+form {
   flex: 1 1 340px;
   min-width: 300px;
   max-width: 540px;
 }
 
-.box2 p {
+form {
   font-size: 1.1rem;
   color: #444;
   line-height: 1.7;
   margin-bottom: 18px;
 }
 
-.box3 {
+section {
   flex: 1 1 320px;
   min-width: 260px;
   display: flex;
@@ -89,8 +89,8 @@ textarea {
     gap: 20px;
   }
 
-  .box2,
-  .box3 {
+  .form,
+  .section {
     max-width: 100%;
   }
 
