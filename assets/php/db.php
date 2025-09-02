@@ -42,12 +42,17 @@ mysqli_query($conn, "
 
 mysqli_query($conn, "
     CREATE TABLE IF NOT EXISTS wachtwoord (
+        id TINYINT PRIMARY KEY AUTO_INCREMENT,
         wachtwoord VARCHAR(255) NOT NULL
     )
 ");
 
-mysqli_query($conn, "
-    INSERT INTO wachtwoord (wachtwoord) 
-    SELECT '#K@tt3nkwaad!' 
-    WHERE NOT EXISTS (SELECT 1 FROM wachtwoord WHERE wachtwoord = '#K@tt3nkwaad!')
-");
+$result = mysqli_query($conn, "SELECT COUNT(*) as count FROM wachtwoord");
+$row = mysqli_fetch_assoc($result);
+
+if ($row['count'] == 0) {
+    mysqli_query($conn, "
+        INSERT INTO wachtwoord (wachtwoord) 
+        VALUES ('" . $env["admin_pass"] . "')
+    ");
+}

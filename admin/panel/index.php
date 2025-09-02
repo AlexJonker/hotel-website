@@ -30,7 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $oud_wachtwoord_input = $_POST['oud_wachtwoord'];
     $nieuw_wachtwoord_input = $_POST['nieuw_wachtwoord'];
 
-    $oud_wachtwoord = mysql_query("SELECT wachtwoord FROM admins WHERE id = {$_SESSION['admin_id']}");
+    $oud_wachtwoord_result = mysqli_query($conn, "SELECT wachtwoord FROM wachtwoord LIMIT 1");
+    $oud_wachtwoord_row = mysqli_fetch_assoc($oud_wachtwoord_result);
+    $oud_wachtwoord = $oud_wachtwoord_row ? $oud_wachtwoord_row['wachtwoord'] : '';
+
+    if ($oud_wachtwoord == $oud_wachtwoord_input) {
+        mysqli_query($conn, "UPDATE wachtwoord SET wachtwoord = '$nieuw_wachtwoord_input' WHERE id = 1");
+        header('Location: /admin');
+    }
 }
 
 
