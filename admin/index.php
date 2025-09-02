@@ -43,6 +43,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
     <link rel="stylesheet" href="/styling/global.css">
     <link rel="stylesheet" href="/styling/login.css">
     <title>Admin - Hotel De Zonne Vallei</title>
+    <link rel="icon" href="/assets/logos/favicon.ico">
 </head>
 
 <body>
@@ -67,7 +68,9 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
             <button type="submit" class="login-btn">Inloggen</button>
         </form>
         <br>
-        <p class="info-text">Alleen bevoegd personeel heeft toegang tot dit gedeelte.</p>
+        <p class="info-text">Alleen bevoegd personeel heeft toegang tot dit paneel.</p>
+        <br>
+        <p>Per ongeluk hier beland? <a href="/">Klik hier om terug te gaan naar de homepage.</a></p>
 
     </section>
 </body>
