@@ -41,7 +41,7 @@ if (mail($to, $subject, $message, $headers)) {
         
       
   <h2 id='h'>Stel je vraag?</h2><br>
-      <input type="text" id="naam" name="naam"  required placeholder="Naam" class="style">
+      <input type="text" id="naam" name="naam" size="40" required placeholder="Naam" class="style">><br><br>
     
          
       

@@ -10,6 +10,7 @@
     flex-direction: column;
     gap: 35px;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 10%;
 }
 
 .kamer-naam {
@@ -127,7 +128,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 233%;
     gap: 12px;
     margin-top: 8px;
 }
@@ -164,7 +164,6 @@
     transform: translateY(-2px);
 }
 
-/* "Terug naar kamer" as a button-like link */
 .terug-knop {
     display: inline-flex;
     align-items: center;
@@ -173,7 +172,6 @@
     cursor: pointer;
 }
 
-/* make it visually consistent with the reserveer button but slightly muted */
 .terug-knop.kamer-reserveer-knop {
     background-color: transparent;
     color: var(--color-primary);
@@ -182,7 +180,6 @@
     box-shadow: none;
 }
 
-/* small responsive tweak */
 @media (max-width: 480px) {
     .reserveer-form #email { width: 90%; }
     .kamer-prijs, .kamer-beschrijving { text-align: center; }

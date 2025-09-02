@@ -72,7 +72,7 @@
 
 
 
-    <!---<?php include("assets/html/footer.html"); ?> -->
+    <?php include("assets/html/footer.html"); ?>
 </body>
 
 </html>

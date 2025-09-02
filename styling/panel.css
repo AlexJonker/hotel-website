@@ -1,8 +1,5 @@
-html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    display: flex;
 }
 
 aside {
@@ -10,23 +7,12 @@ aside {
     width: 200px;
     background-color: #f4f4f4;
     padding: 15px;
-  
+
     box-sizing: border-box;
 }
 
-.layout {
-    display: flex;
-    height: 100vh;
-}
-nav ul li {
-    margin-bottom: 10%;
-}
 
-nav ul {
-    margin-bottom: 5%;
-}
-
-nav ul li a {
+aside a {
     text-decoration: none;
     color: #000000;
     padding: 8px 12px;
@@ -35,11 +21,11 @@ nav ul li a {
     border-bottom: 1px solid #eaeaea;
 }
 
-nav ul li a:hover {
+aside a:hover {
     background-color: #ddd;
 }
 
-nav ul li a i {
+aside a i {
     color: var(--color-primary-light);
 }
 
@@ -60,8 +46,100 @@ nav ul li a i {
 .home-button:hover {
     color: var(--color-primary-light);
 }
-article{
-    flex:1;
-    box-sizing:border-box;
-        padding: 20px;
+
+article {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+
+
+.rooms-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.room-card {
+    overflow: hidden;
+    background: var(--color-bg-alt);
+    color: var(--color-grey);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s all;
+    text-decoration: none;
+    box-shadow: 0 4px 20px var(--color-shadow);
+}
+
+.room-card:hover {
+    filter: grayscale(100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px var(--color-shadow-dark);
+}
+
+.room-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.room-card i {
+    font-size: 238px;
+    object-fit: cover;
+}
+
+.room-info {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.room-card h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-grey);
+    margin-bottom: 10px;
+}
+
+.room-info p {
+    font-size: 0.95rem;
+    color: var(--color-grey-light);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.room-price {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-white);
+    background: var(--color-primary);
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.fa-pencil-alt {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color: #fff;
+    transition: all .5s;
+}
+
+.room-card:hover .fa-pencil-alt {
+    opacity: 1;
 }
