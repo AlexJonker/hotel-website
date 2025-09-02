@@ -27,26 +27,36 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $oud_wachtwoord_input = $_POST['oud_wachtwoord'];
-    $nieuw_wachtwoord_input = $_POST['nieuw_wachtwoord'];
 
-    $oud_wachtwoord_result = mysqli_query($conn, "SELECT wachtwoord FROM wachtwoord LIMIT 1");
-    $oud_wachtwoord_row = mysqli_fetch_assoc($oud_wachtwoord_result);
-    $oud_wachtwoord = $oud_wachtwoord_row ? $oud_wachtwoord_row['wachtwoord'] : '';
+    // Logout system
+    if (isset($_POST['logout'])) {
+        session_unset();
+        session_destroy();
+        header("Location: /admin");
+    } else {
+        // Change password system
+        $oud_wachtwoord_input = $_POST['oud_wachtwoord'];
+        $nieuw_wachtwoord_input = $_POST['nieuw_wachtwoord'];
+        $herhaal_nieuw_wachtwoord_input = $_POST['herhaal_nieuw_wachtwoord'];
 
-    if (password_verify($oud_wachtwoord_input, $oud_wachtwoord)) {
-        $nieuw_wachtwoord_hash = password_hash($nieuw_wachtwoord_input, PASSWORD_DEFAULT);
-        mysqli_query($conn, "UPDATE wachtwoord SET wachtwoord = '$nieuw_wachtwoord_hash' WHERE id = 1");
-        header('Location: /admin');
+        if ($nieuw_wachtwoord_input !== $herhaal_nieuw_wachtwoord_input) {
+            $error_message = ["red", "De nieuwe wachtwoorden komen niet overeen."];
+        } else {
+            $oud_wachtwoord_result = mysqli_query($conn, "SELECT wachtwoord FROM wachtwoord LIMIT 1");
+            $oud_wachtwoord_row = mysqli_fetch_assoc($oud_wachtwoord_result);
+            $oud_wachtwoord = $oud_wachtwoord_row ? $oud_wachtwoord_row['wachtwoord'] : '';
+
+            if (password_verify($oud_wachtwoord_input, $oud_wachtwoord)) {
+                $nieuw_wachtwoord_hash = password_hash($nieuw_wachtwoord_input, PASSWORD_DEFAULT);
+                mysqli_query($conn, "UPDATE wachtwoord SET wachtwoord = '$nieuw_wachtwoord_hash' WHERE id = 1");
+                $error_message = ["green", 'Wachtwoord succesvol gewijzigd.'];
+            } else {
+                $error_message = ["red", 'Oud wachtwoord is onjuist.'];
+            }
+        }
     }
 }
 
-
-if (isset($_POST['logout'])) {
-    session_unset();
-    session_destroy();
-    header("Location: /admin");
-}
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +77,7 @@ if (isset($_POST['logout'])) {
 <body>
     <aside>
         <a href="/"><i class="fas fa-home"></i> Home</a>
-        <form method="post">
+        <form class="logout" method="post">
             <button type="submit" name="logout"><i class="fas fa-arrow-left-from-bracket"></i> Uitloggen</button>
         </form>
 
@@ -83,9 +93,13 @@ if (isset($_POST['logout'])) {
                 <label for="nieuw_wachtwoord">Nieuw wachtwoord</label>
                 <input type="password" name="nieuw_wachtwoord" required>
 
+                <label for="herhaal_nieuw_wachtwoord">Herhaal nieuw wachtwoord</label>
+                <input type="password" name="herhaal_nieuw_wachtwoord" required>
+
                 <button type="submit">Wijzig</button>
             </form>
         </div>
+        <p style="color: <?= $error_message[0] ?? '' ?>"><?= $error_message[1] ?? '' ?></p>
     </aside>
     <article>
         <section class="rooms-container">
