@@ -29,7 +29,7 @@
        <p>Ons team van enthousiaste en professionele medewerkers deelt de visie van Bouke van Zon om elke gast een warm welkom en een onvergetelijk verblijf te bieden. Van de receptie tot het restaurant en de huishouding, elk teamlid speelt een cruciale rol in het creëren van de unieke sfeer en ervaring waar Hotel De Zonne Vallei om bekend staat.</P>
      
       </section>
-      <div class="box3">
+   
 
         <div class="w3-content w3-section" style="max-width:500px">
           <img class="mySlides"
@@ -39,10 +39,10 @@
           <img class="mySlides"
             src="https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA"
             style="width:110%">
-        </div>
-      </div>
+      
     </div>
   </div>
+   </div>
   <?php include('../assets/html/footer.html'); ?>
     
 </body>
