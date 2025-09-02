@@ -143,3 +143,43 @@ article {
 .room-card:hover .fa-pencil-alt {
     opacity: 1;
 }
+
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #f1f1f1;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+
+.show {
+    display: flex;
+}
+
+.dropdown-content button {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.dropdown-content input {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+.dropdown-content input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}

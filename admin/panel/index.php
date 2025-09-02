@@ -30,7 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $oud_wachtwoord_input = $_POST['oud_wachtwoord'];
     $nieuw_wachtwoord_input = $_POST['nieuw_wachtwoord'];
 
-    $oud_wachtwoord = mysql_query("SELECT wachtwoord FROM admins WHERE id = {$_SESSION['admin_id']}");
+    $oud_wachtwoord_result = mysqli_query($conn, "SELECT wachtwoord FROM wachtwoord LIMIT 1");
+    $oud_wachtwoord_row = mysqli_fetch_assoc($oud_wachtwoord_result);
+    $oud_wachtwoord = $oud_wachtwoord_row ? $oud_wachtwoord_row['wachtwoord'] : '';
+
+    if (password_verify($oud_wachtwoord_input, $oud_wachtwoord)) {
+        $nieuw_wachtwoord_hash = password_hash($nieuw_wachtwoord_input, PASSWORD_DEFAULT);
+        mysqli_query($conn, "UPDATE wachtwoord SET wachtwoord = '$nieuw_wachtwoord_hash' WHERE id = 1");
+        header('Location: /admin');
+    }
 }
 
 
@@ -48,24 +56,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="/styling/global.css">
     <link rel="stylesheet" href="/styling/home.css">
     <link rel="stylesheet" href="/styling/panel.css">
+    <script src="/assets/js/dropdown.js"></script>
 </head>
+
 
 <body>
     <aside>
         <a href="/"><i class="fas fa-home"></i> Home</a>
-        <a href=""><i class="fas fa-key"></i> Wachtwoord wijzigen</a>
-        <div class="form-popup">
-            <form class="form-container" method="post" enctype="multipart/form-data">
+
+        <div class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)">
+                <i class="fas fa-key"></i> Wachtwoord wijzigen
+            </a>
+
+            <form id="dropdown-content" class="dropdown-content" method="post" enctype="multipart/form-data">
                 <label for="oud_wachtwoord">Oud wachtwoord</label>
-                <input type="password" placeholder="Enter current Password" name="oud_wachtwoord" required>
+                <input type="password" name="oud_wachtwoord" required>
 
                 <label for="nieuw_wachtwoord">Nieuw wachtwoord</label>
-                <input type="password" placeholder="Enter new Password" name="nieuw_wachtwoord" required>
+                <input type="password" name="nieuw_wachtwoord" required>
 
                 <button type="submit">Wijzig</button>
             </form>
         </div>
-
     </aside>
     <article>
         <section class="rooms-container">

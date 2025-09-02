@@ -22,7 +22,7 @@ $conn->close();
 if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
     
-    if ($password === $dbPassword) {
+    if (password_verify($password, $dbPassword)) {
         $_SESSION['admin_logged_in'] = true;
         header('Location: /admin/panel');
         exit;
