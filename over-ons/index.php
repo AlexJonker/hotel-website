@@ -12,10 +12,10 @@
 
 <body>
    <?php include('../assets/html/navbar.html'); ?>
-  <section class="cont">
+  <div class="cont">
     
-    <h1>Over ons</h1>
-    <section class="box">
+    <h1>over ons</h1>
+    <div class="box">
 
       <section>
         <h2>Welkom bij Hotel De Zonne Vallei</h2>
@@ -26,9 +26,9 @@
        <p>Bij Hotel De Zonne Vallei staan kwaliteit, gastvrijheid en persoonlijke service centraal. Wij geloven dat elk detail bijdraagt aan een perfecte ervaring, van de smaakvolle inrichting van onze kamers tot de culinaire hoogstandjes in ons restaurant. Ons toegewijde team staat altijd klaar om aan al uw wensen te voldoen en ervoor te zorgen dat uw verblijf zo aangenaam mogelijk is.</P>
         <h2>Ons Team</h2>
        <p>Ons team van enthousiaste en professionele medewerkers deelt de visie van Bouke van Zon om elke gast een warm welkom en een onvergetelijk verblijf te bieden. Van de receptie tot het restaurant en de huishouding, elk teamlid speelt een cruciale rol in het creëren van de unieke sfeer en ervaring waar Hotel De Zonne Vallei om bekend staat.</P>
-    
+      </div>
       </section>
-    
+      <div class="box3">
 
         <div class="w3-content w3-section" style="max-width:500px">
           <img class="mySlides"
@@ -39,7 +39,9 @@
             src="https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA"
             style="width:110%">
         </div>
-   
+      </div>
+    </div>
+  </div>
   <?php include('../assets/html/footer.html'); ?>
     
 </body>
