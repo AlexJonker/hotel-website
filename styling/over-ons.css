@@ -11,10 +11,12 @@
 .cont h1 {
   margin-top: 20px;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #2d3e50;
   margin-bottom: 32px;
   letter-spacing: 1px;
+  font-weight: 600;
+
 }
 
 .box {
@@ -64,9 +66,10 @@
 .mySlides:first-child {
   display: block;
 }
-h2.thick {
-  font-weight: bold;
+
+.box2 h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4%;
 }
-h2.thicker {
-  font-weight: 900;
-}
+
