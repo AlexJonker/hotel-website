@@ -44,6 +44,13 @@ a{
 
 .footer-addr h2 {
   margin-top: 1.3em;
+  margin-bottom: 1em;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.weer-title {
+  margin-top: 1em;
   font-size: 1.2rem;
   font-weight: 700;
 }
