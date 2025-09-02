@@ -42,8 +42,13 @@ if (is_numeric($current_room)) {
     }
 }
 
+
+
+
+// Update data
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    // Room info
     if (isset($_POST['naam']) && isset($_POST['prijs']) && isset($_POST['beschrijving']) && isset($_POST['beschikbaar'])) {
         $naam = sanitize($_POST['naam']);
         $prijs = sanitize($_POST['prijs']);
@@ -59,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mysqli_query($conn, $command);
     }
 
+    // Image deletion
     if (isset($_POST['delete_image'])) {
         $image_link = $_POST['image_link'];
         $image_id = $_POST['image_id'];
@@ -78,6 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Redirect to refresh 
         header("Location: " . $_SERVER['REQUEST_URI']);
     }
+
 
 
     // Image upload
@@ -203,18 +210,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <?php endif; ?>
                                 <div class="slideshow-images">
                                     <?php foreach ($afbeeldingen as $index => $link): ?>
-                                        <img class="kamer-afbeelding slideshow-slide" src="<?= $link ?>"
-                                            alt="Afbeelding van <?= $kamer['naam'] ?>"
-                                            style="<?= $index === 0 ? '' : 'display:none;' ?>">
-                                        <form method="post" style="display: inline;"></form>
-                                        <input type="hidden" name="delete_image" value="1">
-                                        <input type="hidden" name="image_link" value="<?= htmlspecialchars($link) ?>">
-                                        <input type="hidden" name="image_id" value="<?php
-                                        $img_result = mysqli_query($conn, "SELECT id FROM afbeeldingen WHERE link = '" . mysqli_real_escape_string($conn, $link) . "' AND kamer_id = $kamer_id LIMIT 1");
-                                        echo mysqli_fetch_assoc($img_result)['id'];
-                                        ?>">
-                                        <button type="submit" class="kamer-afbeelding-verwijder fa-solid fa-trash"></button>
-                                        </form>
+                                        <div class="slide-container" style="<?= $index === 0 ? '' : 'display:none;' ?>">
+                                            <img class="kamer-afbeelding slideshow-slide" src="<?= $link ?>"
+                                                alt="Afbeelding van <?= $kamer['naam'] ?>">
+                                            <form method="post">
+                                                <input type="hidden" name="delete_image" value="1">
+                                                <input type="hidden" name="image_link" value="<?= $link ?>">
+                                                <input type="hidden" name="image_id" value="<?php
+                                                $img_result = mysqli_query($conn, "SELECT id FROM afbeeldingen WHERE link = '" . mysqli_real_escape_string($conn, $link) . "' AND kamer_id = $kamer_id LIMIT 1");
+                                                echo mysqli_fetch_assoc($img_result)['id'];
+                                                ?>">
+                                                <button type="submit" class="kamer-afbeelding-verwijder fa-solid fa-trash"></button>
+                                            </form>
+                                        </div>
                                     <?php endforeach; ?>
                                 </div>
                                 <?php if (count($afbeeldingen) > 1): ?>
