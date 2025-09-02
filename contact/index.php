@@ -62,8 +62,8 @@ if (isset($_POST["verzenden"])){
                  <h2> <i class="fa-solid fa-info my-icon"></i>contact info:</h2> <br> <!--wissel de namen met icoontjes-->
 
                 <li><i class="fas fa-location-dot my-icon"></i> straatnaam 85  1234 AB Alkmaar NL</a></li> <br>
-                <li><i class="fas fa-phone my-icon"></i> 31 6 4241344</a></li> <br>
-                <li> <i class="fas fa-envelope my-icon"></i> support@zonnenvalei</a></li>
+                <li><i class="fas fa-phone my-icon"></i></a> ____________________</li> <br>
+                <li> <i class="fas fa-envelope my-icon"></i> ____________________</a></li>
                 
             </ul>
         <!--section-->
