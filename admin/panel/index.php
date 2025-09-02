@@ -42,7 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-
+if (isset($_POST['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: /admin");
+}
 ?>
 
 <!DOCTYPE html>
@@ -63,6 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <aside>
         <a href="/"><i class="fas fa-home"></i> Home</a>
+        <form method="post">
+            <button type="submit" name="logout"><i class="fas fa-arrow-left-from-bracket"></i> Uitloggen</button>
+        </form>
 
         <div class="dropdown">
             <a href="#" onclick="toggleDropdown(event)">
