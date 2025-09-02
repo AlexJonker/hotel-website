@@ -12,7 +12,7 @@
   margin-top: 20px;
   text-align: center;
   font-size: 2.8rem;
-  color: #2d3e50;
+  color: var(--color-primary);
   margin-bottom: 32px;
   letter-spacing: 1px;
   font-weight: 600;
@@ -67,8 +67,9 @@
   display: block;
 }
 
-.box2 h2 {
+.h2 {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 4%;
+  color: var(--color-primary);
 }
