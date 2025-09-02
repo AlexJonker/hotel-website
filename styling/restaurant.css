@@ -50,7 +50,9 @@
 }
 
 #h-btn-2 {
-    background-color: rgba(255, 255, 255, 0.315); /* transparant wit, geen var */
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 
