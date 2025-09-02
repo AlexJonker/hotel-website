@@ -49,7 +49,7 @@
         <input type="email" id="email" name="email" required placeholder="Email">
 
         <textarea id="vraag" name="vraag" rows="4" cols="40" minlength="30" maxlength="800" required
-          placeholder="stel je vraag"></textarea>
+          placeholder="Stel je vraag"></textarea>
         <input type="submit" id="verzenden" name="verzenden" required>
 
         <?php
