@@ -12,7 +12,7 @@ if ($env === false) {
     die("No .env file found");
 }
 
-
+$admin_pass = password_hash($env["admin_pass"], PASSWORD_DEFAULT);
 
 $conn = mysqli_connect(
     $env["db_host"],
@@ -53,6 +53,6 @@ $row = mysqli_fetch_assoc($result);
 if ($row['count'] == 0) {
     mysqli_query($conn, "
         INSERT INTO wachtwoord (wachtwoord) 
-        VALUES ('" . $env["admin_pass"] . "')
+        VALUES ('" . $admin_pass . "')
     ");
 }

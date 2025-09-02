@@ -34,8 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $oud_wachtwoord_row = mysqli_fetch_assoc($oud_wachtwoord_result);
     $oud_wachtwoord = $oud_wachtwoord_row ? $oud_wachtwoord_row['wachtwoord'] : '';
 
-    if ($oud_wachtwoord == $oud_wachtwoord_input) {
-        mysqli_query($conn, "UPDATE wachtwoord SET wachtwoord = '$nieuw_wachtwoord_input' WHERE id = 1");
+    if (password_verify($oud_wachtwoord_input, $oud_wachtwoord)) {
+        $nieuw_wachtwoord_hash = password_hash($nieuw_wachtwoord_input, PASSWORD_DEFAULT);
+        mysqli_query($conn, "UPDATE wachtwoord SET wachtwoord = '$nieuw_wachtwoord_hash' WHERE id = 1");
         header('Location: /admin');
     }
 }
