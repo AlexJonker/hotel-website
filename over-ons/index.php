@@ -12,10 +12,10 @@
 
 <body>
    <?php include('../assets/html/navbar.html'); ?>
-  <div class="cont">
+  <section class="cont">
     
-    <h1>over ons</h1>
-    <div class="box">
+    <h1>Over ons</h1>
+    <section class="box">
 
       <div class="box2">
         <h2>Welkom bij Hotel De Zonne Vallei</h2>
@@ -39,8 +39,9 @@
             style="width:110%">
         </div>
       </div>
-    </div>
-  </div>
+      
+    </section>
+  </section>
   <?php include('../assets/html/footer.html'); ?>
     
 </body>
