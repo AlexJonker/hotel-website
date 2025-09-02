@@ -61,12 +61,12 @@
       </form>
       <section>
 
-          <h2> <i class="fa-solid fa-info my-icon"></i>Contact info:</h2> <br>
+          <h2> <i class="fa-solid fa-info my-info"></i>Contact info:</h2> <br>
 
         <ul>
-          <li><i class="fas fa-location-dot my-icon"></i> Straatnaam 85 1234 AB Alkmaar NL</a></li> <br>
-          <!-- <li><i class="fas fa-phone my-icon"></i></a> ____________________</li> <br> -->
-          <!-- <li> <i class="fas fa-envelope my-icon"></i> ____________________</a></li> -->
+          <li><i class="fas fa-location-dot my-icon"></i> Straatnaam 85 1234 AB Alkmaar NL</a></li> 
+         <li><i class="fas fa-phone my-icon"></i></a> 06-12345678</li>  
+         <li> <i class="fas fa-envelope my-icon"></i> Support@email.com</a></li>
 
         </ul>
       </section>

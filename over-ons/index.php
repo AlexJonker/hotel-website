@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styling/global.css">
   <link rel="stylesheet" href="/styling/over-ons.css">
+  <link rel="icon" href="/assets/logos/favicon.ico">
   <title>Over Ons - Hotel De Zonne Vallei</title>
   <script src="/over-ons/script.js"></script>
 </head>

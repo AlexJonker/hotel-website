@@ -10,6 +10,7 @@
 
 }
 
+
 .cont h1 {
   
   margin-top: 20px;
@@ -54,7 +55,11 @@ section {
 
 
 .my-icon {
-  color: var(--color-primary-light)
+  color: var(--color-primary-light);
+  margin-bottom: 10px;
+}
+.my-info{
+  color: var(--color-primary-light);
 }
 .evil {
   color:rgb(221, 82, 82)

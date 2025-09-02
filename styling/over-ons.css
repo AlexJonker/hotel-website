@@ -15,9 +15,10 @@
   margin-top: 20px;
   text-align: center;
   font-size: 2.8rem;
-  color: #2d3e50;
+  color: #f4f1f1;
   margin-bottom: 32px;
   letter-spacing: 1px;
+  border-radius: 50px;
 }
 
 .box {
