@@ -16,6 +16,7 @@ $email = '';
 $email_send_error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
+    $klant_naam = $_POST['naam'] ?? '';
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'Voer een geldig e-mailadres in.';
     }
@@ -23,21 +24,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Ongeldige kamer geselecteerd.';
     }
     if (empty($errors)) {
-        $message  = "Beste gast,\n\n";
-        $message .= "Hartelijk dank voor uw reservering bij Zonne Vallei! We kijken ernaar uit u te verwelkomen.\n\n";
-        $message .= "Reserveringsdetails:\n";
-        $message .= "– Kamer: " . $room['naam'] . "\n";
-        $message .= "– Prijs per nacht: €" . number_format($room['prijs'], 2, ',', '.') . "\n\n";
-        $message .= "Wij nemen binnenkort contact met u op om uw verblijf verder af te stemmen.\n";
-        $message .= "Heeft u in de tussentijd vragen? Neem gerust contact met ons op.\n\n";
-        $message .= "Met vriendelijke groet,\n";
-        $message .= "Het team van Zonne Vallei";
+        $message = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/html/email_template.html");
+        $message = str_replace('{{kamer_naam}}', $room['naam'], $message);
+        $message = str_replace('{{kamer_link}}', "https://hotel.alexjonker.dev/kamer?num=" . $room['id'], $message);
+        $message = str_replace('{{klant_naam}}', $klant_naam, $message);
 
+        require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/php/sender.php");
+        $output = sender($email, $message, "Reservering bevestiging");
 
-        require_once($_SERVER['DOCUMENT_ROOT'] . "/admin/smtp/sender.php");
-        $output = sender($email, $message);
-
-        if (strpos($output, 'Email verstuured!') !== false) {
+        if (strpos($output, 'Email verstuurd!') !== false) {
             $success = true;
         } else {
             $lines = explode("\n", trim(strip_tags($output)));
@@ -97,6 +92,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <?php endif; ?>
 
                         <form class="reserveer-form" method="post" action="?num=<?= $room_id ?>">
+                            <label for="naam">Naam</label>
+                            <input id="naam" name="naam" type="text" required value="<?= htmlspecialchars($klant_naam) ?>">
                             <label for="email">E-mailadres</label>
                             <input id="email" name="email" type="email" required value="<?= htmlspecialchars($email) ?>">
                             <button type="submit" class="kamer-reserveer-knop">Bevestig</button>

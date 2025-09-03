@@ -53,9 +53,9 @@
 }
 
 #h-btn-2 {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--color-footer-bg);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--color-footer-bg);
 }
 
 
@@ -113,7 +113,7 @@
     padding: 18px 35px;
     background-color: var(--color-primary);
     border-radius: 5px;
-    color: white;
+    color: var(--color-white);
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -136,14 +136,14 @@
 #menu li {
     margin-bottom: 8px;
     font-size: 16px;
-    color: black;
+    color: var(--color-black);
     line-height: 1.5;
 }
 
 #menu h3 {
     margin-top: 20px;
     font-size: 24px;
-    color: #333;
+    color: var(--color-grey);
 }
 
 #dark,#dark2 {

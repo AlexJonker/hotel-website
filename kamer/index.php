@@ -63,7 +63,7 @@ if (is_numeric($current_room)) {
                             <p class="kamer-afbeelding">Geen afbeeldingen beschikbaar.</p>
                         <?php endif; ?>
                     </div>
-                    <p class="kamer-beschikbaarheid" style="color: <?= $kamer['beschikbaar'] ? 'green' : 'red' ?>">Kamer is <?= $kamer['beschikbaar'] ? 'beschikbaar' : 'niet beschikbaar' ?></p>
+                    <p class="kamer-beschikbaarheid">Nog <?= $kamer['beschikbaar'] ?> kamers beschikbaar</p>
                     <a class="kamer-reserveer-knop" href="/kamer/reserveer?num=<?= $kamer['id'] ?>">Reserveer deze kamer</a>
                 </div>
             </div>
