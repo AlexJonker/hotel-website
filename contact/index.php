@@ -65,8 +65,8 @@
 
         <ul>
           <li><i class="fas fa-location-dot my-icon"></i> Straatnaam 85 1234 AB Alkmaar NL</a></li> 
-         <li><i class="fas fa-phone my-icon"></i></a> 06-12345678</li>  
-         <li> <i class="fas fa-envelope my-icon"></i> Support@email.com</a></li>
+         <li><i class="fas fa-phone my-icon"></i></a> 072 41 45 343</li>  
+         <li> <i class="fas fa-envelope my-icon"></i> info@hotelzon.nl</a></li>
 
         </ul>
       </section>
