@@ -52,11 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </form>
 
       <section>
-        <h2> <i class="fa-solid fa-info my-info"></i>Contact info:</h2> <br>
         <ul>
-          <li><i class="fas fa-location-dot my-icon"></i> Straatnaam 85 1234 AB Alkmaar NL</a></li>
-          <li><i class="fas fa-phone my-icon"></i></a> 072 41 45 343</li>
-          <li> <i class="fas fa-envelope my-icon"></i> info@hotelzon.nl</a></li>
+          <li><i class="fas fa-info my-info my-icon"></i> Contact info:</li>
+          <li><i class="fas fa-location-dot my-icon"></i> Straatnaam 85 1234 AB Alkmaar NL</li>
+          <li><i class="fas fa-phone my-icon"></i> 072 41 45 343</li>
+          <li><i class="fas fa-envelope my-icon"></i> info@hotelzon.nl</li>
         </ul>
       </section>
     </div>
