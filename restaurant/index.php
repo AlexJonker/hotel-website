@@ -32,8 +32,8 @@
         </div>
     </section>
 
-    <section class="about-section" id="menu">
-        <div class="about-content-wrapper">
+    <section class="about-section2" id="menu">
+        <div class="about-content-wrapper2">
             
             <h2>Menu</h2>
             <h3>Voorgerechten:</h3>
