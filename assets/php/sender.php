@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 
-function sender($adress, $email, $subject){
+function sender($adress, $html, $subject){
     $mail = new PHPMailer(true);
     try {
         $mail->isSMTP();
@@ -19,7 +19,8 @@ function sender($adress, $email, $subject){
         $mail->addAddress($adress);
 
         $mail->Subject = $subject;
-        $mail->Body    = $email;
+        $mail->Body    = $html;
+        $mail->isHTML(true);
 
         $mail->send();
         return 'Email verstuurd!';

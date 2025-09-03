@@ -7,9 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $client_name = trim($_POST['naam'] ?? '');
 
   $question = $_POST['vraag'] ?? '';
-  $question .= "\n\n------------------\n";
-  $question .= "Van: " . $client_name . "\n";
-  $question .= "Email: " . $client_email;
+  $question .= "<br><br><hr><br>";
+  $question .= "<strong>Van:</strong> " . htmlspecialchars($client_name) . "<br>";
+  $question .= "<strong>Email:</strong> " . htmlspecialchars($client_email);
   
   require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/php/sender.php");
   $output = sender($admin_email, $question, "Vraag van " . $client_name);
