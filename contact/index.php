@@ -37,9 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
   <?php include('../assets/html/navbar.html'); ?>
-  <div class="cont">
+  <section class="cont">
     <h1>Neem contact met ons.</h1>
-    <div class="box">
+    <main class="box">
 
       <form action='' method='post'>
         <input type="text" id="naam" name="naam" size="40" required placeholder="Naam" class="style">
@@ -59,8 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <li><i class="fas fa-envelope my-icon"></i> info@hotelzon.nl</li>
         </ul>
       </section>
-    </div>
-  </div>
+    </main>
+  </section>
 
   <?php include('../assets/html/footer.html'); ?>
 
