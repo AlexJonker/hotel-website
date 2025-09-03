@@ -72,8 +72,6 @@
 
     <section class="about-section">
         <div class="about-content-wrapper">
-            <img src="https://fastly.picsum.photos/id/42/3456/2304.jpg?hmac=dhQvd1Qp19zg26MEwYMnfz34eLnGv8meGk_lFNAJR3g"
-                alt="Voorbeeld kamer">
             <div class="about-paragraph">
                 <h2>Culinaire Verwennerij</h2>
                 <p>
@@ -82,6 +80,8 @@
                     is een ervaring op zich. Ontdek ons menu en geniet van de smaken van Alkmaar.
                 </p>
             </div>
+            <img src="https://fastly.picsum.photos/id/42/3456/2304.jpg?hmac=dhQvd1Qp19zg26MEwYMnfz34eLnGv8meGk_lFNAJR3g"
+                alt="Voorbeeld kamer">
         </div>
     </section>
 
