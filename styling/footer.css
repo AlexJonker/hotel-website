@@ -6,23 +6,22 @@ body {
   min-height: 100vh;
 }
 
-a{
-      text-decoration: none;
-      color: black
-
+a {
+  text-decoration: none;
+  color: black
 }
 
 .footer {
   display: flex;
   flex-flow: row wrap;
   padding: 30px 30px 20px 30px;
-  color: var(--color-bg-dark);
-  background: var(--color-white);
+  color: var(--color-grey-lighter);
+  background-color: var(--color-bg);
   border-top: 1px solid var(--color-border);
   text-decoration: none;
 }
 
-.footer > * {
+.footer>* {
   flex: 1 100%;
 }
 
@@ -91,7 +90,7 @@ a{
 .footer ul {
   list-style: none;
   padding-left: 0;
-  
+
 }
 
 .footer li a {
@@ -106,7 +105,7 @@ a{
   margin-left: -1.25em;
 }
 
-.footer-nav > * {
+.footer-nav>* {
   flex: 1 50%;
   margin-right: 1.25em;
 }
@@ -139,7 +138,7 @@ a{
 }
 
 @media screen and (min-width: 40.375em) {
-  .footer-nav > * {
+  .footer-nav>* {
     flex: 1;
   }
 
@@ -199,7 +198,7 @@ a{
     align-items: center;
   }
 
-  .footer-nav > * {
+  .footer-nav>* {
     margin-right: 0;
     margin-bottom: 1em;
     flex: 1 100%;

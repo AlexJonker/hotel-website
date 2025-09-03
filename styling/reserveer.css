@@ -92,7 +92,7 @@
 
 .kamer-beschrijving {
     font-size: 18px;
-    color: var(--color-grey-light);
+    color: var(--color-grey-dark);
     line-height: 1.8;
     margin-bottom: 15px;
     text-align: justify;

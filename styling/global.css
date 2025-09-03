@@ -1,30 +1,32 @@
 /* kleuren */
 :root {
-    --color-primary: #B5925C;           /* Logo brown color */
-    --color-primary-dark: #8A6C43;      /* Darker brown */
-    --color-primary-light: #D2B285;     /* Lighter brown */
-    --color-accent: #F9F58B;            /* Logo yellow color */
-    --color-accent-dark: #E9E46A;       /* Slightly darker yellow */
-    --color-bg: #B5925C;                /* Warm tan background */
-    --color-bg-alt: #EAE0CC;            /* Slightly darker tan */
-    --color-bg-dark: #3B342D;           /* Dark brown background */
-    --color-white: #FFFFFF;             /* Pure white */
-    --color-black: #1A1611;             /* Rich black */
-    --color-grey: #777166;              /* Warm dark gray */
-    --color-grey-light: #ADA79D;        /* Warm medium gray */
-    --color-grey-lighter: #E5E2DC;      /* Warm light gray */
-    --color-border: #C8AC7D;            /* Warm border color */
-    --color-border-alt: #D9CEBC;        /* Alternative warm border */
-    --color-border-dark: #826B44;       /* Darker warm border */
-    --color-shadow: rgba(83, 66, 49, 0.1);         /* Brown-tinted shadow */
-    --color-shadow-dark: rgba(83, 66, 49, 0.15);   /* Darker brown shadow */
-    --color-shadow-accent: rgba(249, 245, 139, 0.25); /* Yellow accent shadow */
-    --color-shadow-accent-light: rgba(249, 245, 139, 0.15); /* Light yellow shadow */
-    --color-footer-bg: rgba(59, 52, 45, 0.12);     /* Warm footer background */
+    --color-primary: #B5925C;
+    --color-primary-dark: #8A6C43;
+    --color-primary-light: #D2B285;
+    --color-accent: #F9F58B;
+    --color-accent-dark: #E9E46A;
+    --color-bg: #B5925C;
+    --color-bg-alt: #EAE0CC;
+    --color-bg-dark: #3B342D;
+    --color-white: #FFFFFF;
+    --color-black: #1A1611;  
+    --color-grey: #777166;
+    --color-grey-light: #ADA79D;
+    --color-grey-lighter: #E5E2DC;
+    --color-border: #C8AC7D;
+    --color-border-alt: #D9CEBC;  
+    --color-border-dark: #826B44; 
+    --color-shadow: rgba(83, 66, 49, 0.1);
+    --color-shadow-dark: rgba(83, 66, 49, 0.15);
+    --color-shadow-accent: rgba(249, 245, 139, 0.25);
+    --color-shadow-accent-light: rgba(249, 245, 139, 0.15);
+    --color-footer-bg: rgba(59, 52, 45, 0.12);
 }
 
 
-
+html {
+    background-color: var(--color-primary);
+}
 
 
 

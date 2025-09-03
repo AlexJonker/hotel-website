@@ -30,13 +30,9 @@
       <div class="box3">
 
         <div class="w3-content w3-section" style="max-width:500px">
-          <img class="mySlides"
-            src="https://fastly.picsum.photos/id/142/4272/2848.jpg?hmac=z8IS_an6FQ8ijJOBd-wSVg1JTZbeIDG4TbjHwLQbs0I"
-            style="width:110%" alt="alternatetext">
-          <img class="mySlides" src="https://picsum.photos/id/4/5000/3333" style="width:110%">
-          <img class="mySlides"
-            src="https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA"
-            style="width:110%">
+          <img class="mySlides" src="https://wallpaperaccess.com/full/658385.jpg" alt="hotel foto">
+          <img class="mySlides" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/619990272.jpg?k=0cdca0c64117ed139eaeb5198076a2aa715ec9e6ab121fd687d438d93d832399&o=&hp=1" alt="kamer foto">
+          <img class="mySlides" src="https://fastly.picsum.photos/id/42/3456/2304.jpg?hmac=dhQvd1Qp19zg26MEwYMnfz34eLnGv8meGk_lFNAJR3g" alt="restaurant foto">
         </div>
       </div>
       
