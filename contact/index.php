@@ -1,8 +1,21 @@
 <?php
+$env = false;
+
+if (file_exists('../.env')) {
+    $env = parse_ini_file('../.env');
+}
+elseif (file_exists('../../.env')) {
+    $env = parse_ini_file('../../.env');
+}
+
+if ($env === false) {
+    die("No .env file found");
+}
+
+
 $email_send_message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $admin_email = "alex@alexjonker.dev";
   $client_email = trim($_POST['email'] ?? '');
   $client_name = trim($_POST['naam'] ?? '');
 
@@ -12,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $question .= "<strong>Email:</strong> " . htmlspecialchars($client_email);
   
   require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/php/sender.php");
-  $output = sender($admin_email, $question, "Vraag van " . $client_name);
+  $output = sender($env["admin_email"], $question, "Vraag van " . $client_name);
 
   if (strpos($output, 'Email verstuurd!') !== false) {
     $email_send_message = "Email verstuurd!";
