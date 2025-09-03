@@ -60,35 +60,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include('../../assets/html/navbar.html'); ?>
 
     <?php if ($room): ?>
-        <div class="kamer-container">
+        <section class="kamer-container">
             <h1 class="kamer-naam">Reserveer: <?= htmlspecialchars($room['naam']) ?></h1>
-            <div class="kamer-content">
-                <div class="kamer-info">
+            <main class="kamer-content">
+                <article class="kamer-info">
                     <p class="kamer-prijs">Prijs per nacht: €<?= number_format($room['prijs'], 2, ',', '.') ?></p>
                     <p class="kamer-beschrijving"><?= nl2br(htmlspecialchars($room['beschrijving'])) ?></p>
-                </div>
+                </article>
 
-                <div class="rechts">
+                <main class="rechts">
                     <p class="kamer-beschikbaarheid" style="color: <?= $room['beschikbaar'] ? 'green' : 'red' ?>">
                         Kamer is <?= $room['beschikbaar'] ? 'beschikbaar' : 'niet beschikbaar' ?>
                     </p>
 
                     <?php if ($success): ?>
-                        <div class="reserveer-success">
+                        <article class="reserveer-success">
                             <p>Bedankt! Er is een reserveringsaanvraag verstuurd voor kamer <?= htmlspecialchars($room['naam']) ?> met e-mailadres <?= htmlspecialchars($email) ?>.</p>
                             <p><a class="terug-knop kamer-reserveer-knop" href="/kamer?num=<?= $room['id'] ?>">Terug naar kamer</a></p>
-                        </div>
+                        </article>
                     <?php elseif ($email_send_error): ?>
-                        <div class="reserveer-errors">
+                        <article class="reserveer-errors">
                             <p><?= htmlspecialchars($email_send_error) ?></p>
-                        </div>
+                        </article>
                     <?php else: ?>
                         <?php if (!empty($errors)): ?>
-                            <div class="reserveer-errors">
+                            <article class="reserveer-errors">
                                 <?php foreach ($errors as $err): ?>
                                     <p><?= htmlspecialchars($err) ?></p>
                                 <?php endforeach; ?>
-                            </div>
+                            </article>
                         <?php endif; ?>
 
                         <form class="reserveer-form" method="post" action="?num=<?= $room_id ?>">
@@ -101,13 +101,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <p style="margin-top:1rem;"><a class="terug-knop kamer-reserveer-knop" href="/kamer?num=<?= $room['id'] ?>">Terug naar kamer</a></p>
                     <?php endif; ?>
-                </div>
-            </div>
-        </div>
+                </main>
+            </main>
+        </section>
     <?php else: ?>
-        <div class="kamer-error">
+        <article class="kamer-error">
             <p>Ongeldige kamer. Ga terug naar <a href="/kamers">overzicht kamers</a>.</p>
-        </div>
+        </article>
     <?php endif; ?>
 
     <?php include('../../assets/html/footer.html'); ?>
