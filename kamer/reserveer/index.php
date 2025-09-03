@@ -34,8 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message .= "Het team van Zonne Vallei";
 
 
-        require_once($_SERVER['DOCUMENT_ROOT'] . "/admin/smtp/sender.php");
-        $output = sender($email, $message);
+        require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/php/sender.php");
+        $output = sender($email, $message, "Reservering bevestiging");
 
         if (strpos($output, 'Email verstuured!') !== false) {
             $success = true;
