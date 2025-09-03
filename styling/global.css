@@ -24,7 +24,9 @@
 }
 
 
-
+html {
+    background-color: var(--color-primary);
+}
 
 
 
