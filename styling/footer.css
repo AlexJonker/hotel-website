@@ -27,8 +27,8 @@ a{
 }
 
 .footer-addr {
-  margin-left: 10em;
-  margin-right: 1.25em;
+  /* margin-left: 8em; */
+  /* margin-right: 1.25em; */
   margin-bottom: 2em;
   margin-top: 1.2em;
 }
@@ -60,7 +60,6 @@ a{
   font-size: 1.2rem;
   font-weight: 700;
 }
-
 
 .nav-title {
   margin-top: 1.3em;
@@ -104,6 +103,7 @@ a{
 .footer-nav {
   display: flex;
   flex-flow: row wrap;
+  margin-left: -1.25em;
 }
 
 .footer-nav > * {
@@ -160,6 +160,10 @@ a{
   .footer {
     flex-direction: column;
     padding: 20px 10px 10px 10px;
+    text-align: center;
+  }
+
+  .footer-nav .nav-item:first-child {
     text-align: center;
   }
 
