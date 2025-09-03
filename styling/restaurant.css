@@ -180,19 +180,9 @@
 
 
 
-@media (max-width: 1024px) {
-    .hero-content-wrapper {
-        width: 70%;
-    }
-
-    .hero-content-wrapper h1 {
-        font-size: 40px;
-    }
-}
-
 @media (max-width: 768px) {
     .hero-container {
-        height: auto;
+        margin-top: 40px;
         padding: 40px 20px;
         text-align: center;
     }
@@ -226,24 +216,5 @@
     .about-button {
         font-size: 15px;
         padding: 16px 30px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content-wrapper h1 {
-        font-size: 24px;
-    }
-
-    .about-content-wrapper h2 {
-        font-size: 24px;
-    }
-
-    .about-content-wrapper {
-        width: 95%;
-    }
-
-    .about-button {
-        padding: 14px 20px;
-        font-size: 14px;
     }
 }

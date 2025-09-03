@@ -78,7 +78,7 @@
         <div class="about-content-wrapper">
             <h2>Maak een Reservering</h2>
             <p>Bel ons: 072 41 45 343</p>
-            <a class="about-button" href="tel:18000000000">Nu reserveren</a>
+            <a class="about-button" href="tel:0724145343">Nu reserveren</a>
         </div>
     </section>
 
