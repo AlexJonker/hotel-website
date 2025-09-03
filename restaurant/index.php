@@ -14,26 +14,26 @@
 
 <?php include("../assets/html/navbar.html"); ?>
 
-    <div class="hero-container">
-        <div class="hero-content-wrapper">
+    <section class="hero-container">
+        <main class="hero-content-wrapper">
             <h1 id="dark">Welkom in ons Restaurant</h1>
             <p id="dark2">Bij Hotel De Zonne Vallei zijn we trots op ons wereldberoemde restaurant, waar culinaire dromen werkelijkheid worden. Onze 2-duimen chef-kok, bekend om zijn creativiteit en vakmanschap, brengt zijn passie voor koken tot leven in elk gerecht. Met jarenlange ervaring in gerenommeerde keukens over de hele wereld, zorgt onze chef voor een onvergetelijke eetervaring die zowel traditionele als moderne smaken combineert.</p>  <!-- tesk opmaak verbetern-->
-            <div class="hero-button-container">
+            <article class="hero-button-container">
                 <a href="#menu">Bekijk Menu</a>
                 <a id="h-btn-2" href="#reserveren">Reserveren</a>
-            </div>
-        </div>
-    </div>
+            </article>
+        </main>
+    </section>
 
     <section class="about-section">
-        <div class="about-content-wrapper">
+        <article class="about-content-wrapper">
             <h2>Over het Restaurant</h2>
             <p>Bij Hotel De Zonne Vallei zijn we trots op ons wereldberoemde restaurant, waar culinaire dromen werkelijkheid worden. Onze 2-duimen chef-kok, bekend om zijn creativiteit en vakmanschap, brengt zijn passie voor koken tot leven in elk gerecht. Met jarenlange ervaring in gerenommeerde keukens over de hele wereld, zorgt onze chef voor een onvergetelijke eetervaring die zowel traditionele als moderne smaken combineert.</p>
-        </div>
+        </article>
     </section>
 
     <section class="about-section2" id="menu">
-        <div class="about-content-wrapper2">
+        <main class="about-content-wrapper2">
             
             <h2>Menu</h2>
             <h3>Voorgerechten:</h3>
@@ -71,15 +71,15 @@
                 <li>Pannenkoeken - Met stroop en poedersuiker.</li>
                 <li>Fish and Chips - Gebakken vis met frietjes en een beetje ketchup.</li>
             </ul>
-        </div>
+        </main>
     </section>
 
     <section class="about-section" id="reserveren">
-        <div class="about-content-wrapper">
+        <article class="about-content-wrapper">
             <h2>Maak een Reservering</h2>
             <p>Bel ons: 072 41 45 343</p>
             <a class="about-button" href="tel:18000000000">Nu reserveren</a>
-        </div>
+        </article>
     </section>
 
 <?php include("../assets/html/footer.html"); ?>
