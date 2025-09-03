@@ -9,7 +9,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://lipsum.app/random/1920x1080");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cf.bstatic.com/xdata/images/hotel/max1024x768/619990272.jpg?k=0cdca0c64117ed139eaeb5198076a2aa715ec9e6ab121fd687d438d93d832399&o=&hp=1");
     display: flex;
     justify-content: center;
     align-items: center;
