@@ -61,7 +61,7 @@
 
     width: 100%;
     padding: 80px 0;
-    background-color: var(--color-bg);
+    background-color: var(--color-primary-light);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,14 +69,14 @@
 
 .about-section2 {
     border-top: 1px solid var(--color-border);
+
     width: 100%;
     padding: 80px 0;
-    background-color: var(--color-footer-bg);
+    background-color: var(--color-bg);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 .about-content-wrapper {
     width: 80%;
@@ -87,35 +87,57 @@
     flex-direction: column;
     gap: 30px;
     text-align: center;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+
 }
 
 .about-content-wrapper h2 {
+    font-size: 42px;
+    color: var(--color-white);
+    margin-bottom: 10px;
+}
+
+.about-content-wrapper2 {
+    width: 80%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+}
+
+.about-content-wrapper2 h2 {
     font-size: 42px;
     color: var(--color-grey);
     margin-bottom: 10px;
 }
 
+
 .about-section2 h2 {
     font-size: 42px;
-    color: black;
+    color: var(--color-white);
     margin-bottom: 10px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+
 }
 
 .about-section2 li {
-    color: black;
+    color: var(--color-white);
     margin-bottom: 10px;
 }
 
 .about-content-wrapper p {
     font-size: 18px;
     line-height: 1.6;
-    color: var(--color-grey-light);
+    color: var(--color-white);
     max-width: 700px;
 }
 
 .about-button {
     padding: 18px 35px;
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-dark);
     border-radius: 5px;
     color: var(--color-white);
     text-decoration: none;
@@ -126,7 +148,7 @@
 }
 
 .about-button:hover {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-bg-dark);
     transform: translateY(-2px);
 }
 
@@ -139,14 +161,14 @@
 #menu li {
     margin-bottom: 8px;
     font-size: 16px;
-    color: var(--color-black);
+    color: var(--color-white);
     line-height: 1.5;
 }
 
 #menu h3 {
     margin-top: 20px;
     font-size: 24px;
-    color: var(--color-grey);
+    color: var(--color-white);
 }
 #dark{
        
