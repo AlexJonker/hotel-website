@@ -2,9 +2,9 @@
   max-width: 1100px;
   margin: 40px auto;
   padding: 32px 24px 48px 24px;
-  background: #fff;
+  background: var(--color-white);
   border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 24px var(--color-shadow);
 
 }
 
@@ -35,7 +35,7 @@
 
 .box2 p {
   font-size: 1.1rem;
-  color: #444;
+  color: var(--color-grey-light);
   line-height: 1.7;
   margin-bottom: 18px;
 }
@@ -53,8 +53,8 @@
   max-width: 420px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-  background: #eee;
+  box-shadow: 0 2px 12px var(--color-shadow);
+  background: var(--color-bg-alt);
 }
 
 .mySlides {

@@ -50,9 +50,9 @@
 }
 
 #h-btn-2 {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--color-footer-bg);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--color-footer-bg);
 }
 
 
@@ -146,9 +146,9 @@
 #menu h3 {
     margin-top: 20px;
     font-size: 24px;
-    color: #333;
+    color: var(--color-grey);
 }
 #dark{
        
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px var(--color-shadow);
 }
