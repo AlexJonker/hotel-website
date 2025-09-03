@@ -115,7 +115,7 @@
         right: -100%;
         width: 100%;
         height: calc(100vh - 80px);
-        background-color: var(--color-white);
+        background-color: var(--color-bg);
         flex-direction: column;
         justify-content: flex-start;
         padding-top: 50px;
