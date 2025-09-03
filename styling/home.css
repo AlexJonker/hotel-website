@@ -84,7 +84,6 @@
     justify-content: center;
     align-items: center;
     border-top: 1px solid var(--color-border);
-    flex-direction: row;
 
 }
 
@@ -92,6 +91,7 @@
     width: 60%;
     max-width: 1000px;
     display: flex;
+    flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
     gap: 30px;
@@ -282,4 +282,13 @@
         width: 95%;
         gap: 25px;
     }
+
+    .about-content-wrapper, .about-content-wrapper2 {
+        flex-direction: column;
+    }
+
+    .about-content-wrapper img, .about-content-wrapper2 img {
+        width: 100%;
+    }
+  
 }

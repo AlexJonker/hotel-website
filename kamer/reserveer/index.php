@@ -69,9 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </article>
 
                 <main class="rechts">
-                    <p class="kamer-beschikbaarheid" style="color: <?= $room['beschikbaar'] ? 'green' : 'red' ?>">
-                        Kamer is <?= $room['beschikbaar'] ? 'beschikbaar' : 'niet beschikbaar' ?>
-                    </p>
+                    <p class="kamer-beschikbaarheid"">Nog <?= $room['beschikbaar'] ?> kamers beschikbaar</p>
 
                     <?php if ($success): ?>
                         <article class="reserveer-success">

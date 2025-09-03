@@ -71,18 +71,18 @@
     </section>
 
     <section class="about-section">
-        <main class="about-content-wrapper">
-            <img src="https://fastly.picsum.photos/id/42/3456/2304.jpg?hmac=dhQvd1Qp19zg26MEwYMnfz34eLnGv8meGk_lFNAJR3g"
-                alt="Voorbeeld kamer">
-            <article class="about-paragraph">
+        <div class="about-content-wrapper">
+            <div class="about-paragraph">
                 <h2>Culinaire Verwennerij</h2>
                 <p>
                     Laat uw smaakpapillen prikkelen in ons restaurant, waar onze chef-kok met passie lokale ingrediënten
                     omtovert tot culinaire meesterwerken. Van een uitgebreid ontbijt tot een intiem diner, elke maaltijd
                     is een ervaring op zich. Ontdek ons menu en geniet van de smaken van Alkmaar.
                 </p>
-            </article>
-        </main>
+            </div>
+            <img src="https://fastly.picsum.photos/id/42/3456/2304.jpg?hmac=dhQvd1Qp19zg26MEwYMnfz34eLnGv8meGk_lFNAJR3g"
+                alt="Voorbeeld kamer">
+        </div>
     </section>
 
     <section class="about-section2">
