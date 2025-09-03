@@ -36,51 +36,6 @@
     justify-content: center;
 }
 
-.kamer-afbeelding {
-    width: 380px;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px var(--color-shadow-accent);
-    background-color: var(--color-bg);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-.kamer-afbeeldingen-slideshow {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.slideshow-arrow {
-    background: var(--color-shadow-dark);
-    color: var(--color-white);
-    border: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 0;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    z-index: 2;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(4px);
-}
-
-.slideshow-arrow:hover {
-    background: var(--color-bg-dark);
-    transform: scale(1.1);
-}
-
-.slideshow-arrow:active {
-    transform: scale(0.95);
-}
-
 .kamer-info {
     flex: 1;
     display: flex;
@@ -180,7 +135,27 @@
     box-shadow: none;
 }
 
-@media (max-width: 480px) {
-    .reserveer-form input { width: 90%; }
-    .kamer-prijs, .kamer-beschrijving { text-align: center; }
+@media (max-width: 768px) {
+    .kamer-container {
+        padding: 20px;
+        margin-top: 80px;
+        width: 95%;
+        max-width: 100%;
+    }
+
+    .kamer-content {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 30px;
+    }
+
+    .kamer-beschrijving, .kamer-prijs {
+        display: none;
+    }
+    
+    .reserveer-form input {
+        width: 100%;
+        max-width: 320px;
+    }
 }
