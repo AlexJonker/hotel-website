@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel De Zonne Vallei</title>
+</head>
+
+<body style="margin:0; padding:0; background-color:#ffffff; font-family:Arial, sans-serif;">
+
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td align="center" style="padding:20px;">
+
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600"
+          style="border-radius:20px; background-color:#f5f5f5; padding:30px; text-align:center;">
+          <tr>
+            <td>
+              <h1 style="font-size:28px; font-weight:bold; margin:0 0 20px 0; color:#000000;">
+                Welkom bij Zonne Vallei
+              </h1>
+
+              <p style="font-size:16px; line-height:1.5; color:#000000; margin:0 0 20px 0;">
+                Geachte Heer/Mevrouw {{klant_naam}}, <br><br>
+                Hartelijk dank voor uw reservering bij Zonne Vallei!
+                <br>
+                Uw kamer: <strong>{{kamer_naam}}</strong>
+                <br>
+                We bevestigen hierbij dat uw kamer succesvol is gereserveerd.
+                Volg de link hieronder om uw kamer te bekijken.
+                <br><br>
+                Met vriendelijke groet,<br>
+                Het Zonne Vallei team
+              </p>
+
+              <a href="{{kamer_link}}"
+                style="display:inline-block; padding:15px 30px; background-color:#8d8d3c; color:#ffffff; text-decoration:none; border-radius:6px; font-size:16px; font-weight:bold;">
+                Uw kamer
+              </a>
+
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+
+</html>
