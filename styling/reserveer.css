@@ -137,7 +137,7 @@
     color: var(--color-grey);
 }
 
-.reserveer-form #email {
+.reserveer-form input {
     width: 320px;
     max-width: 90%;
     padding: 10px 12px;
@@ -181,6 +181,6 @@
 }
 
 @media (max-width: 480px) {
-    .reserveer-form #email { width: 90%; }
+    .reserveer-form input { width: 90%; }
     .kamer-prijs, .kamer-beschrijving { text-align: center; }
 }
