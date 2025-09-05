@@ -27,6 +27,8 @@
 
 .hero-content-wrapper h1 {
     font-size: 50px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
 }
 
 .hero-button-container {
@@ -46,6 +48,7 @@
     color: white;
     text-decoration: none;
     transition: all 0.5s;
+    
 }
 
 .hero-button-container a:hover {
@@ -90,6 +93,8 @@ backdrop-filter: blur(10px);
     font-size: 42px;
     color: var(--color-black);
     margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
 }
 
 .about-content-wrapper2 {
@@ -101,12 +106,16 @@ backdrop-filter: blur(10px);
     flex-direction: column;
     gap: 30px;
     text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
 }
 
 .about-content-wrapper2 h2 {
     font-size: 42px;
     color: var(--color-grey);
     margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
 }
 
 
@@ -115,11 +124,15 @@ backdrop-filter: blur(10px);
     color: var(--color-white);
     margin-bottom: 10px;
     font-size: clamp(2rem, 5vw, 3.5rem);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
 }
 
 .about-section2 li {
     color: var(--color-white);
     margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
 }
 
 .about-content-wrapper p {
@@ -127,6 +140,8 @@ backdrop-filter: blur(10px);
     line-height: 1.6;
     color: var(--color-black);
     max-width: 700px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
 }
 
 strong {
@@ -177,7 +192,8 @@ strong {
 
 #dark2 {
    font-size: 24px;
-   
+       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
 }
 
 
