@@ -6,7 +6,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: linear-gradient(var(--color-shadow-dark), var(--color-shadow-dark)), url("https://wallpaperaccess.com/full/658385.jpg");
+    background-image:url("https://wallpaperaccess.com/full/658385.jpg");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,24 +67,23 @@
 }
 
 #h-btn-2 {
-    background-color: var(--color-footer-bg);
+    background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    border: 1px solid var(--color-footer-bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #h-btn-2:hover {
-    background-color: var(--color-footer-bg);
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 .about-section {
     width: 100%;
     padding: 80px 20px;
-    background-color: var(--color-bg);
+    background-color: #f8f9fa;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid var(--color-border);
-
+    border-top: 1px solid #e9ecef;
 }
 
 .about-content-wrapper {
@@ -100,14 +99,13 @@
 
 .about-content-wrapper img {
     width: 40%;
-    border-radius: 5px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
-
 
 .about-content-wrapper h2 {
     font-size: clamp(2rem, 4vw, 2.8rem);
-    color: var(--color-white);
+    color: #2c3e50;
     margin-bottom: 4%;
     font-weight: 600;
 }
@@ -115,13 +113,13 @@
 .about-content-wrapper p {
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.8;
-    color: var(--color-white);
+    color: #34495e;
     max-width: 700px;
 }
 
 .about-button {
     padding: 18px 35px;
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary-light);
     border-radius: 8px;
     color: white;
     text-decoration: none;
@@ -133,16 +131,13 @@
 }
 
 .about-button:hover {
-    background-color: var(--color-bg-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px var(--color-shadow-accent);
+
 }
 
 .about-paragraph {
     margin-bottom: 30px;
 }
-
-
 
 .about-paragraph p {
     margin: 0;
@@ -151,11 +146,11 @@
 .about-section3 {
     width: 100%;
     padding: 80px 20px;
-    background-color: var(--color-primary-light);
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .about-content-wrapper3 {
@@ -165,14 +160,12 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
     gap: 30px;
     text-align: center;
 }
 
 .about-content-wrapper3 h2 {
     font-size: clamp(2rem, 4vw, 2.8rem);
-    color: var(--color-bg-dark);
     margin-bottom: 4%;
     font-weight: 600;
 }
@@ -180,27 +173,23 @@
 .about-content-wrapper3 p {
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.8;
-    color: var(--color-bg-dark);
+    color: rgba(40, 40, 40, 0.9);
     max-width: 700px;
 }
-
-
 
 .about-paragraph3 p {
     margin: 0;
 }
 
-
 .about-section2 {
     width: 100%;
     padding: 80px 20px;
-    background-color: var(--color-primary-light);
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid #e9ecef;
     flex-direction: row;
-
 }
 
 .about-content-wrapper2 {
@@ -215,14 +204,13 @@
 
 .about-content-wrapper2 img {
     width: 40%;
-    border-radius: 5px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
-
 
 .about-content-wrapper2 h2 {
     font-size: clamp(2rem, 4vw, 2.8rem);
-    color: var(--color-bg-dark);
+    color: #2c3e50;
     margin-bottom: 4%;
     font-weight: 600;
 }
@@ -230,14 +218,13 @@
 .about-content-wrapper2 p {
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.8;
-    color: var(--color-bg-dark);
+    color: #34495e;
     max-width: 700px;
 }
 
 .about-paragraph2 {
     margin-bottom: 30px;
 }
-
 
 .about-paragraph2 p {
     margin: 0;
@@ -290,5 +277,4 @@
     .about-content-wrapper img, .about-content-wrapper2 img {
         width: 100%;
     }
-  
 }
