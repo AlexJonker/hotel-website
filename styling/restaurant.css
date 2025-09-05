@@ -96,13 +96,12 @@ backdrop-filter: blur(10px);
 
 .about-content-wrapper2 {
     width: 80%;
-    max-width: 1000px;
+    max-width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 30px;
-    text-align: center;
 }
 
 .about-content-wrapper2 h2 {
@@ -126,7 +125,7 @@ backdrop-filter: blur(10px);
 
 .about-content-wrapper p {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.5;
     color: var(--color-black);
     max-width: 700px;
 
