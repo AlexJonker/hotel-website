@@ -27,7 +27,6 @@
 
 .hero-content-wrapper h1 {
     font-size: 50px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 
 }
 
@@ -92,7 +91,6 @@ backdrop-filter: blur(10px);
     font-size: 42px;
     color: var(--color-black);
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 
 }
 
@@ -105,15 +103,11 @@ backdrop-filter: blur(10px);
     flex-direction: column;
     gap: 30px;
     text-align: center;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-
 }
 
 .about-content-wrapper2 h2 {
     font-size: 42px;
-    color: var(--color-grey);
     margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 
 }
 
@@ -122,13 +116,11 @@ backdrop-filter: blur(10px);
     font-size: 42px;
     margin-bottom: 10px;
     font-size: clamp(2rem, 5vw, 3.5rem);
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 
 }
 
 .about-section2 li {
     margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 
 }
 
@@ -137,7 +129,6 @@ backdrop-filter: blur(10px);
     line-height: 1.6;
     color: var(--color-black);
     max-width: 700px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 
 }
 
@@ -172,7 +163,6 @@ strong {
 #menu li {
     margin-bottom: 8px;
     font-size: 16px;
-    color: var(--color-white);
     line-height: 1.5;
 }
 
@@ -184,12 +174,10 @@ strong {
 #menu h3 {
     margin-top: 20px;
     font-size: 24px;
-    color: var(--color-white);
 }
 
 #dark2 {
    font-size: 24px;
-       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 
 }
 
