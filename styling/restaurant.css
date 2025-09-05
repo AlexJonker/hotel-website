@@ -1,7 +1,7 @@
 .hero-container {
     width: 100%;
     height: 700px;
-    background-image: url("https://fastly.picsum.photos/id/42/3456/2304.jpg?hmac=dhQvd1Qp19zg26MEwYMnfz34eLnGv8meGk_lFNAJR3g");
+    background-image: linear-gradient(rgba(59, 52, 45, 0.6), rgba(59, 52, 45, 0.6)), url("https://fastly.picsum.photos/id/42/3456/2304.jpg?hmac=dhQvd1Qp19zg26MEwYMnfz34eLnGv8meGk_lFNAJR3g");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
