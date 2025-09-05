@@ -44,7 +44,6 @@
 .hero-button-container a {
     padding: 20px 30px;
     border-radius: 5px;
-    color: white;
     text-decoration: none;
     transition: all 0.5s;
     
@@ -72,7 +71,8 @@ backdrop-filter: blur(10px);
 }
 
 .about-section2 {
-    background-color: rgba(255, 255, 255, 0.153);
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
 }
 
 .about-content-wrapper {
@@ -120,7 +120,6 @@ backdrop-filter: blur(10px);
 
 .about-section2 h2 {
     font-size: 42px;
-    color: var(--color-white);
     margin-bottom: 10px;
     font-size: clamp(2rem, 5vw, 3.5rem);
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
@@ -128,7 +127,6 @@ backdrop-filter: blur(10px);
 }
 
 .about-section2 li {
-    color: var(--color-white);
     margin-bottom: 10px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 
