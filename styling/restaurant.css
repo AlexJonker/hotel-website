@@ -43,7 +43,6 @@
 
 .hero-button-container a {
     padding: 20px 30px;
-    background-color: var(--color-primary);
     border-radius: 5px;
     color: white;
     text-decoration: none;
@@ -65,8 +64,8 @@ backdrop-filter: blur(10px);
 .about-section2 {
     width: 100%;
     padding: 80px 20px;
-    background-color: var(--color-bg);
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
