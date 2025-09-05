@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message = str_replace('{{kamer_naam}}', $room['naam'], $message);
         $message = str_replace('{{kamer_link}}', "https://hotel.alexjonker.dev/kamer?num=" . $room['id'], $message);
         $message = str_replace('{{klant_naam}}', $klant_naam, $message);
+        $message = str_replace("{{datum}}", $_POST['datum'] ?? '', $message);
 
         require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/php/sender.php");
         $output = sender($email, $message, "Reservering bevestiging");
@@ -125,6 +126,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <input id="naam" name="naam" type="text" required value="<?= htmlspecialchars($klant_naam) ?>">
                                 <label for="email">E-mailadres</label>
                                 <input id="email" name="email" type="email" required value="<?= htmlspecialchars($email) ?>">
+                                <label for="datum">Datum</label>
+                                <input id="datum" name="datum" type="date" required>
                                 <button type="submit" class="kamer-reserveer-knop">Bevestig</button>
                             </form>
 
