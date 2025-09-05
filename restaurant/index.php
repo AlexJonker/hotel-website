@@ -38,38 +38,38 @@
             <h2>Menu</h2>
             <h3>Voorgerechten:</h3>
             <ul>
-                <li>Geroosterde Bietensalade - Met geitenkaas, walnoten en een honing-balsamico dressing.</li>
-                <li>Carpaccio van Rundvlees - Met truffelmayonaise, rucola en Parmezaanse kaas.</li>
-                <li>Gerookte Zalm - Met dillecrème, kappertjes en een citroenpartje.</li>
-                <li>Ravioli met Spinazie en Ricotta - In een romige tomatensaus met basilicum.</li>
-                <li>Gegratineerde Champignons - Gevuld met knoflook en kruiden, geserveerd met knapperig brood.</li>
+                <li><strong>Geroosterde Bietensalade</strong> - Met geitenkaas, walnoten en een honing-balsamico dressing.</li>
+                <li><strong>Carpaccio van Rundvlees</strong> - Met truffelmayonaise, rucola en Parmezaanse kaas.</li>
+                <li><strong>Gerookte Zalm</strong> - Met dillecrème, kappertjes en een citroenpartje.</li>
+                <li><strong>Ravioli met Spinazie en Ricotta</strong> - In een romige tomatensaus met basilicum.</li>
+                <li><strong>Gegratineerde Champignons</strong> - Gevuld met knoflook en kruiden, geserveerd met knapperig brood.</li>
             </ul>
 
             <h3>Hoofdgerechten:</h3>
             <ul>
-                <li>Gegrilde Zalmfilet - Met een citroen-dille saus, geserveerd met seizoensgroenten en aardappelpuree.</li>
-                <li>Ribeye Steak - Geserveerd met een pepersaus, gegrilde groenten en frietjes.</li>
-                <li>Kipfilet Supreme - Met een champignonroomsaus, gestoofde worteltjes en aardappelgratin.</li>
-                <li>Vegetarische Lasagne - Laagjes pasta, seizoensgroenten, ricotta en tomatensaus, geserveerd met een frisse salade.</li>
-                <li>Gebakken Zeebaars - Op een bedje van spinazie, geserveerd met rijst en een beurre blanc saus.</li>
+                <li><strong>Gegrilde Zalmfilet</strong> - Met een citroen-dille saus, geserveerd met seizoensgroenten en aardappelpuree.</li>
+                <li><strong>Ribeye Steak</strong> - Geserveerd met een pepersaus, gegrilde groenten en frietjes.</li>
+                <li><strong>Kipfilet Supreme</strong> - Met een champignonroomsaus, gestoofde worteltjes en aardappelgratin.</li>
+                <li><strong>Vegetarische Lasagne</strong> - Laagjes pasta, seizoensgroenten, ricotta en tomatensaus, geserveerd met een frisse salade.</li>
+                <li><strong>Gebakken Zeebaars</strong> - Op een bedje van spinazie, geserveerd met rijst en een beurre blanc saus.</li>
             </ul>
 
             <h3>Nagerechten:</h3>
             <ul>
-                <li>Tiramisu - Klassieke Italiaanse dessert met lagen van koffie-geweekte koekjes en mascarpone crème.</li>
-                <li>Crème Brûlée - Rijke vanille custard met een knapperige gekarameliseerde suikerlaag.</li>
-                <li>Chocolade Fondant - Warme chocoladetaart met een vloeibare kern, geserveerd met vanille-ijs.</li>
-                <li>Lemon Cheesecake - Romige cheesecake met een vleugje citroen en een graham cracker korst.</li>
-                <li>Vers Fruit met Sorbet - Een selectie van seizoensfruit, geserveerd met verfrissende sorbet.</li>
+                <li><strong>Tiramisu</strong> - Klassieke Italiaanse dessert met lagen van koffie-geweekte koekjes en mascarpone crème.</li>
+                <li><strong>Crème Brûlée</strong> - Rijke vanille custard met een knapperige gekarameliseerde suikerlaag.</li>
+                <li><strong>Chocolade Fondant</strong> - Warme chocoladetaart met een vloeibare kern, geserveerd met vanille-ijs.</li>
+                <li><strong>Lemon Cheesecake</strong> - Romige cheesecake met een vleugje citroen en een graham cracker korst.</li>
+                <li><strong>Vers Fruit met Sorbet</strong> - Een selectie van seizoensfruit, geserveerd met verfrissende sorbet.</li>
             </ul>
 
             <h3>Kinder Menu's:</h3>
             <ul>
-                <li>Mini Burger - Met kaas en frietjes.</li>
-                <li>Kipnuggets - Geserveerd met appelmoes en een klein salade.</li>
-                <li>Spaghetti Bolognese - Met huisgemaakte tomatensaus.</li>
-                <li>Pannenkoeken - Met stroop en poedersuiker.</li>
-                <li>Fish and Chips - Gebakken vis met frietjes en een beetje ketchup.</li>
+                <li><strong>Mini Burger</strong> - Met kaas en frietjes.</li>
+                <li><strong>Kipnuggets</strong> - Geserveerd met appelmoes en een klein salade.</li>
+                <li><strong>Spaghetti Bolognese</strong> - Met huisgemaakte tomatensaus.</li>
+                <li><strong>Pannenkoeken</strong> - Met stroop en poedersuiker.</li>
+                <li><strong>Fish and Chips</strong> - Gebakken vis met frietjes en een beetje ketchup.</li>
             </ul>
         </main>
     </section>
