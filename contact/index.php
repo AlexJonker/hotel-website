@@ -67,9 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <section>
         <ul>
           <li><i class="fas fa-info my-info my-icon"></i> Contact info:</li>
-          <li><i class="fas fa-location-dot my-icon"></i> Straatnaam 85 1234 AB Alkmaar NL</li>
-          <li><i class="fas fa-phone my-icon"></i> 072 41 45 343</li>
-          <li><i class="fas fa-envelope my-icon"></i> info@hotelzon.nl</li>
+          <li><a href="https://www.google.com/maps?q=ict+vanaf+morgen+alkmaar"><i class="fas fa-location-dot my-icon"></i> Straatnaam 85 1234 AB Alkmaar NL</a></li>
+          <li><a href="tel:0724145343"><i class="fas fa-phone my-icon"></i> 072 41 45 343</a></li>
+          <li><a href="mailto:info@hotelzon.nl"><i class="fas fa-envelope my-icon"></i> info@hotelzon.nl</a></li>
         </ul>
       </section>
     </main>
