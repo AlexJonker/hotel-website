@@ -36,6 +36,7 @@
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+    
 }
 
 .hero-button-container a {
@@ -52,9 +53,8 @@
 }
 
 #h-btn-2 {
-    background-color: var(--color-footer-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--color-footer-bg);
+backdrop-filter: blur(10px);
+  border: 1px solid var(--color-footer-bg);
 }
 
 
@@ -82,7 +82,7 @@
     flex-direction: column;
     gap: 30px;
     text-align: center;
-        font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
 
 }
 
