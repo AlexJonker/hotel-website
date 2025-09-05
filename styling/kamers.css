@@ -73,7 +73,7 @@ body {
     align-items: center;
     transition: 0.3s all;
     text-decoration: none;
-    box-shadow: 0 6px 24px var(--color-shadow-dark);
+    box-shadow: 4px 4px var(--color-shadow-dark);
 
 }
 
