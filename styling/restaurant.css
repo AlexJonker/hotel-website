@@ -90,7 +90,6 @@
     font-size: 42px;
     color: var(--color-black);
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .about-content-wrapper2 {
@@ -108,7 +107,6 @@
     font-size: 42px;
     color: var(--color-grey);
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 
@@ -117,13 +115,11 @@
     color: var(--color-white);
     margin-bottom: 10px;
     font-size: clamp(2rem, 5vw, 3.5rem);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .about-section2 li {
     color: var(--color-white);
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .about-content-wrapper p {
@@ -131,7 +127,6 @@
     line-height: 1.6;
     color: var(--color-black);
     max-width: 700px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 strong {
@@ -167,7 +162,6 @@ strong {
     font-size: 16px;
     color: var(--color-white);
     line-height: 1.5;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 #menu li strong {
@@ -179,14 +173,8 @@ strong {
     margin-top: 20px;
     font-size: 24px;
     color: var(--color-white);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-#dark,#dark2 {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-   
-
-}
 #dark2 {
    font-size: 24px;
    
