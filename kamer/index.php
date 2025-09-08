@@ -69,10 +69,9 @@ if (is_numeric($current_room)) {
             </div>
         </div>
     <?php else: ?>
-        <div class="kamer-error">
-            <p>Kamer niet gevonden.</p>
-            <a href="/kamers">Bekijk alle kamers</a>
-        </div>
+        <article class="kamer-error">
+            <h2>Ongeldige kamer. Ga terug naar <a href="/kamers">overzicht</a> kamers.</h2>
+        </article>
     <?php endif; ?>
     <?php include('../assets/html/footer.html'); ?>
 </body>
