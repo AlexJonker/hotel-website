@@ -126,6 +126,11 @@ article {
     color: var(--color-bg-alt);
 }
 
+.reserveringen p {
+    margin: 5px 0;
+    color: var(--color-bg-alt);
+}
+
 strong {
     color: var(--color-border-dark);
     font-weight: 600;
