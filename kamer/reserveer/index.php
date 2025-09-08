@@ -169,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="start_datum">Startdatum</label>
                                 <input id="start_datum" name="start_datum" type="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($start_datum ?? '') ?>">
                                 <label for="eind_datum">Einddatum</label>
-                                <input id="eind_datum" name="eind_datum" type="date" min="<?= date('Y-m-d') ?> max="<?= date('Y-m-d', strtotime('+1 year')) ?>" required value="<?= htmlspecialchars($eind_datum ?? '') ?>">
+                                <input id="eind_datum" name="eind_datum" type="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($eind_datum ?? '') ?>">
                                 <button type="submit" class="kamer-reserveer-knop">Bevestig</button>
                             </form>
 
@@ -181,7 +181,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </section>
     <?php else: ?>
         <article class="kamer-error">
-            <h2>Ongeldige kamer. Ga terug naar <a href="/kamers">overzicht</a> kamers.</h2>
+            <p>Ongeldige kamer. Ga terug naar <a href="/kamers">overzicht kamers</a>.</p>
         </article>
     <?php endif; ?>
 
@@ -192,29 +192,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         const startDateInput = document.getElementById("start_datum");
         const endDateInput = document.getElementById("eind_datum");
 
-        startDateInput.setAttribute('min', today);
-        endDateInput.setAttribute('min', today);
+        if (startDateInput) startDateInput.setAttribute('min', today);
+        if (endDateInput) endDateInput.setAttribute('min', today);
 
-        startDateInput.addEventListener('change', function () {
-            const startDate = this.value;
-            if (startDate) {
-                endDateInput.setAttribute('min', startDate);
-                if (endDateInput.value && endDateInput.value < startDate) {
-                    endDateInput.value = '';
+        if (startDateInput && endDateInput) {
+            startDateInput.addEventListener('change', function () {
+                const startDate = this.value;
+                if (startDate) {
+                    endDateInput.setAttribute('min', startDate);
+                } else {
+                    endDateInput.setAttribute('min', today);
                 }
-            } else {
-                endDateInput.setAttribute('min', today);
-            }
-        });
+            });
 
-        endDateInput.addEventListener('change', function () {
-            const startDate = startDateInput.value;
-            const endDate = this.value;
-            if (startDate && endDate && endDate < startDate) {
-                alert('Einddatum kan niet eerder zijn dan de startdatum.');
-                this.value = '';
+            const form = document.querySelector('.reserveer-form');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    const start = startDateInput.value;
+                    const end = endDateInput.value;
+
+                    if (start && end && end < start) {
+                        e.preventDefault();
+                        endDateInput.focus();
+                    }
+                });
             }
-        });
+        }
     </script>
 
 </body>
