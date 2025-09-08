@@ -47,6 +47,17 @@ mysqli_query($conn, "
     )
 ");
 
+mysqli_query($conn, "
+    CREATE TABLE IF NOT EXISTS reserveringen (
+        id TINYINT PRIMARY KEY AUTO_INCREMENT,
+        kamer_id INT NOT NULL,
+        start_datum DATE NOT NULL,
+        eind_datum DATE NOT NULL,
+        gast_naam VARCHAR(255) NOT NULL,
+        gast_email VARCHAR(255) NOT NULL
+    )
+");
+
 $result = mysqli_query($conn, "SELECT COUNT(*) as count FROM wachtwoord");
 $row = mysqli_fetch_assoc($result);
 
