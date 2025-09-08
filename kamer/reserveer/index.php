@@ -20,23 +20,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $klant_naam = $_POST['naam'];
     $start_datum = $_POST['start_datum'];
     $eind_datum = $_POST['eind_datum'];
-    
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'Voer een geldig e-mailadres in.';
-    }
-    if (!$room) {
-        $errors[] = 'Ongeldige kamer geselecteerd.';
     }
 
 
     if (empty($errors)) {
-        $db_succes = mysqli_query($conn,"
+        $db_succes = mysqli_query($conn, "
             INSERT INTO reserveringen (kamer_id, start_datum, eind_datum, gast_naam, gast_email)
             VALUES ('$room_id', '$start_datum', '$eind_datum', '$klant_naam', '$email');
         ");
 
 
         if ($db_succes) {
+            $maanden = [
+                'January' => 'januari',
+                'February' => 'februari',
+                'March' => 'maart',
+                'April' => 'april',
+                'May' => 'mei',
+                'June' => 'juni',
+                'July' => 'juli',
+                'August' => 'augustus',
+                'September' => 'september',
+                'October' => 'oktober',
+                'November' => 'november',
+                'December' => 'december'
+            ];
+
+            $start_datum = date('j F Y', strtotime($start_datum));
+            $start_datum = strtr($start_datum, $maanden);
+
+            $eind_datum = date('j F Y', strtotime($eind_datum));
+            $eind_datum = strtr($eind_datum, $maanden);
             // vervang template data met echte data
             $message = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/html/email_template.html");
             $message = str_replace('{{kamer_naam}}', $room['naam'], $message);
