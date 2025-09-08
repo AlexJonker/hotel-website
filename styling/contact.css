@@ -1,22 +1,100 @@
+.hero-container {
+    width: 100%;
+    height: 700px;
+    background-image: linear-gradient(rgba(59, 52, 45, 0.6), rgba(59, 52, 45, 0.6)), url("https://www.vlieg.nl/wp-content/uploads/2021/03/WAAGTOREN-WEB.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid var(--color-border);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-content-wrapper {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.hero-content-wrapper h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px var(--color-shadow);
+}
+
+.hero-content-wrapper p {
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px var(--color-shadow);
+}
+
+.hero-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-button-container a {
+    padding: 15px 25px;
+    background-color: var(--color-primary);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    min-width: 120px;
+    text-align: center;
+}
+
+.hero-button-container a:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--color-shadow-dark);
+}
+
+#h-btn-2 {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#h-btn-2:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.backgroundcolor {
+  background-color: var(--color-bg-alt);
+}
+
 .cont {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 40px auto;
-  padding: 32px 24px 48px 24px;
-  background: var(--color-bg-alt);
-  border-radius: 18px;
-  box-shadow: 0 4px 24px var(--color-shadow);
-  margin-top:150px;
+  padding: 48px 32px 64px 32px;
+  margin-top: 120px;
 }
 
 .cont h1 {
-  margin-top: 20px;
+  margin-top: 0;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   color: var(--color-bg-dark);
-  margin-bottom: 32px;
+  margin-bottom: 48px;
   letter-spacing: 1px;
-  padding:20px;
-  border-radius: 20px;
+  padding: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .box {
@@ -31,6 +109,8 @@ form {
   flex: 1 1 340px;
   min-width: 300px;
   max-width: 540px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 32px;
 }
 
 section {
@@ -39,28 +119,73 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 32px;
 }
 
 .my-icon {
   color: var(--color-primary-light);
-  margin-bottom: 10px;
+  margin-right: 12px;
+  font-size: 1.1em;
 }
 
-.my-info{
-  color: var(--color-bg-dark);
+.my-info {
+  color: var(--color-bg-light);
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+section ul li {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  color: var(--color-bg-light);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+section ul li:hover {
+  transform: translateX(5px);
+}
+
+section ul li a {
+  color: var(--color-bg-light);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+section ul li a:hover {
+  color: var(--color-primary-light);
 }
 
 #verzenden {
   background-color: var(--color-primary-light);
   border: none;
   border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 15px 25px;
+  margin-top: 20px;
   color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 #verzenden:hover {
-    background-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 textarea {
@@ -73,10 +198,39 @@ textarea {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  margin-bottom:20px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
   background-color: var(--color-bg-alt);
-  border: 4px solid var(--color-primary-light);
+  border: 2px solid var(--color-primary-light);
   border-radius: 10px;
+  font-size: 1rem;
+  color: var(--color-bg-light);
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+  transform: translateY(-1px);
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.error {
+  color: #ff6b6b;
+  font-weight: 500;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border-left: 4px solid #ff6b6b;
 }
 
 @media (max-width: 768px) {
@@ -91,10 +245,24 @@ textarea {
   }
 
   .cont {
+    padding: 24px 16px;
+    margin-top: 80px;
+  }
+
+  .cont h1 {
+    font-size: 2rem;
     padding: 16px;
   }
 
+  .hero-container {
+    height: 500px;
+  }
+
+  .hero-content-wrapper h1 {
+    font-size: 2rem;
+  }
+
   ul {
-    padding-left: 20px;
+    padding-left: 0;
   }
 }
