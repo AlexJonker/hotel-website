@@ -181,7 +181,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </section>
     <?php else: ?>
         <article class="kamer-error">
-            <p>Ongeldige kamer. Ga terug naar <a href="/kamers">overzicht kamers</a>.</p>
+            <h2>Ongeldige kamer. Ga terug naar <a href="/kamers">overzicht</a> kamers.</h2>
         </article>
     <?php endif; ?>
 
