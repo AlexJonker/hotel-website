@@ -17,7 +17,6 @@ $kamers = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $kamers[] = $row;
 }
-;
 
 $result = mysqli_query($conn, "SELECT * FROM afbeeldingen");
 $afbeeldingen = [];
@@ -68,7 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Panel - Hotel De Zonne Vallei</title>
     <link rel="icon" href="/assets/logos/favicon.ico">
     <link rel="stylesheet" href="/styling/global.css">
-    <link rel="stylesheet" href="/styling/home.css">
     <link rel="stylesheet" href="/styling/panel.css">
     <script src="/assets/js/dropdown.js"></script>
 </head>
@@ -77,6 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <aside>
         <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="/admin/reserveringen"><i class="fas fa-calendar"></i> Reserveringen</a>
         <form class="logout" method="post">
             <button type="submit" name="logout"><i class="fas fa-arrow-left-from-bracket"></i> Uitloggen</button>
         </form>
