@@ -24,19 +24,19 @@ mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS `{$env["db_name"]}`");
 mysqli_select_db($conn, $env["db_name"]);
 mysqli_query($conn, "
     CREATE TABLE IF NOT EXISTS kamers (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id TINYINT AUTO_INCREMENT PRIMARY KEY,
         naam VARCHAR(100) NOT NULL,
         beschrijving TEXT,
         prijs DECIMAL(10,2) NOT NULL,
-        beschikbaar INT NOT NULL DEFAULT TRUE
+        beschikbaar TINYINT NOT NULL DEFAULT TRUE
     )
 ");
 
 mysqli_query($conn, "
     CREATE TABLE IF NOT EXISTS afbeeldingen (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id TINYINT AUTO_INCREMENT PRIMARY KEY,
         link VARCHAR(255) DEFAULT NULL,
-        kamer_id INT NOT NULL
+        kamer_id TINYINT NOT NULL
     )
 ");
 
@@ -44,6 +44,17 @@ mysqli_query($conn, "
     CREATE TABLE IF NOT EXISTS wachtwoord (
         id TINYINT PRIMARY KEY AUTO_INCREMENT,
         wachtwoord VARCHAR(255) NOT NULL
+    )
+");
+
+mysqli_query($conn, "
+    CREATE TABLE IF NOT EXISTS reserveringen (
+        id TINYINT PRIMARY KEY AUTO_INCREMENT,
+        kamer_id TINYINT NOT NULL,
+        start_datum DATE NOT NULL,
+        eind_datum DATE NOT NULL,
+        gast_naam VARCHAR(255) NOT NULL,
+        gast_email VARCHAR(255) NOT NULL
     )
 ");
 

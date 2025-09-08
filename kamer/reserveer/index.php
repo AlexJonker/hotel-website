@@ -15,33 +15,73 @@ $success = false;
 $email = '';
 $email_send_error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email'] ?? '');
-    $klant_naam = $_POST['naam'] ?? '';
+    $db_succes = false;
+    $email = trim($_POST['email']);
+    $klant_naam = $_POST['naam'];
+    $start_datum = $_POST['start_datum'];
+    $eind_datum = $_POST['eind_datum'];
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'Voer een geldig e-mailadres in.';
     }
-    if (!$room) {
-        $errors[] = 'Ongeldige kamer geselecteerd.';
+
+    $today = date('Y-m-d');
+    if ($start_datum < $today) {
+        $errors[] = 'Startdatum kan niet eerder zijn dan vandaag.';
     }
+    if ($eind_datum < $start_datum) {
+        $errors[] = 'Einddatum kan niet eerder zijn dan de startdatum.';
+    }
+
+
     if (empty($errors)) {
-        $message = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/html/email_template.html");
-        $message = str_replace('{{kamer_naam}}', $room['naam'], $message);
-        $message = str_replace('{{kamer_link}}', "https://hotel.alexjonker.dev/kamer?num=" . $room['id'], $message);
-        $message = str_replace('{{klant_naam}}', $klant_naam, $message);
-        $message = str_replace("{{datum}}", $_POST['datum'] ?? '', $message);
+        $db_succes = mysqli_query($conn, "
+            INSERT INTO reserveringen (kamer_id, start_datum, eind_datum, gast_naam, gast_email)
+            VALUES ('$room_id', '$start_datum', '$eind_datum', '$klant_naam', '$email');
+        ");
 
-        require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/php/sender.php");
-        $output = sender($email, $message, "Reservering bevestiging");
 
-        if (strpos($output, 'Email verstuurd!') !== false) {
-            $success = true;
-        } else {
-            $lines = explode("\n", trim(strip_tags($output)));
-            $firstLine = $lines[0] ?? '';
-            if ($firstLine === '' || stripos($firstLine, 'email verzending mislukt!') === false) {
-                $firstLine = 'Onbekende fout.';
+        if ($db_succes) {
+            $maanden = [
+                'January' => 'januari',
+                'February' => 'februari',
+                'March' => 'maart',
+                'April' => 'april',
+                'May' => 'mei',
+                'June' => 'juni',
+                'July' => 'juli',
+                'August' => 'augustus',
+                'September' => 'september',
+                'October' => 'oktober',
+                'November' => 'november',
+                'December' => 'december'
+            ];
+
+            $start_datum = date('j F Y', strtotime($start_datum));
+            $start_datum = strtr($start_datum, $maanden);
+
+            $eind_datum = date('j F Y', strtotime($eind_datum));
+            $eind_datum = strtr($eind_datum, $maanden);
+            $message = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/html/email_template.html");
+            $message = str_replace('{{kamer_naam}}', $room['naam'], $message);
+            $message = str_replace('{{kamer_link}}', "https://hotel.alexjonker.dev/kamer?num=" . $room_id, $message);
+            $message = str_replace('{{klant_naam}}', $klant_naam, $message);
+            $message = str_replace("{{start_datum}}", $start_datum, $message);
+            $message = str_replace("{{eind_datum}}", $eind_datum, $message);
+
+            require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/php/sender.php");
+            $output = sender($email, $message, "Reservering bevestiging");
+
+            if (strpos($output, 'Email verstuurd!') !== false) {
+                $success = true;
+            } else {
+                $lines = explode("\n", trim(strip_tags($output)));
+                $firstLine = $lines[0] ?? '';
+                if ($firstLine === '' || stripos($firstLine, 'email verzending mislukt!') === false) {
+                    $firstLine = 'Onbekende fout.';
+                }
+                $email_send_error = 'Email verstuurd! ';
             }
-            $email_send_error = 'Email verstuurd! ';
         }
     }
 }
@@ -123,11 +163,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                             <form class="reserveer-form" method="post" action="?num=<?= $room_id ?>">
                                 <label for="naam">Naam</label>
-                                <input id="naam" name="naam" type="text" required value="<?= htmlspecialchars($klant_naam) ?>">
+                                <input id="naam" name="naam" type="text" required value="<?= htmlspecialchars($klant_naam ?? '') ?>">
                                 <label for="email">E-mailadres</label>
                                 <input id="email" name="email" type="email" required value="<?= htmlspecialchars($email) ?>">
-                                <label for="datum">Datum</label>
-                                <input id="datum" name="datum" type="date" required>
+                                <label for="start_datum">Startdatum</label>
+                                <input id="start_datum" name="start_datum" type="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($start_datum ?? '') ?>">
+                                <label for="eind_datum">Einddatum</label>
+                                <input id="eind_datum" name="eind_datum" type="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($eind_datum ?? '') ?>">
                                 <button type="submit" class="kamer-reserveer-knop">Bevestig</button>
                             </form>
 
@@ -144,6 +186,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 
     <?php include('../../assets/html/footer.html'); ?>
+
+    <script>
+        const today = new Date().toISOString().split('T')[0];
+        const startDateInput = document.getElementById("start_datum");
+        const endDateInput = document.getElementById("eind_datum");
+
+        startDateInput.setAttribute('min', today);
+        endDateInput.setAttribute('min', today);
+
+        startDateInput.addEventListener('change', function () {
+            const startDate = this.value;
+            if (startDate) {
+                endDateInput.setAttribute('min', startDate);
+                if (endDateInput.value && endDateInput.value < startDate) {
+                    endDateInput.value = '';
+                }
+            } else {
+                endDateInput.setAttribute('min', today);
+            }
+        });
+
+        endDateInput.addEventListener('change', function () {
+            const startDate = startDateInput.value;
+            const endDate = this.value;
+            if (startDate && endDate && endDate < startDate) {
+                alert('Einddatum kan niet eerder zijn dan de startdatum.');
+                this.value = '';
+            }
+        });
+    </script>
+
 </body>
 
 </html>
