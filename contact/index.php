@@ -14,24 +14,24 @@ if ($env === false) {
 
 $email_send_message = '';
 
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//   $client_email = trim($_POST['email'] ?? '');
-//   $client_name = trim($_POST['naam'] ?? '');
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $client_email = trim($_POST['email'] ?? '');
+  $client_name = trim($_POST['naam'] ?? '');
 
-//   $question = $_POST['vraag'] ?? '';
-//   $question .= "<br><br><hr><br>";
-//   $question .= "<strong>Van:</strong> " . htmlspecialchars($client_name) . "<br>";
-//   $question .= "<strong>Email:</strong> " . htmlspecialchars($client_email);
+  $question = $_POST['vraag'] ?? '';
+  $question .= "<br><br><hr><br>";
+  $question .= "<strong>Van:</strong> " . htmlspecialchars($client_name) . "<br>";
+  $question .= "<strong>Email:</strong> " . htmlspecialchars($client_email);
 
-//   require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/php/sender.php");
-//   $output = sender($env["admin_email"], $question, "Vraag van " . $client_name);
+  require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/php/sender.php");
+  $output = sender($env["admin_email"], $question, "Vraag van " . $client_name);
 
-//   if (strpos($output, 'Email verstuurd!') !== false) {
-//     $email_send_message = "Email verstuurd!";
-//   } else {
-//     $email_send_message = 'Email verzending mislukt!';
-//   }
-// }
+  if (strpos($output, 'Email verstuurd!') !== false) {
+    $email_send_message = "Email verstuurd!";
+  } else {
+    $email_send_message = 'Email verzending mislukt!';
+  }
+}
 ?>
 
 
