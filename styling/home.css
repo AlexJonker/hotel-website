@@ -12,6 +12,7 @@
     align-items: center;
     color: var(--color-white);
     padding: 20px;
+    position: relative;
 }
 
 .hero-content-wrapper {
@@ -74,6 +75,46 @@
 
 #h-btn-2:hover {
     background-color: rgba(255, 255, 255, 0.25);
+}
+
+.scroll-down-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(181, 181, 181);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 20px;
+    animation: bounce 2s infinite;
+}
+
+.scroll-down-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 4px 12px var(--color-shadow-dark);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
 }
 
 .about-section {
@@ -251,6 +292,13 @@
         padding: 12px 20px;
         font-size: 14px;
         min-width: 100px;
+    }
+
+    .scroll-down-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        bottom: 20px;
     }
 
     .about-section {

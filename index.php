@@ -11,6 +11,7 @@
 
 <body>
     <?php include("assets/html/navbar.html"); ?>
+    <?php include("assets/php/fontawesome.php"); ?>
 
     <section class="hero-container">
         <main class="hero-content-wrapper">
@@ -22,6 +23,9 @@
                 <a href="/contact" id="h-btn-2">Contact</a>
             </article>
         </main>
+        <a href="#about" class="scroll-down-btn" onclick="scrollToNext(event)">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
     </section>
 
     <section class="about-section3">
@@ -101,7 +105,7 @@
                 alt="Voorbeeld kamer">
         </main>
     </section>
-
+    <script src="/assets/js/scrolldown.js"></script>
     <?php include("assets/html/footer.html"); ?>
 </body>
 
