@@ -25,6 +25,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Voer een geldig e-mailadres in.';
     }
 
+    $today = date('Y-m-d');
+    if ($start_datum < $today) {
+        $errors[] = 'Startdatum kan niet eerder zijn dan vandaag.';
+    }
+    if ($eind_datum < $start_datum) {
+        $errors[] = 'Einddatum kan niet eerder zijn dan de startdatum.';
+    }
+
 
     if (empty($errors)) {
         $db_succes = mysqli_query($conn, "
@@ -54,7 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $eind_datum = date('j F Y', strtotime($eind_datum));
             $eind_datum = strtr($eind_datum, $maanden);
-            // vervang template data met echte data
             $message = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/html/email_template.html");
             $message = str_replace('{{kamer_naam}}', $room['naam'], $message);
             $message = str_replace('{{kamer_link}}', "https://hotel.alexjonker.dev/kamer?num=" . $room_id, $message);
@@ -156,13 +163,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                             <form class="reserveer-form" method="post" action="?num=<?= $room_id ?>">
                                 <label for="naam">Naam</label>
-                                <input id="naam" name="naam" type="text" required value="<?= htmlspecialchars($klant_naam) ?>">
+                                <input id="naam" name="naam" type="text" required value="<?= htmlspecialchars($klant_naam ?? '') ?>">
                                 <label for="email">E-mailadres</label>
                                 <input id="email" name="email" type="email" required value="<?= htmlspecialchars($email) ?>">
                                 <label for="start_datum">Startdatum</label>
-                                <input id="start_datum" name="start_datum" type="date" required>
+                                <input id="start_datum" name="start_datum" type="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($start_datum ?? '') ?>">
                                 <label for="eind_datum">Einddatum</label>
-                                <input id="eind_datum" name="eind_datum" type="date" required>
+                                <input id="eind_datum" name="eind_datum" type="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($eind_datum ?? '') ?>">
                                 <button type="submit" class="kamer-reserveer-knop">Bevestig</button>
                             </form>
 
@@ -179,6 +186,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 
     <?php include('../../assets/html/footer.html'); ?>
+
+    <script>
+        const today = new Date().toISOString().split('T')[0];
+        const startDateInput = document.getElementById("start_datum");
+        const endDateInput = document.getElementById("eind_datum");
+
+        startDateInput.setAttribute('min', today);
+        endDateInput.setAttribute('min', today);
+
+        startDateInput.addEventListener('change', function () {
+            const startDate = this.value;
+            if (startDate) {
+                endDateInput.setAttribute('min', startDate);
+                if (endDateInput.value && endDateInput.value < startDate) {
+                    endDateInput.value = '';
+                }
+            } else {
+                endDateInput.setAttribute('min', today);
+            }
+        });
+
+        endDateInput.addEventListener('change', function () {
+            const startDate = startDateInput.value;
+            const endDate = this.value;
+            if (startDate && endDate && endDate < startDate) {
+                alert('Einddatum kan niet eerder zijn dan de startdatum.');
+                this.value = '';
+            }
+        });
+    </script>
+
 </body>
 
 </html>
