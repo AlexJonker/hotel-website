@@ -7,8 +7,9 @@ aside {
     width: 200px;
     background-color: var(--color-bg);
     padding: 15px;
-    height: auto;
     box-sizing: border-box;
+    position: sticky;
+    top: 0;
 }
 
 

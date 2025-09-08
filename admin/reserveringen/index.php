@@ -111,9 +111,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </aside>
     <article>
         <section class="reserveringen">
-            <h2>Huidige Reserveringen</h2>
+            <h2 class="titel">Huidige Reserveringen</h2>
             <?php if (empty($bezig)): ?>
-                <p>Er zijn nog geen huidige reserveringen geplaatst.</p>
+                <p class="info">Er zijn nog geen huidige reserveringen geplaatst.</p>
             <?php else: ?>
                 <?php foreach ($bezig as $reservering): ?>
                     <div class="reservering">
@@ -128,9 +128,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>
         </section>
         <section class="reserveringen">
-            <h2>Komende Reserveringen</h2>
+            <h2 class="titel">Komende Reserveringen</h2>
             <?php if (empty($komend)): ?>
-                <p>Er zijn nog geen komende reserveringen geplaatst.</p>
+                <p class="info">Er zijn nog geen komende reserveringen geplaatst.</p>
             <?php else: ?>
                 <?php foreach ($komend as $reservering): ?>
                     <div class="reservering">
@@ -145,9 +145,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>
         </section>
         <section class="reserveringen">
-            <h2>Afgelopen Reserveringen</h2>
+            <h2 class="titel">Afgelopen Reserveringen</h2>
             <?php if (empty($geweest)): ?>
-                <p>Er zijn nog geen afgelopen reserveringen geplaatst.</p>
+                <p class="info">Er zijn nog geen afgelopen reserveringen geplaatst.</p>
             <?php else: ?>
                 <?php foreach ($geweest as $reservering): ?>
                     <div class="reservering">

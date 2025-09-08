@@ -8,7 +8,8 @@ aside {
     background-color: var(--color-bg);
     padding: 15px;
     box-sizing: border-box;
-    height: auto;
+    position: sticky;
+    top: 0;
 }
 
 aside a {
@@ -119,14 +120,14 @@ article {
     font-size: 120%;
 }
 
-.reserveringen h2 {
+.titel {
     font-weight: 600;
     font-size: 150%;
     margin-bottom: 10px;
     color: var(--color-bg-alt);
 }
 
-.reserveringen p {
+.info {
     margin: 5px 0;
     color: var(--color-bg-alt);
 }
