@@ -15,7 +15,7 @@
 
     <section class="hero-container">
         <main class="hero-content-wrapper">
-            <h1 id="dark">Welkom bij Hotel De Zonne Vallei</h1>
+            <h1 id="dark">Over Ons</h1>
             <p id="dark2">Bij Hotel De Zonne Vallei streven we ernaar om elke gast een onvergetelijke ervaring te bieden, doordrenkt met luxe, comfort en uitzonderlijke gastvrijheid. Gelegen in het hart van Alkmaar, biedt ons hotel de perfecte uitvalsbasis om deze historische en charmante stad te ontdekken.</p>
             <article class="hero-button-container">
                 <a href="../">Home</a>
