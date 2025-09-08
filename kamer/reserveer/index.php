@@ -15,34 +15,49 @@ $success = false;
 $email = '';
 $email_send_error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email'] ?? '');
-    $klant_naam = $_POST['naam'] ?? '';
+    $db_succes = false;
+    $email = trim($_POST['email']);
+    $klant_naam = $_POST['naam'];
+    $start_datum = $_POST['start_datum'];
+    $eind_datum = $_POST['eind_datum'];
+    
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'Voer een geldig e-mailadres in.';
     }
     if (!$room) {
         $errors[] = 'Ongeldige kamer geselecteerd.';
     }
+
+
     if (empty($errors)) {
-        $message = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/html/email_template.html");
-        $message = str_replace('{{kamer_naam}}', $room['naam'], $message);
-        $message = str_replace('{{kamer_link}}', "https://hotel.alexjonker.dev/kamer?num=" . $room['id'], $message);
-        $message = str_replace('{{klant_naam}}', $klant_naam, $message);
-        $message = str_replace("{{start_datum}}", $_POST['start_datum'] ?? '', $message);
-        $message = str_replace("{{eind_datum}}", $_POST['eind_datum'] ?? '', $message);
+        $db_succes = mysqli_query($conn,"
+            INSERT INTO reserveringen (kamer_id, start_datum, eind_datum, gast_naam, gast_email)
+            VALUES ('$room_id', '$start_datum', '$eind_datum', '$klant_naam', '$email');
+        ");
 
-        require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/php/sender.php");
-        $output = sender($email, $message, "Reservering bevestiging");
 
-        if (strpos($output, 'Email verstuurd!') !== false) {
-            $success = true;
-        } else {
-            $lines = explode("\n", trim(strip_tags($output)));
-            $firstLine = $lines[0] ?? '';
-            if ($firstLine === '' || stripos($firstLine, 'email verzending mislukt!') === false) {
-                $firstLine = 'Onbekende fout.';
+        if ($db_succes) {
+            // vervang template data met echte data
+            $message = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/assets/html/email_template.html");
+            $message = str_replace('{{kamer_naam}}', $room['naam'], $message);
+            $message = str_replace('{{kamer_link}}', "https://hotel.alexjonker.dev/kamer?num=" . $room_id, $message);
+            $message = str_replace('{{klant_naam}}', $klant_naam, $message);
+            $message = str_replace("{{start_datum}}", $start_datum, $message);
+            $message = str_replace("{{eind_datum}}", $eind_datum, $message);
+
+            require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/php/sender.php");
+            $output = sender($email, $message, "Reservering bevestiging");
+
+            if (strpos($output, 'Email verstuurd!') !== false) {
+                $success = true;
+            } else {
+                $lines = explode("\n", trim(strip_tags($output)));
+                $firstLine = $lines[0] ?? '';
+                if ($firstLine === '' || stripos($firstLine, 'email verzending mislukt!') === false) {
+                    $firstLine = 'Onbekende fout.';
+                }
+                $email_send_error = 'Email verstuurd! ';
             }
-            $email_send_error = 'Email verstuurd! ';
         }
     }
 }
