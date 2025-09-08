@@ -11,6 +11,26 @@ if (is_numeric($current_room)) {
     }
 
 }
+
+
+$result = mysqli_query($conn, "SELECT * FROM reserveringen WHERE kamer_id = $current_room");
+$reserveringen = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $reserveringen[] = $row;
+}
+
+$vandaag = date("Y-m-d");
+$open = [];
+
+foreach ($reserveringen as $res) {
+    if ($res['eind_datum'] >= $vandaag) {
+        $open[] = $res;
+    }
+}
+
+$beschikbaar = count($open);
+
+
 ?>
 
 
@@ -63,7 +83,7 @@ if (is_numeric($current_room)) {
                             <p class="kamer-afbeelding">Geen afbeeldingen beschikbaar.</p>
                         <?php endif; ?>
                     </div>
-                    <p class="kamer-beschikbaarheid">Nog <?= $kamer['beschikbaar'] ?> kamers beschikbaar</p>
+                    <p class="kamer-beschikbaarheid">Nog <?= $kamer['beschikbaar'] - $beschikbaar ?> kamers beschikbaar</p>
                     <a class="kamer-reserveer-knop" href="/kamer/reserveer?num=<?= $kamer['id'] ?>">Reserveer deze kamer</a>
                 </div>
             </div>

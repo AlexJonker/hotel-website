@@ -1,6 +1,9 @@
 <?php
 require '../../assets/php/db.php';
 
+$current_room = $_GET['num'];
+
+
 $room_id = isset($_REQUEST['num']) && is_numeric($_REQUEST['num']) ? (int) $_REQUEST['num'] : null;
 $room = null;
 if ($room_id) {
@@ -85,6 +88,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+
+
+
+
+$result = mysqli_query($conn, "SELECT * FROM reserveringen WHERE kamer_id = $current_room");
+$reserveringen = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $reserveringen[] = $row;
+}
+
+$vandaag = date("Y-m-d");
+$open = [];
+
+foreach ($reserveringen as $res) {
+    if ($res['eind_datum'] >= $vandaag) {
+        $open[] = $res;
+    }
+}
+
+$beschikbaar = count($open);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -138,7 +164,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <?php endif; ?>
                     </div>
                     <div class="rechts">
-                        <p class="kamer-beschikbaarheid"">Nog <?= $room['beschikbaar'] ?> kamers beschikbaar</p>
+                        <p class="kamer-beschikbaarheid">Nog <?= $room['beschikbaar'] - $beschikbaar ?> kamers beschikbaar</p>
 
                     <?php if ($success): ?>
                         <article class=" reserveer-success">
