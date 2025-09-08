@@ -169,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="start_datum">Startdatum</label>
                                 <input id="start_datum" name="start_datum" type="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($start_datum ?? '') ?>">
                                 <label for="eind_datum">Einddatum</label>
-                                <input id="eind_datum" name="eind_datum" type="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($eind_datum ?? '') ?>">
+                                <input id="eind_datum" name="eind_datum" type="date" min="<?= date('Y-m-d') ?> max="<?= date('Y-m-d', strtotime('+1 year')) ?>" required value="<?= htmlspecialchars($eind_datum ?? '') ?>">
                                 <button type="submit" class="kamer-reserveer-knop">Bevestig</button>
                             </form>
 
