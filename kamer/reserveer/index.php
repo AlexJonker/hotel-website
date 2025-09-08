@@ -72,19 +72,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $message = str_replace("{{start_datum}}", $start_datum, $message);
             $message = str_replace("{{eind_datum}}", $eind_datum, $message);
 
+
+
+            // admin email
+            $admin_message = "Nieuwe reservering gemaakt:<br><br>";
+            $admin_message .= "<strong>Kamer:</strong> " . $room['naam'] . "<br>";
+            $admin_message .= "<strong>Startdatum:</strong> " . $start_datum . "<br>";
+            $admin_message .= "<strong>Einddatum:</strong> " . $eind_datum . "<br>";
+            $admin_message .= "<br><br><hr><br>";
+            $admin_message .= "<strong>Van:</strong> " . $klant_naam . "<br>";
+            $admin_message .= "<strong>Email:</strong> " . $email;
+
             require_once($_SERVER['DOCUMENT_ROOT'] . "/assets/php/sender.php");
             $output = sender($email, $message, "Reservering bevestiging");
+            $admin_output = sender($env["admin_email"], $admin_message, "Nieuwe reservering: " . $room['naam']);
+            $success = true;
 
-            if (strpos($output, 'Email verstuurd!') !== false) {
-                $success = true;
-            } else {
-                $lines = explode("\n", trim(strip_tags($output)));
-                $firstLine = $lines[0] ?? '';
-                if ($firstLine === '' || stripos($firstLine, 'email verzending mislukt!') === false) {
-                    $firstLine = 'Onbekende fout.';
-                }
-                $email_send_error = 'Email verstuurd! ';
-            }
         }
     }
 }
@@ -165,13 +168,14 @@ $beschikbaar = count($open);
                         <?php endif; ?>
                     </div>
                     <div class="rechts">
-                        <p class="kamer-beschikbaarheid">Nog <?= $room['beschikbaar'] - $beschikbaar ?> kamers beschikbaar</p>
+                        <p class="kamer-beschikbaarheid">Nog <?= $room['beschikbaar'] - $beschikbaar ?> kamers beschikbaar
+                        </p>
 
-                    <?php if ($success): ?>
-                        <article class=" reserveer-success">
-                            <p>Bedankt! Er is een reserveringsaanvraag verstuurd voor kamer
-                                <?= htmlspecialchars($room['naam']) ?> met e-mailadres <?= htmlspecialchars($email) ?>.
-                            </p>
+                        <?php if ($success): ?>
+                            <article class=" reserveer-success">
+                                <p>Bedankt! Er is een reserveringsaanvraag verstuurd voor kamer
+                                    <?= htmlspecialchars($room['naam']) ?> met e-mailadres <?= htmlspecialchars($email) ?>.
+                                </p>
                             </article>
                         <?php elseif ($email_send_error): ?>
                             <article class="reserveer-errors">
@@ -188,13 +192,16 @@ $beschikbaar = count($open);
 
                             <form class="reserveer-form" method="post" action="?num=<?= $room_id ?>">
                                 <label for="naam">Naam</label>
-                                <input id="naam" name="naam" type="text" required value="<?= htmlspecialchars($klant_naam ?? '') ?>">
+                                <input id="naam" name="naam" type="text" required
+                                    value="<?= htmlspecialchars($klant_naam ?? '') ?>">
                                 <label for="email">E-mailadres</label>
                                 <input id="email" name="email" type="email" required value="<?= htmlspecialchars($email) ?>">
                                 <label for="start_datum">Startdatum</label>
-                                <input id="start_datum" name="start_datum" type="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($start_datum ?? '') ?>">
+                                <input id="start_datum" name="start_datum" type="date" min="<?= date('Y-m-d') ?>" required
+                                    value="<?= htmlspecialchars($start_datum ?? '') ?>">
                                 <label for="eind_datum">Einddatum</label>
-                                <input id="eind_datum" name="eind_datum" type="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($eind_datum ?? '') ?>">
+                                <input id="eind_datum" name="eind_datum" type="date" min="<?= date('Y-m-d') ?>" required
+                                    value="<?= htmlspecialchars($eind_datum ?? '') ?>">
                                 <button type="submit" class="kamer-reserveer-knop">Bevestig</button>
                             </form>
                         <?php endif; ?>
