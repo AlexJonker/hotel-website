@@ -51,6 +51,7 @@ $beschikbaar = count($open);
     <?php if (!empty($kamers)): ?>
         <?php $kamer = $kamers[0]; ?>
         <div class="kamer-container">
+            <a class="terug-knop kamer-reserveer-knop" href="/kamers">Terug naar overzicht</a>
             <h1 class="kamer-naam"><?= $kamer['naam'] ?></h1>
             <div class="kamer-content">
                 <div class="kamer-info">

@@ -129,6 +129,7 @@ $beschikbaar = count($open);
 
     <?php if ($room): ?>
         <section class="kamer-container">
+            <a class="terug-knop kamer-reserveer-knop" href="/kamer?num=<?= $room['id'] ?>">Terug naar kamer</a>
             <h1 class="kamer-naam">Reserveer: <?= htmlspecialchars($room['naam']) ?></h1>
             <main class="kamer-content">
                 <article class="kamer-info">
@@ -171,8 +172,6 @@ $beschikbaar = count($open);
                             <p>Bedankt! Er is een reserveringsaanvraag verstuurd voor kamer
                                 <?= htmlspecialchars($room['naam']) ?> met e-mailadres <?= htmlspecialchars($email) ?>.
                             </p>
-                            <p><a class="terug-knop kamer-reserveer-knop" href="/kamer?num=<?= $room['id'] ?>">Terug naar
-                                    kamer</a></p>
                             </article>
                         <?php elseif ($email_send_error): ?>
                             <article class="reserveer-errors">
@@ -198,9 +197,6 @@ $beschikbaar = count($open);
                                 <input id="eind_datum" name="eind_datum" type="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($eind_datum ?? '') ?>">
                                 <button type="submit" class="kamer-reserveer-knop">Bevestig</button>
                             </form>
-
-                            <p style="margin-top:1rem;"><a class="terug-knop kamer-reserveer-knop"
-                                    href="/kamer?num=<?= $room['id'] ?>">Terug naar kamer</a></p>
                         <?php endif; ?>
                     </div>
                 </main>

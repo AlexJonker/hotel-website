@@ -174,11 +174,8 @@
 }
 
 .terug-knop {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    cursor: pointer;
+    width: fit-content;
+    text-align: center;
 }
 
 .kamer-error,
@@ -193,14 +190,6 @@
 .kamer-error a {
     color: var(--color-primary);
     text-decoration: underline;
-}
-
-.terug-knop.kamer-reserveer-knop {
-    background-color: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-shadow);
-    padding: 10px 18px;
-    box-shadow: none;
 }
 
 @media (max-width: 768px) {

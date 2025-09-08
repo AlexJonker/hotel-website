@@ -1,16 +1,20 @@
 .kamer-container {
     width: 100%;
-    max-width: 1200px;
-    margin: 60px auto 40px auto;
-    background: linear-gradient(135deg, var(--color-bg-alt) 0%, rgba(255, 255, 255, 0.95) 100%);
-    border-radius: 16px;
+    background-color: var(--color-white );
     box-shadow: 0 8px 32px var(--color-shadow-dark), 0 2px 8px var(--color-shadow);
     padding: 50px 40px;
     display: flex;
     flex-direction: column;
     gap: 35px;
     border: 1px solid var(--color-footer-bg);
+    height: 100%;
 }
+
+.terug-knop {
+    width: fit-content;
+    text-align: center;
+}
+
 
 .kamer-naam {
     font-size: 42px;
