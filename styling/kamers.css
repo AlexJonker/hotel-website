@@ -30,13 +30,11 @@ body {
 
 .hero-content-wrapper h1 {
     font-size: 3.2rem;
-    text-shadow: 2px 2px 4px var(--color-bg-dark);
 }
 
 .hero-content-wrapper p {
     font-size: 1.1rem;
     line-height: 1.6;
-    text-shadow: 1px 1px 2px var(--color-bg-dark);
     max-width: 600px;
 }
 
