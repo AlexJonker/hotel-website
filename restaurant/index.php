@@ -10,14 +10,15 @@
     <title>Restaurant - Hotel De Zonne Vallei</title>
     <link rel="icon" href="/assets/logos/favicon.ico">
 </head>
+
 <body>
 
-<?php include("../assets/html/navbar.html"); ?>
+    <?php include("../assets/html/navbar.html"); ?>
 
     <section class="hero-container">
         <main class="hero-content-wrapper">
             <h1 id="dark">Welkom in ons Restaurant</h1>
-            <p id="dark2">Bij Hotel De Zonne Vallei zijn we trots op ons wereldberoemde restaurant, waar culinaire dromen werkelijkheid worden. Onze 2-duimen chef-kok, bekend om zijn creativiteit en vakmanschap, brengt zijn passie voor koken tot leven in elk gerecht. Met jarenlange ervaring in gerenommeerde keukens over de hele wereld, zorgt onze chef voor een onvergetelijke eetervaring die zowel traditionele als moderne smaken combineert.</p>  <!-- tesk opmaak verbetern-->
+            <p id="dark2">Bij Hotel De Zonne Vallei zijn we trots op ons wereldberoemde restaurant, waar culinaire dromen werkelijkheid worden. Onze 2-duimen chef-kok, bekend om zijn creativiteit en vakmanschap, brengt zijn passie voor koken tot leven in elk gerecht. Met jarenlange ervaring in gerenommeerde keukens over de hele wereld, zorgt onze chef voor een onvergetelijke eetervaring die zowel traditionele als moderne smaken combineert.</p> <!-- tesk opmaak verbetern-->
             <article class="hero-button-container">
                 <a href="#menu">Bekijk Menu</a>
                 <a id="h-btn-2" href="#reserveren">Reserveren</a>
@@ -34,7 +35,7 @@
 
     <section class="about-section2" id="menu">
         <main class="about-content-wrapper2">
-            
+
             <h2>Menu</h2>
             <h3>Voorgerechten:</h3>
             <ul>
@@ -82,7 +83,7 @@
         </article>
     </section>
 
-<?php include("../assets/html/footer.html"); ?>
+    <?php include("../assets/html/footer.html"); ?>
 
 </body>
 
