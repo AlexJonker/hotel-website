@@ -32,7 +32,7 @@
                     Hotel De Zonne Vallei is opgericht door Bouke van Zon, een visionaire ondernemer met een passie voor gastvrijheid en een scherp oog voor detail. Met jarenlange ervaring in de horeca-industrie heeft Bouke zijn droom verwezenlijkt om een uniek hotel te creëren waar gasten zich thuis voelen en kunnen genieten van alle gemakken en luxe die het leven te bieden heeft.
                 </p>
             </article>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpZiGg8ozpMUslgIg4cpnHmYvZtD54iQVkCw&s"
+            <img src="https://travellinghan.com/wp-content/uploads/2024/05/wp-1716815519674.jpg?w=1024"
                 alt="Voorbeeld kamer">
         </main>
     </section>
@@ -45,7 +45,7 @@
                     Bij Hotel De Zonne Vallei staan kwaliteit, gastvrijheid en persoonlijke service centraal. Wij geloven dat elk detail bijdraagt aan een perfecte ervaring, van de smaakvolle inrichting van onze kamers tot de culinaire hoogstandjes in ons restaurant. Ons toegewijde team staat altijd klaar om aan al uw wensen te voldoen en ervoor te zorgen dat uw verblijf zo aangenaam mogelijk is.
                 </p>
             </div>
-            <img src="https://www.27vakantiedagen.nl/wp-content/uploads/2021/02/nederland-alkmaar-2.jpg"
+            <img src="https://top10bezienswaardigheden.nl/wp-content/uploads/2022/11/alkmaar-accijnstoren.jpeg"
                 alt="Voorbeeld kamer">
         </div>
     </section>
@@ -58,7 +58,7 @@
                     Ons team van enthousiaste en professionele medewerkers deelt de visie van Bouke van Zon om elke gast een warm welkom en een onvergetelijk verblijf te bieden. Van de receptie tot het restaurant en de huishouding, elk teamlid speelt een cruciale rol in het creëren van de unieke sfeer en ervaring waar Hotel De Zonne Vallei om bekend staat.
                 </p>
             </article>
-            <img src="https://www.expeditieaardbol.nl/wp-content/uploads/Alkmaar-Daphne-Damiaans-13.jpg"
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Alkmaar_-_Bierkade_zaterdagochtend.jpg"
                 alt="Voorbeeld kamer">
         </main>
     </section>
