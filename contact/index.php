@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form action='' method='post'>
           <input type="text" id="naam" name="naam" size="40" required placeholder="Naam" class="style">
           <input type="email" id="email" name="email" required placeholder="Email">
-          <textarea id="vraag" name="vraag" rows="4" cols="40" minlength="30" maxlength="800" required placeholder="Stel een vraag."></textarea>
+          <textarea id="vraag" name="vraag" rows="4" cols="40" minlength="5" maxlength="800" required placeholder="Stel een vraag."></textarea>
           <input type="submit" id="verzenden" name="verzenden" value="Verstuur" required>
           <?php if ($email_send_message): ?>
             <p class="error"><?php echo $email_send_message; ?></p>
