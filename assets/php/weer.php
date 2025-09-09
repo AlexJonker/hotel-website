@@ -5,4 +5,3 @@ $weer = file_get_contents($link);
 
 header('Content-Type: application/json');
 echo $weer;
-?>
