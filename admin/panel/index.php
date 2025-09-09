@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </a>
             <?php
             foreach ($kamers as $kamer) {
-                ?>
+            ?>
                 <a href="/admin/edit?kamer=<?= $kamer['id'] ?>" class="room-card">
                     <?php
                     $kamerAfbeelding = null;
@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <span class="room-price">€<?= $kamer['prijs'] ?> / nacht</span>
                     </article>
                 </a>
-                <?php
+            <?php
             }
             ?>
         </section>
