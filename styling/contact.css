@@ -148,6 +148,8 @@ section ul .hovericon {
   color: var(--color-bg-light);
   font-size: 1rem;
   transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
 }
 
 section ul li {
@@ -157,6 +159,8 @@ section ul li {
   color: var(--color-bg-light);
   font-size: 1rem;
   transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
 }
 
 section ul .hovericon:hover {
