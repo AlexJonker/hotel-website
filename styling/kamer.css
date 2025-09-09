@@ -1,6 +1,6 @@
 .kamer-container {
     width: 100%;
-    background-color: var(--color-white );
+    background-color: var(--color-white);
     box-shadow: 0 8px 32px var(--color-shadow-dark), 0 2px 8px var(--color-shadow);
     padding: 50px 40px;
     display: flex;
@@ -97,6 +97,7 @@
     margin-bottom: 15px;
     text-align: justify;
 }
+
 .kamer-prijs {
     font-size: 24px;
     color: var(--color-primary);
