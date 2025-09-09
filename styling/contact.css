@@ -190,8 +190,6 @@ section ul .hovericon a:hover {
   padding: 15px 25px;
   margin-top: 20px;
   color: var(--color-white);
-  font-size: 1rem;
-  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
