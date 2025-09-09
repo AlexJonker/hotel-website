@@ -27,6 +27,7 @@ function sender($adress, $html, $subject)
         $mail->Username   = $env["mail_user"];
         $mail->Password = $env["mail_pass"];
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
         $mail->setFrom($env["mail_user"], 'Thijs Keesje');
         $mail->addAddress($adress);
@@ -35,9 +36,14 @@ function sender($adress, $html, $subject)
         $mail->Body    = $html;
         $mail->isHTML(true);
 
+        $mail->SMTPDebug = 0;
+        $mail->Timeout = 10;
+        $mail->SMTPKeepAlive = false;
+
         $mail->send();
         return 'Email verstuurd!';
     } catch (Exception $e) {
-        return 'Email verzending mislukt!';
+        error_log(message: 'Mailer Error: ' . $mail->ErrorInfo);
+        return 'Email verzending mislukt: ' . $mail->ErrorInfo;
     }
 }
