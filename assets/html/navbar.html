@@ -1,46 +1,46 @@
-<link rel="stylesheet" href="/styling/global.css">
-<link rel="stylesheet" href="/styling/navbar.css">
-<link rel="icon" href="/assets/logos/favicon.ico">
+<link rel="stylesheet" href="/styling/global.css" />
+<link rel="stylesheet" href="/styling/navbar.css" />
+<link rel="icon" href="/assets/logos/favicon.ico" />
 
 <nav class="nav-container">
-    <section class="nav-items-wrapper">
-        <article class="logo-wrapper">
-            <a href="/">
-                <img src="/assets/logos/logo.png" alt="logo">
-            </a>
-        </article>
+  <section class="nav-items-wrapper">
+    <article class="logo-wrapper">
+      <a href="/">
+        <img src="/assets/logos/logo.png" alt="logo" />
+      </a>
+    </article>
 
-        <article class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-            <article class="hamburger-line"></article>
-            <article class="hamburger-line"></article>
-            <article class="hamburger-line"></article>
-        </article>
+    <article class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+      <article class="hamburger-line"></article>
+      <article class="hamburger-line"></article>
+      <article class="hamburger-line"></article>
+    </article>
 
-        <article class="nav-links-wrapper" id="navLinks">
-            <a href="/">Home</a>
-            <a href="/kamers">Kamers</a>
-            <a href="/restaurant">Restaurant</a>
-            <a href="/over-ons">Over ons</a>
-            <a id="contact" href="/contact">Contact</a>
-        </article>
-    </section>
+    <article class="nav-links-wrapper" id="navLinks">
+      <a href="/">Home</a>
+      <a href="/kamers">Kamers</a>
+      <a href="/restaurant">Restaurant</a>
+      <a href="/over-ons">Over ons</a>
+      <a id="contact" href="/contact">Contact</a>
+    </article>
+  </section>
 </nav>
 
 <script>
-    function toggleMobileMenu() {
-        const navLinks = document.getElementById('navLinks');
-        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  function toggleMobileMenu() {
+    const navLinks = document.getElementById("navLinks");
+    const mobileToggle = document.querySelector(".mobile-menu-toggle");
 
-        navLinks.classList.toggle('active');
-        mobileToggle.classList.toggle('active');
-    }
+    navLinks.classList.toggle("active");
+    mobileToggle.classList.toggle("active");
+  }
 
-    document.querySelectorAll('.nav-links-wrapper a').forEach(link => {
-        link.addEventListener('click', () => {
-            const navLinks = document.getElementById('navLinks');
-            const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            navLinks.classList.remove('active');
-            mobileToggle.classList.remove('active');
-        });
+  document.querySelectorAll(".nav-links-wrapper a").forEach((link) => {
+    link.addEventListener("click", () => {
+      const navLinks = document.getElementById("navLinks");
+      const mobileToggle = document.querySelector(".mobile-menu-toggle");
+      navLinks.classList.remove("active");
+      mobileToggle.classList.remove("active");
     });
+  });
 </script>
