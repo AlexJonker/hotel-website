@@ -8,7 +8,7 @@ if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true
 }
 
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
 $dbPassword = '';
@@ -21,7 +21,7 @@ $conn->close();
 
 if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
-    
+
     if (password_verify($password, $dbPassword)) {
         $_SESSION['admin_logged_in'] = true;
         header('Location: /admin/panel');
@@ -74,4 +74,5 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
 
     </section>
 </body>
+
 </html>
