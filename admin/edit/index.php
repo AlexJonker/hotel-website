@@ -7,7 +7,6 @@ if (isset($_SESSION["admin_logged_in"]) && $_SESSION["admin_logged_in"] === true
     exit;
 }
 
-
 require '../../assets/php/db.php';
 require '../../assets/php/fontawesome.php';
 
@@ -15,7 +14,6 @@ function sanitize($data)
 {
     return htmlspecialchars(stripslashes(trim($data)));
 }
-
 
 $current_room = $_GET['kamer'];
 $kamers = [];
@@ -41,9 +39,6 @@ if (is_numeric($current_room)) {
         ];
     }
 }
-
-
-
 
 // Update data
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
