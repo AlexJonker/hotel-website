@@ -9,7 +9,6 @@ if (is_numeric($current_room)) {
     while ($row = mysqli_fetch_assoc($result)) {
         $kamers[] = $row;
     }
-
 }
 
 
@@ -66,7 +65,7 @@ $beschikbaar = count($open);
                     $afbeeldingen[] = $afbeelding_row['link'];
                 }
                 ?>
-                <div class = "rechts">
+                <div class="rechts">
                     <div class="kamer-afbeeldingen-slideshow">
                         <?php if (!empty($afbeeldingen)): ?>
                             <?php if (count($afbeeldingen) > 1): ?>
