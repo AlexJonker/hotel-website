@@ -68,7 +68,7 @@
                     verblijf. Geniet van moderne voorzieningen, comfortabele bedden en een prachtig uitzicht op de
                     omgeving.
                 </p>
-                <a href="/kamers" class="about-button">Zie alle kamers</a>
+                <a href="/kamers" class="about-button" id="about-knop">Zie alle kamers</a>
             </article>
             <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/619990272.jpg?k=0cdca0c64117ed139eaeb5198076a2aa715ec9e6ab121fd687d438d93d832399&o=&hp=1"
                 alt="Voorbeeld kamer">
@@ -84,7 +84,7 @@
                     omtovert tot culinaire meesterwerken. Van een uitgebreid ontbijt tot een intiem diner, elke maaltijd
                     is een ervaring op zich. Ontdek ons menu en geniet van de smaken van Alkmaar.
                 </p>
-                <a href="/restaurant" class="about-button">Zie het menu</a>
+                <a href="/restaurant" class="about-button" id="about-knop">Zie het menu</a>
             </div>
             <img src="https://fastly.picsum.photos/id/42/3456/2304.jpg?hmac=dhQvd1Qp19zg26MEwYMnfz34eLnGv8meGk_lFNAJR3g"
                 alt="Voorbeeld kamer">
