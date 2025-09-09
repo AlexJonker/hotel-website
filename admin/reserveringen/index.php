@@ -8,10 +8,8 @@ if (isset($_SESSION["admin_logged_in"]) && $_SESSION["admin_logged_in"] === true
     exit;
 }
 
-
 require '../../assets/php/fontawesome.php';
 require '../../assets/php/db.php';
-
 
 $result = mysqli_query($conn, "SELECT * FROM reserveringen ORDER BY start_datum DESC");
 $reserveringen = [];
