@@ -132,12 +132,12 @@
         width: 100%;
         padding: 20px;
         text-align: center;
-    border-bottom: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
         font-size: 16px;
     }
 
     .nav-links-wrapper a:hover {
-    background-color: var(--color-bg);
+        background-color: var(--color-bg);
     }
 
     #contact {
