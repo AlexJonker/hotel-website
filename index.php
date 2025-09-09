@@ -84,6 +84,7 @@
                     omtovert tot culinaire meesterwerken. Van een uitgebreid ontbijt tot een intiem diner, elke maaltijd
                     is een ervaring op zich. Ontdek ons menu en geniet van de smaken van Alkmaar.
                 </p>
+                <a href="/restaurant" class="about-button">Zie het menu</a>
             </div>
             <img src="https://fastly.picsum.photos/id/42/3456/2304.jpg?hmac=dhQvd1Qp19zg26MEwYMnfz34eLnGv8meGk_lFNAJR3g"
                 alt="Voorbeeld kamer">
