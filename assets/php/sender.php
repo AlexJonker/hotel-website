@@ -3,8 +3,7 @@ $env = false;
 
 if (file_exists('../.env')) {
     $env = parse_ini_file('../.env');
-}
-elseif (file_exists('../../.env')) {
+} elseif (file_exists('../../.env')) {
     $env = parse_ini_file('../../.env');
 }
 
@@ -12,15 +11,13 @@ if ($env === false) {
     die("No .env file found");
 }
 
-
-
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 
-function sender($adress, $html, $subject){
+function sender($adress, $html, $subject)
+{
     global $env;
     $mail = new PHPMailer(true);
     try {
@@ -44,5 +41,3 @@ function sender($adress, $html, $subject){
         return 'Email verzending mislukt!';
     }
 }
-
-?>
