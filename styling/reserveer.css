@@ -171,29 +171,29 @@
 }
 
 .scroll-down-btn {
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-30%);
-    width: 60px;
-    height: 60px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(181, 181, 181);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    font-size: 20px;
-    animation: bounce 2s infinite;
-    box-shadow: 0 4px 12px var(--color-shadow-dark);
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-30%);
+  width: 60px;
+  height: 60px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(181, 181, 181);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 20px;
+  animation: bounce 2s infinite;
+  box-shadow: 0 4px 12px var(--color-shadow-dark);
 }
 
 .scroll-down-btn:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    transform: translateX(-50%) translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateX(-50%) translateY(-2px);
 }
 
 .kamer-error,
@@ -210,11 +210,25 @@
   text-decoration: underline;
 }
 
+
+
 @media (max-width: 768px) {
+  .onder {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .kamer-afbeeldingen-slideshow {
+    display: none;
+  }
+
+  .kamer-naam {
+    font-size: 36px;
+  }
+
   .kamer-container {
     padding: 20px;
     margin-top: 80px;
-    width: 95%;
     max-width: 100%;
   }
 
@@ -225,13 +239,20 @@
     gap: 30px;
   }
 
-  .kamer-beschrijving,
   .kamer-prijs {
-    display: none;
+    font-size: 20px;
+    display: block;
+    text-align: center;
   }
 
   .reserveer-form input {
     width: 100%;
     max-width: 320px;
+  }
+
+  .scroll-down-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
   }
 }
