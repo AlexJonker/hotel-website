@@ -141,7 +141,7 @@ section ul {
   margin: 0;
 }
 
-section ul li {
+section ul .hovericon {
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -150,11 +150,11 @@ section ul li {
   transition: all 0.3s ease;
 }
 
-section ul li:hover {
+section ul .hovericon:hover {
   transform: translateX(5px);
 }
 
-section ul li a {
+section ul .hovericon a {
   color: var(--color-bg-light);
   text-decoration: none;
   display: flex;
@@ -162,7 +162,7 @@ section ul li a {
   transition: all 0.3s ease;
 }
 
-section ul li a:hover {
+section ul .hovericon a:hover {
   color: var(--color-primary-light);
 }
 
