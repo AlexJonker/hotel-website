@@ -87,7 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $output = sender($email, $message, "Reservering bevestiging");
             $admin_output = sender($env["admin_email"], $admin_message, "Nieuwe reservering: " . $room['naam']);
             $success = true;
-
         }
     }
 }
@@ -225,7 +224,7 @@ $beschikbaar = count($open);
         if (endDateInput) endDateInput.setAttribute('min', today);
 
         if (startDateInput && endDateInput) {
-            startDateInput.addEventListener('change', function () {
+            startDateInput.addEventListener('change', function() {
                 const startDate = this.value;
                 if (startDate) {
                     endDateInput.setAttribute('min', startDate);
@@ -236,7 +235,7 @@ $beschikbaar = count($open);
 
             const form = document.querySelector('.reserveer-form');
             if (form) {
-                form.addEventListener('submit', function (e) {
+                form.addEventListener('submit', function(e) {
                     const start = startDateInput.value;
                     const end = endDateInput.value;
 
