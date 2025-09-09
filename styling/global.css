@@ -9,13 +9,13 @@
     --color-bg-alt: #EAE0CC;
     --color-bg-dark: #3B342D;
     --color-white: #FFFFFF;
-    --color-black: #1A1611;  
+    --color-black: #1A1611;
     --color-grey: #777166;
     --color-grey-light: #ADA79D;
     --color-grey-lighter: #E5E2DC;
     --color-border: #C8AC7D;
-    --color-border-alt: #D9CEBC;  
-    --color-border-dark: #826B44; 
+    --color-border-alt: #D9CEBC;
+    --color-border-dark: #826B44;
     --color-shadow: rgba(83, 66, 49, 0.1);
     --color-shadow-dark: rgba(83, 66, 49, 0.15);
     --color-shadow-accent: rgba(249, 245, 139, 0.25);
@@ -24,17 +24,9 @@
     --navfoot: rgb(37, 37, 37);
 }
 
-
 html {
     background-color: var(--navfoot);
 }
-
-
-
-
-
-
-
 
 
 /* reset */
@@ -47,8 +39,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
     margin: 0;
@@ -60,25 +52,31 @@ time, mark, audio, video {
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
