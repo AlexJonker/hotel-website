@@ -1,5 +1,6 @@
 <?php
 require '../assets/php/db.php';
+include '../assets/php/fontawesome.php';
 
 $current_room = $_GET['num'];
 
@@ -50,7 +51,9 @@ $beschikbaar = count($open);
     <?php if (!empty($kamers)): ?>
         <?php $kamer = $kamers[0]; ?>
         <div class="kamer-container">
-            <a class="terug-knop kamer-reserveer-knop" href="/kamers">Terug naar overzicht</a>
+            <a href="/kamers" class="scroll-down-btn">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
             <h1 class="kamer-naam"><?= $kamer['naam'] ?></h1>
             <div class="kamer-content">
                 <div class="kamer-info">
@@ -73,7 +76,9 @@ $beschikbaar = count($open);
                             <?php endif; ?>
                             <div class="slideshow-images">
                                 <?php foreach ($afbeeldingen as $index => $link): ?>
-                                    <img class="kamer-afbeelding slide-container" src="<?= $link ?>" alt="Afbeelding van <?= $kamer['naam'] ?>" style="<?= $index === 0 ? '' : 'display:none;' ?>">
+                                    <img class="kamer-afbeelding slide-container" src="<?= $link ?>"
+                                        alt="Afbeelding van <?= $kamer['naam'] ?>"
+                                        style="<?= $index === 0 ? '' : 'display:none;' ?>">
                                 <?php endforeach; ?>
                             </div>
                             <?php if (count($afbeeldingen) > 1): ?>
@@ -91,6 +96,7 @@ $beschikbaar = count($open);
     <?php else: ?>
         <article class="kamer-error">
             <h2>Ongeldige kamer. Ga terug naar <a href="/kamers">overzicht</a> kamers.</h2>
+
         </article>
     <?php endif; ?>
     <?php include('../assets/html/footer.html'); ?>

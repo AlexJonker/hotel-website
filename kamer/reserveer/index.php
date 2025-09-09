@@ -1,5 +1,7 @@
 <?php
 require '../../assets/php/db.php';
+include'../../assets/php/fontawesome.php';
+
 
 $current_room = $_GET['num'];
 
@@ -131,7 +133,9 @@ $beschikbaar = count($open);
 
     <?php if ($room): ?>
         <section class="kamer-container">
-            <a class="terug-knop kamer-reserveer-knop" href="/kamer?num=<?= $room['id'] ?>">Terug naar kamer</a>
+            <a href="/kamer?num=<?= $room['id'] ?>" class="scroll-down-btn">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
             <h1 class="kamer-naam">Reserveer: <?= htmlspecialchars($room['naam']) ?></h1>
             <main class="kamer-content">
                 <article class="kamer-info">

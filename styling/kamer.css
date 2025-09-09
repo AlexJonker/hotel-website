@@ -10,11 +10,31 @@
     height: 100%;
 }
 
-.terug-knop {
-    width: fit-content;
-    text-align: center;
+.scroll-down-btn {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-30%);
+    width: 60px;
+    height: 60px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(181, 181, 181);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 20px;
+    animation: bounce 2s infinite;
+    box-shadow: 0 4px 12px var(--color-shadow-dark);
 }
 
+.scroll-down-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateX(-50%) translateY(-2px);
+}
 
 .kamer-naam {
     font-size: 42px;
