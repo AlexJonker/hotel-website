@@ -3,8 +3,7 @@ $env = false;
 
 if (file_exists('../.env')) {
     $env = parse_ini_file('../.env');
-}
-elseif (file_exists('../../.env')) {
+} elseif (file_exists('../../.env')) {
     $env = parse_ini_file('../../.env');
 }
 
