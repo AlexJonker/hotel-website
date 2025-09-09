@@ -150,11 +150,28 @@ section ul .hovericon {
   transition: all 0.3s ease;
 }
 
+section ul li {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  color: var(--color-bg-light);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
 section ul .hovericon:hover {
   transform: translateX(5px);
 }
 
 section ul .hovericon a {
+  color: var(--color-bg-light);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+section ul li a {
   color: var(--color-bg-light);
   text-decoration: none;
   display: flex;
